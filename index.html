@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Price Action Mastery — Get Instant Access</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ── RESET & VARS ─────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+:root {
+  --gold:    #D4AF37;
+  --gold-lt: #FFD700;
+  --gold-dk: #8B6914;
+  --gold-glow: rgba(212,175,55,.35);
+  --black:   #060a05;
+  --dark:    #0a1208;
+  --mid:     #101c0d;
+  --card:    #131f10;
+  --border:  rgba(212,175,55,.18);
+  --white:   #f8f5ee;
+  --grey:    #8a9688;
+  --green:   #22c55e;
+  --red:     #ef4444;
+  --wa:      #25D366;
+  --wa-dk:   #128C7E;
+}
+
+body {
+  font-family: 'Syne', sans-serif;
+  background: var(--black);
+  color: var(--white);
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* ── NOISE TEXTURE OVERLAY ──────────────────────────── */
+body::before {
+  content: '';
+  position: fixed; inset: 0; z-index: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+  pointer-events: none;
+  opacity: .5;
+}
+
+/* ── ANIMATIONS ─────────────────────────────────────── */
+@keyframes fadeUp    { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:translateY(0)} }
+@keyframes fadeIn    { from{opacity:0} to{opacity:1} }
+@keyframes shimmer   { 0%{background-position:-400% center} 100%{background-position:400% center} }
+@keyframes pulse     { 0%,100%{transform:scale(1)} 50%{transform:scale(1.03)} }
+@keyframes glow-pulse{ 0%,100%{box-shadow:0 0 30px rgba(37,211,102,.3),0 0 60px rgba(37,211,102,.1)} 50%{box-shadow:0 0 50px rgba(37,211,102,.6),0 0 100px rgba(37,211,102,.2)} }
+@keyframes ticker    { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+@keyframes spin-slow { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
+@keyframes count-up  { from{opacity:0;transform:translateY(10px)} to{opacity:1;transform:translateY(0)} }
+@keyframes wa-bounce { 0%,100%{transform:translateY(0) scale(1)} 25%{transform:translateY(-6px) scale(1.05)} 75%{transform:translateY(-3px) scale(1.02)} }
+
+.anim-1 { animation: fadeUp .6s .1s ease both; }
+.anim-2 { animation: fadeUp .6s .2s ease both; }
+.anim-3 { animation: fadeUp .6s .3s ease both; }
+.anim-4 { animation: fadeUp .6s .4s ease both; }
+.anim-5 { animation: fadeUp .6s .5s ease both; }
+
+/* ── TICKER ─────────────────────────────────────────── */
+.ticker-wrap {
+  position: relative; z-index: 10;
+  background: var(--gold);
+  overflow: hidden;
+  padding: 10px 0;
+  white-space: nowrap;
+}
+.ticker-inner {
+  display: inline-flex;
+  animation: ticker 30s linear infinite;
+  gap: 0;
+}
+.ticker-inner span {
+  padding: 0 36px;
+  font-family: 'DM Mono', monospace;
+  font-size: 12px; font-weight: 500;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  color: var(--black);
+}
+.ticker-inner span.sep { color: var(--gold-dk); }
+
+/* ── NAV ─────────────────────────────────────────────── */
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(6,10,5,.92);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  padding: 16px 28px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.nav-logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 20px; letter-spacing: 3px; color: var(--gold);
+  text-decoration: none;
+}
+.nav-pill {
+  display: flex; align-items: center; gap: 8px;
+  background: rgba(37,211,102,.1);
+  border: 1px solid rgba(37,211,102,.3);
+  border-radius: 50px;
+  padding: 8px 18px;
+  font-size: 13px; font-weight: 700;
+  color: var(--wa);
+  letter-spacing: .5px;
+}
+.nav-pill::before { content: '●'; font-size: 8px; animation: pulse 1.5s ease-in-out infinite; }
+
+/* ── HERO ─────────────────────────────────────────────── */
+.hero {
+  position: relative; z-index: 1;
+  padding: 80px 24px 60px;
+  text-align: center;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute; top: -200px; left: 50%; transform: translateX(-50%);
+  width: 700px; height: 700px;
+  background: radial-gradient(circle, rgba(212,175,55,.12) 0%, transparent 65%);
+  pointer-events: none;
+}
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  border: 1px solid var(--border);
+  border-radius: 50px;
+  padding: 7px 20px;
+  font-family: 'DM Mono', monospace;
+  font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 28px;
+}
+.hero-eyebrow::before { content: '🇳🇬'; }
+
+h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(64px, 14vw, 140px);
+  line-height: .88;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+h1 .white { color: var(--white); }
+h1 .gold {
+  background: linear-gradient(90deg, var(--gold-dk), var(--gold-lt), var(--gold), var(--gold-lt), var(--gold-dk));
+  background-size: 300% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 5s linear infinite;
+}
+
+.hero-sub {
+  font-size: clamp(15px, 2.5vw, 19px);
+  font-weight: 400; color: var(--grey);
+  max-width: 560px; margin: 20px auto 0; line-height: 1.7;
+}
+.hero-sub strong { color: var(--white); font-weight: 700; }
+
+/* social proof bar */
+.proof-bar {
+  display: flex; align-items: center; justify-content: center;
+  gap: 24px; flex-wrap: wrap;
+  margin: 32px auto 0;
+  max-width: 600px;
+}
+.proof-item {
+  display: flex; align-items: center; gap: 7px;
+  font-family: 'DM Mono', monospace;
+  font-size: 12px; color: var(--grey); letter-spacing: .5px;
+}
+.proof-item .val { color: var(--gold-lt); font-weight: 500; }
+.proof-dot { width: 3px; height: 3px; border-radius: 50%; background: var(--border); }
+
+/* ── FILTER CARD ──────────────────────────────────────── */
+.filter-wrap {
+  position: relative; z-index: 1;
+  max-width: 680px; margin: 60px auto 0;
+  padding: 0 20px;
+}
+.filter-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 40px 100px rgba(0,0,0,.6), 0 0 0 1px var(--border);
+}
+.filter-header {
+  background: linear-gradient(135deg, rgba(212,175,55,.12), rgba(18,70,36,.3));
+  border-bottom: 1px solid var(--border);
+  padding: 28px 32px;
+  text-align: center;
+}
+.filter-header-tag {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 8px;
+}
+.filter-header h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 32px; letter-spacing: 1px; color: var(--white);
+}
+.filter-header p { font-size: 14px; color: var(--grey); margin-top: 6px; }
+
+.filter-body { padding: 32px; }
+
+/* progress bar */
+.progress-wrap { margin-bottom: 28px; }
+.progress-label {
+  display: flex; justify-content: space-between;
+  font-family: 'DM Mono', monospace;
+  font-size: 11px; color: var(--grey); margin-bottom: 8px;
+  letter-spacing: 1px; text-transform: uppercase;
+}
+.progress-label span { color: var(--gold); }
+.progress-bar {
+  height: 4px; background: rgba(255,255,255,.06);
+  border-radius: 2px; overflow: hidden;
+}
+.progress-fill {
+  height: 100%; width: 0%;
+  background: linear-gradient(90deg, var(--gold-dk), var(--gold-lt));
+  border-radius: 2px;
+  transition: width .5s cubic-bezier(.4,0,.2,1);
+}
+
+/* steps */
+.step { display: none; }
+.step.active { display: block; animation: fadeUp .4s ease both; }
+
+.step-q {
+  font-size: 20px; font-weight: 700; color: var(--white);
+  line-height: 1.4; margin-bottom: 8px;
+}
+.step-q span { color: var(--gold); }
+.step-hint { font-size: 13px; color: var(--grey); margin-bottom: 24px; }
+
+/* option buttons */
+.options { display: flex; flex-direction: column; gap: 10px; }
+.opt-btn {
+  display: flex; align-items: center; gap: 14px;
+  background: rgba(255,255,255,.03);
+  border: 1.5px solid rgba(255,255,255,.08);
+  border-radius: 12px;
+  padding: 16px 20px;
+  cursor: pointer;
+  transition: all .2s ease;
+  text-align: left;
+  font-family: 'Syne', sans-serif;
+  color: var(--white);
+  width: 100%;
+}
+.opt-btn:hover {
+  border-color: var(--gold);
+  background: rgba(212,175,55,.06);
+  transform: translateX(4px);
+}
+.opt-btn.selected {
+  border-color: var(--gold);
+  background: rgba(212,175,55,.1);
+}
+.opt-icon {
+  width: 40px; height: 40px; border-radius: 10px;
+  background: rgba(212,175,55,.1);
+  border: 1px solid rgba(212,175,55,.2);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20px; flex-shrink: 0;
+}
+.opt-label { font-size: 15px; font-weight: 700; }
+.opt-sub { font-size: 12px; color: var(--grey); margin-top: 2px; }
+.opt-check {
+  margin-left: auto; width: 22px; height: 22px;
+  border-radius: 50%; border: 1.5px solid rgba(255,255,255,.15);
+  flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px;
+  transition: all .2s;
+}
+.opt-btn.selected .opt-check {
+  background: var(--gold); border-color: var(--gold); color: var(--black);
+}
+
+/* text input */
+.field-group { margin-bottom: 16px; }
+.field-label {
+  display: block; font-size: 12px; font-weight: 700;
+  letter-spacing: 1px; text-transform: uppercase;
+  color: var(--grey); margin-bottom: 8px;
+}
+.field-input {
+  width: 100%;
+  background: rgba(255,255,255,.04);
+  border: 1.5px solid rgba(255,255,255,.1);
+  border-radius: 12px;
+  padding: 14px 18px;
+  font-family: 'Syne', sans-serif;
+  font-size: 16px; color: var(--white);
+  outline: none;
+  transition: border-color .2s;
+}
+.field-input:focus { border-color: var(--gold); background: rgba(212,175,55,.04); }
+.field-input::placeholder { color: rgba(255,255,255,.2); }
+
+/* country select */
+.country-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.country-btn {
+  display: flex; align-items: center; gap: 10px;
+  background: rgba(255,255,255,.03);
+  border: 1.5px solid rgba(255,255,255,.08);
+  border-radius: 12px;
+  padding: 14px 16px;
+  cursor: pointer;
+  transition: all .2s;
+  font-family: 'Syne', sans-serif;
+  color: var(--white); font-size: 14px; font-weight: 700;
+  width: 100%;
+}
+.country-btn:hover { border-color: var(--gold); background: rgba(212,175,55,.06); }
+.country-btn.selected { border-color: var(--gold); background: rgba(212,175,55,.1); }
+.country-flag { font-size: 22px; }
+.country-price { font-size: 11px; color: var(--gold); margin-top: 2px; font-weight: 500; }
+
+/* next button */
+.next-btn {
+  width: 100%; margin-top: 24px;
+  background: linear-gradient(135deg, var(--gold-dk), var(--gold-lt));
+  color: var(--black);
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 22px; letter-spacing: 2px;
+  padding: 18px; border-radius: 12px;
+  border: none; cursor: pointer;
+  transition: transform .15s, opacity .15s;
+}
+.next-btn:hover:not(:disabled) { transform: scale(1.02); }
+.next-btn:disabled { opacity: .4; cursor: not-allowed; }
+
+/* ── RESULT SCREEN ────────────────────────────────────── */
+#result-screen {
+  display: none;
+  padding: 32px;
+  text-align: center;
+  animation: fadeUp .5s ease both;
+}
+.result-icon {
+  width: 80px; height: 80px; border-radius: 50%;
+  background: rgba(37,211,102,.1);
+  border: 2px solid rgba(37,211,102,.3);
+  margin: 0 auto 20px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 36px;
+  animation: pulse 2s ease-in-out infinite;
+}
+.result-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 38px; letter-spacing: 1px; color: var(--white);
+  margin-bottom: 8px;
+}
+.result-title span { color: var(--wa); }
+.result-sub { font-size: 15px; color: var(--grey); line-height: 1.7; max-width: 400px; margin: 0 auto 28px; }
+
+/* summary box */
+.summary-box {
+  background: rgba(255,255,255,.03);
+  border: 1px solid var(--border);
+  border-radius: 16px; padding: 20px 24px;
+  margin-bottom: 24px; text-align: left;
+}
+.summary-row {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255,255,255,.05);
+  font-size: 14px;
+}
+.summary-row:last-child { border-bottom: none; }
+.summary-key { color: var(--grey); }
+.summary-val { color: var(--white); font-weight: 700; }
+.summary-val.gold { color: var(--gold-lt); }
+
+/* WhatsApp CTA button */
+.wa-btn {
+  display: flex; align-items: center; justify-content: center; gap: 12px;
+  width: 100%;
+  background: var(--wa);
+  color: #fff;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 24px; letter-spacing: 1.5px;
+  padding: 22px 32px; border-radius: 14px;
+  text-decoration: none;
+  animation: glow-pulse 3s ease-in-out infinite, wa-bounce 4s ease-in-out infinite;
+  transition: transform .15s;
+  position: relative; overflow: hidden;
+}
+.wa-btn::before {
+  content: '';
+  position: absolute; top: 0; left: -100%;
+  width: 60%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.15), transparent);
+  animation: shimmer 3s linear infinite;
+}
+.wa-btn:hover { transform: scale(1.03); }
+.wa-icon { font-size: 28px; }
+
+.wa-note {
+  margin-top: 14px;
+  font-family: 'DM Mono', monospace;
+  font-size: 11px; color: var(--grey); letter-spacing: 1px; text-align: center;
+}
+
+/* ── SOCIAL PROOF SECTION ─────────────────────────────── */
+.proof-section {
+  position: relative; z-index: 1;
+  max-width: 680px; margin: 60px auto 0;
+  padding: 0 20px;
+}
+.proof-heading {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 28px; letter-spacing: 1px; color: var(--white);
+  text-align: center; margin-bottom: 20px;
+}
+.proof-heading span { color: var(--gold); }
+.testimonials { display: flex; flex-direction: column; gap: 12px; }
+.testi {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--gold);
+  border-radius: 12px;
+  padding: 20px 22px;
+}
+.testi-text {
+  font-size: 14px; color: var(--grey); line-height: 1.7;
+  font-style: italic; margin-bottom: 12px;
+}
+.testi-text strong { color: var(--white); font-style: normal; }
+.testi-footer { display: flex; align-items: center; gap: 10px; }
+.testi-avatar {
+  width: 34px; height: 34px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--gold-dk), var(--gold));
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px; font-weight: 800; color: var(--black);
+  flex-shrink: 0;
+}
+.testi-name { font-size: 13px; font-weight: 700; color: var(--white); }
+.testi-loc  { font-size: 11px; color: var(--grey); }
+.testi-stars{ margin-left: auto; color: var(--gold); font-size: 12px; }
+
+/* ── WHAT YOU GET STRIP ──────────────────────────────── */
+.features-strip {
+  position: relative; z-index: 1;
+  max-width: 680px; margin: 48px auto 0;
+  padding: 0 20px;
+}
+.features-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+.feat-box {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px; padding: 20px 16px;
+  text-align: center;
+  transition: border-color .2s, transform .2s;
+}
+.feat-box:hover { border-color: var(--gold); transform: translateY(-3px); }
+.feat-icon { font-size: 28px; margin-bottom: 8px; }
+.feat-title {
+  font-size: 12px; font-weight: 800;
+  letter-spacing: .5px; text-transform: uppercase;
+  color: var(--white); margin-bottom: 4px; line-height: 1.3;
+}
+.feat-sub { font-size: 11px; color: var(--grey); }
+
+/* ── URGENCY BANNER ──────────────────────────────────── */
+.urgency-banner {
+  position: relative; z-index: 1;
+  max-width: 680px; margin: 40px auto 0;
+  padding: 0 20px;
+}
+.urgency-inner {
+  background: linear-gradient(135deg, rgba(239,68,68,.1), rgba(212,175,55,.05));
+  border: 1px solid rgba(239,68,68,.25);
+  border-radius: 16px; padding: 20px 24px;
+  display: flex; align-items: center; gap: 16px;
+}
+.urgency-icon { font-size: 28px; flex-shrink: 0; }
+.urgency-text { font-size: 14px; color: var(--grey); line-height: 1.6; }
+.urgency-text strong { color: var(--white); }
+
+/* ── FOOTER ──────────────────────────────────────────── */
+footer {
+  position: relative; z-index: 1;
+  text-align: center;
+  padding: 48px 24px 32px;
+}
+.footer-trust {
+  display: flex; align-items: center; justify-content: center;
+  gap: 24px; flex-wrap: wrap; margin-bottom: 20px;
+}
+.trust-item {
+  display: flex; align-items: center; gap: 6px;
+  font-size: 12px; color: var(--grey);
+}
+.trust-icon { font-size: 14px; }
+.footer-copy {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px; color: rgba(138,150,136,.5);
+  letter-spacing: .5px;
+}
+
+/* ── STICKY BOTTOM ───────────────────────────────────── */
+.sticky-bottom {
+  display: none;
+  position: fixed; bottom: 0; left: 0; right: 0; z-index: 200;
+  background: rgba(6,10,5,.96);
+  backdrop-filter: blur(20px);
+  border-top: 1px solid rgba(37,211,102,.2);
+  padding: 12px 20px;
+}
+@media(max-width: 640px) {
+  .sticky-bottom { display: block; }
+  body { padding-bottom: 80px; }
+  .features-grid { grid-template-columns: repeat(2, 1fr); }
+  .country-grid { grid-template-columns: 1fr 1fr; }
+}
+.sticky-bottom a {
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  background: var(--wa); color: #fff;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 20px; letter-spacing: 1.5px;
+  padding: 14px; border-radius: 10px;
+  text-decoration: none;
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+
+/* ── SCROLL REVEAL ───────────────────────────────────── */
+.reveal { opacity: 0; transform: translateY(20px); transition: opacity .6s ease, transform .6s ease; }
+.reveal.vis { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker-inner">
+    <span>🇳🇬 ₦10,000</span><span class="sep">·</span>
+    <span>🇬🇭 GH₵76</span><span class="sep">·</span>
+    <span>🇿🇦 R118</span><span class="sep">·</span>
+    <span>🇨🇲 FCFA 5,140</span><span class="sep">·</span>
+    <span>🇰🇪 KSh947</span><span class="sep">·</span>
+    <span>⭐ 4.9 Rating</span><span class="sep">·</span>
+    <span>2,400+ Students</span><span class="sep">·</span>
+    <span>Lifetime Access</span><span class="sep">·</span>
+    <span>🇳🇬 ₦10,000</span><span class="sep">·</span>
+    <span>🇬🇭 GH₵76</span><span class="sep">·</span>
+    <span>🇿🇦 R118</span><span class="sep">·</span>
+    <span>🇨🇲 FCFA 5,140</span><span class="sep">·</span>
+    <span>🇰🇪 KSh947</span><span class="sep">·</span>
+    <span>⭐ 4.9 Rating</span><span class="sep">·</span>
+    <span>2,400+ Students</span><span class="sep">·</span>
+    <span>Lifetime Access</span><span class="sep">·</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">PAM</a>
+  <div class="nav-pill">Spots Available</div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-eyebrow anim-1">Nigeria — Limited Time Offer</div>
+  <h1 class="anim-2">
+    <span class="white">PRICE<br>ACTION</span><br>
+    <span class="gold">MASTERY</span>
+  </h1>
+  <p class="hero-sub anim-3">
+    From <strong>Zero to Consistent</strong> — No Indicators. No Guesswork. Just Pure Price Action.
+  </p>
+  <div class="proof-bar anim-4">
+    <div class="proof-item"><span class="val">2,400+</span> Students</div>
+    <div class="proof-dot"></div>
+    <div class="proof-item"><span class="val">4.9 ★</span> Rating</div>
+    <div class="proof-dot"></div>
+    <div class="proof-item"><span class="val">10+ hrs</span> HD Video</div>
+    <div class="proof-dot"></div>
+    <div class="proof-item"><span class="val">Lifetime</span> Access</div>
+  </div>
+</section>
+
+<!-- FILTER CARD -->
+<div class="filter-wrap anim-5">
+  <div class="filter-card">
+
+    <div class="filter-header">
+      <div class="filter-header-tag">Step-by-Step · Takes 60 Seconds</div>
+      <h2>Answer 4 Quick Questions</h2>
+      <p>We'll personalise your access and connect you instantly</p>
+    </div>
+
+    <div class="filter-body">
+
+      <!-- PROGRESS -->
+      <div class="progress-wrap">
+        <div class="progress-label">
+          <span id="step-label">Question 1 of 4</span>
+          <span id="step-pct">0%</span>
+        </div>
+        <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+      </div>
+
+      <!-- STEP 1: Experience -->
+      <div class="step active" id="step-1">
+        <div class="step-q">What's your current trading <span>experience level?</span></div>
+        <div class="step-hint">Select the option that best describes you right now.</div>
+        <div class="options">
+          <button class="opt-btn" data-step="1" data-val="beginner" onclick="selectOpt(this)">
+            <div class="opt-icon">🌱</div>
+            <div><div class="opt-label">Complete Beginner</div><div class="opt-sub">Just getting started, learning the basics</div></div>
+            <div class="opt-check">✓</div>
+          </button>
+          <button class="opt-btn" data-step="1" data-val="struggling" onclick="selectOpt(this)">
+            <div class="opt-icon">📉</div>
+            <div><div class="opt-label">Struggling Trader</div><div class="opt-sub">Been trading but losing money or breaking even</div></div>
+            <div class="opt-check">✓</div>
+          </button>
+          <button class="opt-btn" data-step="1" data-val="intermediate" onclick="selectOpt(this)">
+            <div class="opt-icon">📊</div>
+            <div><div class="opt-label">Intermediate</div><div class="opt-sub">Some wins but not consistent yet</div></div>
+            <div class="opt-check">✓</div>
+          </button>
+          <button class="opt-btn" data-step="1" data-val="advanced" onclick="selectOpt(this)">
+            <div class="opt-icon">🏆</div>
+            <div><div class="opt-label">Advanced Trader</div><div class="opt-sub">Looking to sharpen my edge further</div></div>
+            <div class="opt-check">✓</div>
+          </button>
+        </div>
+        <button class="next-btn" id="next-1" disabled onclick="goNext(2)">Continue →</button>
+      </div>
+
+      <!-- STEP 2: Goal -->
+      <div class="step" id="step-2">
+        <div class="step-q">What's your <span>main goal</span> with trading?</div>
+        <div class="step-hint">Be honest — this helps us personalise your experience.</div>
+        <div class="options">
+          <button class="opt-btn" data-step="2" data-val="income" onclick="selectOpt(this)">
+            <div class="opt-icon">💰</div>
+            <div><div class="opt-label">Build a Full-Time Income</div><div class="opt-sub">Replace my job or primary income</div></div>
+            <div class="opt-check">✓</div>
+          </button>
+          <button class="opt-btn" data-step="2" data-val="side" onclick="selectOpt(this)">
+            <div class="opt-icon">📈</div>
+            <div><div class="opt-label">Generate Side Income</div><div class="opt-sub">Supplement my current earnings</div></div>
+            <div class="opt-check">✓</div>
+          </button>
+          <button class="opt-btn" data-step="2" data-val="consistent" onclick="selectOpt(this)">
+            <div class="opt-icon">🎯</div>
+            <div><div class="opt-label">Become Consistently Profitable</div><div class="opt-sub">Stop losing and start winning reliably</div></div>
+            <div class="opt-check">✓</div>
+          </button>
+          <button class="opt-btn" data-step="2" data-val="skill" onclick="selectOpt(this)">
+            <div class="opt-icon">🧠</div>
+            <div><div class="opt-label">Master the Skill</div><div class="opt-sub">Deep understanding of how markets move</div></div>
+            <div class="opt-check">✓</div>
+          </button>
+        </div>
+        <button class="next-btn" id="next-2" disabled onclick="goNext(3)">Continue →</button>
+      </div>
+
+      <!-- STEP 3: Country -->
+      <div class="step" id="step-3">
+        <div class="step-q">Which <span>country</span> are you based in?</div>
+        <div class="step-hint">We'll show your local currency price.</div>
+        <div class="country-grid">
+          <button class="country-btn" data-step="3" data-val="NG" data-price="₦10,000" data-flag="🇳🇬" onclick="selectOpt(this)">
+            <div class="country-flag">🇳🇬</div>
+            <div><div>Nigeria</div><div class="country-price">₦10,000</div></div>
+          </button>
+          <button class="country-btn" data-step="3" data-val="GH" data-price="GH₵76" data-flag="🇬🇭" onclick="selectOpt(this)">
+            <div class="country-flag">🇬🇭</div>
+            <div><div>Ghana</div><div class="country-price">GH₵76</div></div>
+          </button>
+          <button class="country-btn" data-step="3" data-val="ZA" data-price="R118" data-flag="🇿🇦" onclick="selectOpt(this)">
+            <div class="country-flag">🇿🇦</div>
+            <div><div>South Africa</div><div class="country-price">R118</div></div>
+          </button>
+          <button class="country-btn" data-step="3" data-val="CM" data-price="FCFA 5,140" data-flag="🇨🇲" onclick="selectOpt(this)">
+            <div class="country-flag">🇨🇲</div>
+            <div><div>Cameroon</div><div class="country-price">FCFA 5,140</div></div>
+          </button>
+          <button class="country-btn" data-step="3" data-val="KE" data-price="KSh947" data-flag="🇰🇪" onclick="selectOpt(this)">
+            <div class="country-flag">🇰🇪</div>
+            <div><div>Kenya</div><div class="country-price">KSh947</div></div>
+          </button>
+          <button class="country-btn" data-step="3" data-val="OTHER" data-price="₦10,000" data-flag="🌍" onclick="selectOpt(this)">
+            <div class="country-flag">🌍</div>
+            <div><div>Other</div><div class="country-price">NGN equiv.</div></div>
+          </button>
+        </div>
+        <button class="next-btn" id="next-3" disabled onclick="goNext(4)">Continue →</button>
+      </div>
+
+      <!-- STEP 4: Name + WhatsApp -->
+      <div class="step" id="step-4">
+        <div class="step-q">Almost there! <span>Who should we send access to?</span></div>
+        <div class="step-hint">Your details are safe — we only use this to send your course access.</div>
+        <div class="field-group">
+          <label class="field-label" for="fname">First Name</label>
+          <input class="field-input" id="fname" type="text" placeholder="e.g. Emeka" autocomplete="given-name" oninput="checkStep4()">
+        </div>
+        <div class="field-group">
+          <label class="field-label" for="fphone">WhatsApp Number</label>
+          <input class="field-input" id="fphone" type="tel" placeholder="e.g. +2348012345678" autocomplete="tel" oninput="checkStep4()">
+        </div>
+        <button class="next-btn" id="next-4" disabled onclick="showResult()">Get My Access Now →</button>
+      </div>
+
+      <!-- RESULT SCREEN -->
+      <div id="result-screen">
+        <div class="result-icon">✓</div>
+        <div class="result-title">You're <span>Ready!</span></div>
+        <p class="result-sub" id="result-sub">
+          Tap the button below and send us a message on WhatsApp. We'll send your access within minutes.
+        </p>
+
+        <div class="summary-box" id="summary-box">
+          <div class="summary-row"><span class="summary-key">Name</span><span class="summary-val" id="s-name">—</span></div>
+          <div class="summary-row"><span class="summary-key">Country</span><span class="summary-val" id="s-country">—</span></div>
+          <div class="summary-row"><span class="summary-key">Your Price</span><span class="summary-val gold" id="s-price">—</span></div>
+          <div class="summary-row"><span class="summary-key">Access Type</span><span class="summary-val">Lifetime · Instant Delivery</span></div>
+        </div>
+
+        <a id="wa-link" href="#" target="_blank" class="wa-btn">
+          <span class="wa-icon">💬</span>
+          SEND MESSAGE ON WHATSAPP
+        </a>
+        <p class="wa-note">💬 Average response time: under 5 minutes &nbsp;·&nbsp; Safe & Secure</p>
+      </div>
+
+    </div><!-- /filter-body -->
+  </div><!-- /filter-card -->
+</div><!-- /filter-wrap -->
+
+<!-- WHAT YOU GET -->
+<div class="features-strip reveal" style="margin-top:60px;">
+  <div style="text-align:center;margin-bottom:20px;">
+    <span style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);">What's Inside</span>
+  </div>
+  <div class="features-grid">
+    <div class="feat-box">
+      <div class="feat-icon">📈</div>
+      <div class="feat-title">Market Structure</div>
+      <div class="feat-sub">Trend & direction mastery</div>
+    </div>
+    <div class="feat-box">
+      <div class="feat-icon">🎯</div>
+      <div class="feat-title">High-Prob Setups</div>
+      <div class="feat-sub">Zero indicators needed</div>
+    </div>
+    <div class="feat-box">
+      <div class="feat-icon">🧱</div>
+      <div class="feat-title">Supply & Demand</div>
+      <div class="feat-sub">Precision zones</div>
+    </div>
+    <div class="feat-box">
+      <div class="feat-icon">🛡️</div>
+      <div class="feat-title">Risk Management</div>
+      <div class="feat-sub">Protect your capital</div>
+    </div>
+    <div class="feat-box">
+      <div class="feat-icon">🎥</div>
+      <div class="feat-title">10+ Hrs HD Video</div>
+      <div class="feat-sub">Step-by-step training</div>
+    </div>
+    <div class="feat-box">
+      <div class="feat-icon">📄</div>
+      <div class="feat-title">Bonus PDF</div>
+      <div class="feat-sub">Cheat sheets & tools</div>
+    </div>
+  </div>
+</div>
+
+<!-- TESTIMONIALS -->
+<div class="proof-section reveal">
+  <div class="proof-heading">What <span>Real Students</span> Say</div>
+  <div class="testimonials">
+    <div class="testi">
+      <div class="testi-text">"Within 6 weeks I had my first profitable month. Made <strong>₦184,000 in 3 weeks</strong> applying the supply and demand method. I almost cried."</div>
+      <div class="testi-footer">
+        <div class="testi-avatar">C</div>
+        <div><div class="testi-name">Chukwuemeka O.</div><div class="testi-loc">Lagos, Nigeria</div></div>
+        <div class="testi-stars">★★★★★</div>
+      </div>
+    </div>
+    <div class="testi">
+      <div class="testi-text">"Deleted all my indicators after Module 1. <strong>My chart is clean now and my results are sharper than they've ever been.</strong> This course is the real deal."</div>
+      <div class="testi-footer">
+        <div class="testi-avatar">K</div>
+        <div><div class="testi-name">Kwame A.</div><div class="testi-loc">Accra, Ghana</div></div>
+        <div class="testi-stars">★★★★★</div>
+      </div>
+    </div>
+    <div class="testi">
+      <div class="testi-text">"The risk management module alone <strong>saved my account.</strong> Now I'm consistent, calm, and profitable. Worth every kobo."</div>
+      <div class="testi-footer">
+        <div class="testi-avatar">F</div>
+        <div><div class="testi-name">Fatima B.</div><div class="testi-loc">Abuja, Nigeria</div></div>
+        <div class="testi-stars">★★★★★</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- URGENCY -->
+<div class="urgency-banner reveal">
+  <div class="urgency-inner">
+    <div class="urgency-icon">⚠️</div>
+    <div class="urgency-text">
+      <strong>This introductory price won't last.</strong> Once the offer ends, the price increases permanently.
+      Every day you wait is another day trading without the right foundation.
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-trust reveal">
+    <div class="trust-item"><span class="trust-icon">🔒</span> Secure Payment</div>
+    <div class="trust-item"><span class="trust-icon">⚡</span> Instant Delivery</div>
+    <div class="trust-item"><span class="trust-icon">♾️</span> Lifetime Access</div>
+    <div class="trust-item"><span class="trust-icon">💬</span> WhatsApp Support</div>
+  </div>
+  <p class="footer-copy">© 2026 Price Action Mastery · Learn Today · Trade Better Tomorrow · Build Wealth for Life</p>
+</footer>
+
+<!-- STICKY BOTTOM -->
+<div class="sticky-bottom">
+  <a href="https://wa.link/kvmend" target="_blank">💬 GET INSTANT ACCESS — ₦10,000</a>
+</div>
+
+<!-- ── JS ────────────────────────────────────────────── -->
+<script>
+  // State
+  const answers = { 1: null, 2: null, 3: null, country: null, price: null, flag: null };
+
+  // Select option
+  function selectOpt(btn) {
+    const step = parseInt(btn.dataset.step);
+    const btns = btn.closest('.options, .country-grid').querySelectorAll('.opt-btn, .country-btn');
+    btns.forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected');
+    answers[step] = btn.dataset.val;
+    if (btn.dataset.price) {
+      answers.price = btn.dataset.price;
+      answers.flag  = btn.dataset.flag;
+      answers.country = btn.dataset.val;
+    }
+    const nextBtn = document.getElementById('next-' + step);
+    if (nextBtn) nextBtn.disabled = false;
+  }
+
+  // Check step 4
+  function checkStep4() {
+    const name  = document.getElementById('fname').value.trim();
+    const phone = document.getElementById('fphone').value.trim();
+    document.getElementById('next-4').disabled = !(name.length > 1 && phone.length > 6);
+  }
+
+  // Go to next step
+  function goNext(stepNum) {
+    const prev = document.querySelector('.step.active');
+    if (prev) prev.classList.remove('active');
+    const next = document.getElementById('step-' + stepNum);
+    if (next) next.classList.add('active');
+    updateProgress(stepNum - 1);
+  }
+
+  // Update progress
+  function updateProgress(done) {
+    const total = 4;
+    const pct = Math.round((done / total) * 100);
+    document.getElementById('progress-fill').style.width = pct + '%';
+    document.getElementById('step-pct').textContent = pct + '%';
+    document.getElementById('step-label').textContent = 'Question ' + (done + 1) + ' of ' + total;
+  }
+
+  // Show result screen
+  function showResult() {
+    const name  = document.getElementById('fname').value.trim();
+    const phone = document.getElementById('fphone').value.trim();
+
+    // Update progress to 100%
+    document.getElementById('progress-fill').style.width = '100%';
+    document.getElementById('step-pct').textContent = '100%';
+    document.getElementById('step-label').textContent = 'Complete ✓';
+
+    // Hide active step
+    const active = document.querySelector('.step.active');
+    if (active) active.classList.remove('active');
+
+    // Populate summary
+    const countryNames = { NG:'🇳🇬 Nigeria', GH:'🇬🇭 Ghana', ZA:'🇿🇦 South Africa', CM:'🇨🇲 Cameroon', KE:'🇰🇪 Kenya', OTHER:'🌍 Other' };
+    document.getElementById('s-name').textContent    = name;
+    document.getElementById('s-country').textContent = countryNames[answers.country] || '—';
+    document.getElementById('s-price').textContent   = answers.price || '₦10,000';
+
+    // Build personalised WhatsApp message
+    const expMap = { beginner:'a complete beginner', struggling:'a struggling trader', intermediate:'an intermediate trader', advanced:'an advanced trader' };
+    const goalMap = { income:'build a full-time income', side:'generate side income', consistent:'become consistently profitable', skill:'master the skill of price action' };
+    const exp  = expMap[answers[1]]  || 'a trader';
+    const goal = goalMap[answers[2]] || 'improve my trading';
+    const price = answers.price || '₦10,000';
+    const country = countryNames[answers.country] || 'my country';
+
+    const msg = encodeURIComponent(
+      `Hello! I'd like to get access to Price Action Mastery.\n\n` +
+      `Name: ${name}\n` +
+      `Country: ${country}\n` +
+      `My Price: ${price}\n` +
+      `Experience: I am ${exp}\n` +
+      `My goal: I want to ${goal}\n\n` +
+      `Please send me the payment details. Thank you! 🚀`
+    );
+
+    document.getElementById('wa-link').href = `https://wa.link/kvmend`;
+
+    // Show result
+    document.getElementById('result-screen').style.display = 'block';
+
+    // Scroll to result
+    setTimeout(() => {
+      document.getElementById('result-screen').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }, 200);
+  }
+
+  // Scroll reveal
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('vis'); obs.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
