@@ -1,949 +1,1910 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Price Action Mastery — Get Instant Access</title>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Healthy Living Blueprint — Comprehensive Healthcare in New York</title>
+<meta content="Healthy Living Blueprint provides expert, compassionate healthcare across 25+ specialties in New York City. Book same-day appointments online. Accepting most insurance plans." name="description"/>
+<meta content="healthcare, medical center, doctor, appointment, cardiology, mental health, pediatrics, telehealth, New York, wellness" name="keywords"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&amp;family=Nunito:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- ═══════════════════════════════════════════════════════
+     GOOGLE ADSENSE — Publisher: pub-8176918589359902
+     Auto Ads + Manual Placements
+     ═══════════════════════════════════════════════════════ -->
+<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8176918589359902"></script>
 <style>
-/* ── RESET & VARS ─────────────────────────────────────── */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-
-:root {
-  --gold:    #D4AF37;
-  --gold-lt: #FFD700;
-  --gold-dk: #8B6914;
-  --gold-glow: rgba(212,175,55,.35);
-  --black:   #060a05;
-  --dark:    #0a1208;
-  --mid:     #101c0d;
-  --card:    #131f10;
-  --border:  rgba(212,175,55,.18);
-  --white:   #f8f5ee;
-  --grey:    #8a9688;
-  --green:   #22c55e;
-  --red:     #ef4444;
-  --wa:      #25D366;
-  --wa-dk:   #128C7E;
+:root{
+  --teal:#0d7c6f;--teal-dk:#095e54;--teal-lt:#12a091;--teal-pale:#e6f4f2;
+  --coral:#e05a2b;--amber:#f5a623;--sky:#2e86c1;
+  --navy:#0b1f3a;--slate:#4a5568;--mist:#f6faf9;--white:#fff;
+  --border:#cde4e0;--shadow:0 4px 24px rgba(13,124,111,.10);
+  --radius:12px;--font-h:'Lora',Georgia,serif;--font-b:'Nunito',sans-serif;
 }
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:var(--font-b);background:var(--mist);color:var(--navy);line-height:1.7}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+.container{max-width:1200px;margin:0 auto;padding:0 1.75rem}
 
-body {
-  font-family: 'Syne', sans-serif;
-  background: var(--black);
-  color: var(--white);
-  overflow-x: hidden;
-  min-height: 100vh;
+/* ══════════════════════════════════════
+   ADSENSE AD UNIT WRAPPERS
+   pub-8176918589359902
+   ══════════════════════════════════════ */
+
+/* Shared wrapper — adds label + border */
+.adsense-wrap{
+  display:flex;flex-direction:column;align-items:center;
+  background:#f9fafb;border:1px solid #e2e8f0;border-radius:8px;
+  padding:.5rem .5rem .35rem;gap:.25rem;width:100%
 }
-
-/* ── NOISE TEXTURE OVERLAY ──────────────────────────── */
-body::before {
-  content: '';
-  position: fixed; inset: 0; z-index: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
-  background-size: 200px 200px;
-  pointer-events: none;
-  opacity: .5;
+.adsense-wrap::before{
+  content:'Advertisement';
+  font-family:var(--font-b);font-size:.6rem;letter-spacing:.1em;
+  text-transform:uppercase;color:#94a3b8;font-weight:600;
+  align-self:flex-start;padding-left:2px
 }
 
-/* ── ANIMATIONS ─────────────────────────────────────── */
-@keyframes fadeUp    { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:translateY(0)} }
-@keyframes fadeIn    { from{opacity:0} to{opacity:1} }
-@keyframes shimmer   { 0%{background-position:-400% center} 100%{background-position:400% center} }
-@keyframes pulse     { 0%,100%{transform:scale(1)} 50%{transform:scale(1.03)} }
-@keyframes glow-pulse{ 0%,100%{box-shadow:0 0 30px rgba(37,211,102,.3),0 0 60px rgba(37,211,102,.1)} 50%{box-shadow:0 0 50px rgba(37,211,102,.6),0 0 100px rgba(37,211,102,.2)} }
-@keyframes ticker    { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
-@keyframes spin-slow { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
-@keyframes count-up  { from{opacity:0;transform:translateY(10px)} to{opacity:1;transform:translateY(0)} }
-@keyframes wa-bounce { 0%,100%{transform:translateY(0) scale(1)} 25%{transform:translateY(-6px) scale(1.05)} 75%{transform:translateY(-3px) scale(1.02)} }
+/* Leaderboard (728×90) — collapses to fluid on mobile */
+.adsense-leaderboard{max-width:728px;width:100%}
+.adsense-leaderboard ins{width:100%;height:90px}
 
-.anim-1 { animation: fadeUp .6s .1s ease both; }
-.anim-2 { animation: fadeUp .6s .2s ease both; }
-.anim-3 { animation: fadeUp .6s .3s ease both; }
-.anim-4 { animation: fadeUp .6s .4s ease both; }
-.anim-5 { animation: fadeUp .6s .5s ease both; }
+/* Full-width (970×90) Billboard */
+.adsense-billboard{max-width:970px;width:100%}
+.adsense-billboard ins{width:100%;height:90px}
 
-/* ── TICKER ─────────────────────────────────────────── */
-.ticker-wrap {
-  position: relative; z-index: 10;
-  background: var(--gold);
-  overflow: hidden;
-  padding: 10px 0;
-  white-space: nowrap;
-}
-.ticker-inner {
-  display: inline-flex;
-  animation: ticker 30s linear infinite;
-  gap: 0;
-}
-.ticker-inner span {
-  padding: 0 36px;
-  font-family: 'DM Mono', monospace;
-  font-size: 12px; font-weight: 500;
-  letter-spacing: 1.5px; text-transform: uppercase;
-  color: var(--black);
-}
-.ticker-inner span.sep { color: var(--gold-dk); }
+/* Rectangle (300×250) */
+.adsense-mrec ins{width:300px;height:250px;display:block}
 
-/* ── NAV ─────────────────────────────────────────────── */
-nav {
-  position: sticky; top: 0; z-index: 100;
-  background: rgba(6,10,5,.92);
-  backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--border);
-  padding: 16px 28px;
-  display: flex; align-items: center; justify-content: space-between;
-}
-.nav-logo {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 20px; letter-spacing: 3px; color: var(--gold);
-  text-decoration: none;
-}
-.nav-pill {
-  display: flex; align-items: center; gap: 8px;
-  background: rgba(37,211,102,.1);
-  border: 1px solid rgba(37,211,102,.3);
-  border-radius: 50px;
-  padding: 8px 18px;
-  font-size: 13px; font-weight: 700;
-  color: var(--wa);
-  letter-spacing: .5px;
-}
-.nav-pill::before { content: '●'; font-size: 8px; animation: pulse 1.5s ease-in-out infinite; }
+/* In-feed / Fluid — full width */
+.adsense-infeed ins{width:100%;display:block}
 
-/* ── HERO ─────────────────────────────────────────────── */
-.hero {
-  position: relative; z-index: 1;
-  padding: 80px 24px 60px;
-  text-align: center;
-  overflow: hidden;
-}
-.hero::before {
-  content: '';
-  position: absolute; top: -200px; left: 50%; transform: translateX(-50%);
-  width: 700px; height: 700px;
-  background: radial-gradient(circle, rgba(212,175,55,.12) 0%, transparent 65%);
-  pointer-events: none;
-}
-.hero-eyebrow {
-  display: inline-flex; align-items: center; gap: 8px;
-  border: 1px solid var(--border);
-  border-radius: 50px;
-  padding: 7px 20px;
-  font-family: 'DM Mono', monospace;
-  font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 28px;
-}
-.hero-eyebrow::before { content: '🇳🇬'; }
-
-h1 {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: clamp(64px, 14vw, 140px);
-  line-height: .88;
-  letter-spacing: 2px;
-  margin-bottom: 8px;
-}
-h1 .white { color: var(--white); }
-h1 .gold {
-  background: linear-gradient(90deg, var(--gold-dk), var(--gold-lt), var(--gold), var(--gold-lt), var(--gold-dk));
-  background-size: 300% auto;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: shimmer 5s linear infinite;
+/* Section-level ad row */
+.adsense-section{
+  background:rgba(255,255,255,.65);
+  border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+  padding:.85rem 0;display:flex;justify-content:center
 }
 
-.hero-sub {
-  font-size: clamp(15px, 2.5vw, 19px);
-  font-weight: 400; color: var(--grey);
-  max-width: 560px; margin: 20px auto 0; line-height: 1.7;
-}
-.hero-sub strong { color: var(--white); font-weight: 700; }
-
-/* social proof bar */
-.proof-bar {
-  display: flex; align-items: center; justify-content: center;
-  gap: 24px; flex-wrap: wrap;
-  margin: 32px auto 0;
-  max-width: 600px;
-}
-.proof-item {
-  display: flex; align-items: center; gap: 7px;
-  font-family: 'DM Mono', monospace;
-  font-size: 12px; color: var(--grey); letter-spacing: .5px;
-}
-.proof-item .val { color: var(--gold-lt); font-weight: 500; }
-.proof-dot { width: 3px; height: 3px; border-radius: 50%; background: var(--border); }
-
-/* ── FILTER CARD ──────────────────────────────────────── */
-.filter-wrap {
-  position: relative; z-index: 1;
-  max-width: 680px; margin: 60px auto 0;
-  padding: 0 20px;
-}
-.filter-card {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 24px;
-  overflow: hidden;
-  box-shadow: 0 40px 100px rgba(0,0,0,.6), 0 0 0 1px var(--border);
-}
-.filter-header {
-  background: linear-gradient(135deg, rgba(212,175,55,.12), rgba(18,70,36,.3));
-  border-bottom: 1px solid var(--border);
-  padding: 28px 32px;
-  text-align: center;
-}
-.filter-header-tag {
-  font-family: 'DM Mono', monospace;
-  font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
-  color: var(--gold); margin-bottom: 8px;
-}
-.filter-header h2 {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 32px; letter-spacing: 1px; color: var(--white);
-}
-.filter-header p { font-size: 14px; color: var(--grey); margin-top: 6px; }
-
-.filter-body { padding: 32px; }
-
-/* progress bar */
-.progress-wrap { margin-bottom: 28px; }
-.progress-label {
-  display: flex; justify-content: space-between;
-  font-family: 'DM Mono', monospace;
-  font-size: 11px; color: var(--grey); margin-bottom: 8px;
-  letter-spacing: 1px; text-transform: uppercase;
-}
-.progress-label span { color: var(--gold); }
-.progress-bar {
-  height: 4px; background: rgba(255,255,255,.06);
-  border-radius: 2px; overflow: hidden;
-}
-.progress-fill {
-  height: 100%; width: 0%;
-  background: linear-gradient(90deg, var(--gold-dk), var(--gold-lt));
-  border-radius: 2px;
-  transition: width .5s cubic-bezier(.4,0,.2,1);
+/* Responsive helpers */
+@media(max-width:728px){
+  .adsense-leaderboard ins,.adsense-billboard ins{height:50px}
+  .adsense-mrec ins{width:100%;max-width:320px;height:auto;min-height:50px}
 }
 
-/* steps */
-.step { display: none; }
-.step.active { display: block; animation: fadeUp .4s ease both; }
 
-.step-q {
-  font-size: 20px; font-weight: 700; color: var(--white);
-  line-height: 1.4; margin-bottom: 8px;
-}
-.step-q span { color: var(--gold); }
-.step-hint { font-size: 13px; color: var(--grey); margin-bottom: 24px; }
+/* ── TOPBAR ── */
+.topbar{background:var(--navy);color:rgba(255,255,255,.75);font-size:.78rem;padding:.45rem 0}
+.topbar .container{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem}
+.topbar-l,.topbar-r{display:flex;gap:1.25rem;align-items:center}
+.topbar a{color:rgba(255,255,255,.7);transition:color .2s}
+.topbar a:hover{color:var(--amber)}
+.t-emergency{color:var(--amber)!important;font-weight:800}
+.topbar-sep{color:rgba(255,255,255,.2)}
 
-/* option buttons */
-.options { display: flex; flex-direction: column; gap: 10px; }
-.opt-btn {
-  display: flex; align-items: center; gap: 14px;
-  background: rgba(255,255,255,.03);
-  border: 1.5px solid rgba(255,255,255,.08);
-  border-radius: 12px;
-  padding: 16px 20px;
-  cursor: pointer;
-  transition: all .2s ease;
-  text-align: left;
-  font-family: 'Syne', sans-serif;
-  color: var(--white);
-  width: 100%;
-}
-.opt-btn:hover {
-  border-color: var(--gold);
-  background: rgba(212,175,55,.06);
-  transform: translateX(4px);
-}
-.opt-btn.selected {
-  border-color: var(--gold);
-  background: rgba(212,175,55,.1);
-}
-.opt-icon {
-  width: 40px; height: 40px; border-radius: 10px;
-  background: rgba(212,175,55,.1);
-  border: 1px solid rgba(212,175,55,.2);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 20px; flex-shrink: 0;
-}
-.opt-label { font-size: 15px; font-weight: 700; }
-.opt-sub { font-size: 12px; color: var(--grey); margin-top: 2px; }
-.opt-check {
-  margin-left: auto; width: 22px; height: 22px;
-  border-radius: 50%; border: 1.5px solid rgba(255,255,255,.15);
-  flex-shrink: 0;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 12px;
-  transition: all .2s;
-}
-.opt-btn.selected .opt-check {
-  background: var(--gold); border-color: var(--gold); color: var(--black);
-}
+/* ── HEADER AD ── */
+.header-ad{background:#fff;border-bottom:1px solid var(--border);padding:.5rem 0;display:flex;justify-content:center}
+.header-ad .container{display:flex;justify-content:center}
 
-/* text input */
-.field-group { margin-bottom: 16px; }
-.field-label {
-  display: block; font-size: 12px; font-weight: 700;
-  letter-spacing: 1px; text-transform: uppercase;
-  color: var(--grey); margin-bottom: 8px;
-}
-.field-input {
-  width: 100%;
-  background: rgba(255,255,255,.04);
-  border: 1.5px solid rgba(255,255,255,.1);
-  border-radius: 12px;
-  padding: 14px 18px;
-  font-family: 'Syne', sans-serif;
-  font-size: 16px; color: var(--white);
-  outline: none;
-  transition: border-color .2s;
-}
-.field-input:focus { border-color: var(--gold); background: rgba(212,175,55,.04); }
-.field-input::placeholder { color: rgba(255,255,255,.2); }
+/* ── NAV ── */
+nav{background:#fff;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:300;box-shadow:0 2px 12px rgba(13,124,111,.08)}
+.nav-inner{display:flex;align-items:center;height:70px;gap:1rem}
+.logo{display:flex;align-items:center;gap:.55rem;flex-shrink:0}
+.logo-mark{width:40px;height:40px;background:var(--teal);border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.3rem}
+.logo-name{font-family:var(--font-h);font-size:1.28rem;color:var(--navy);line-height:1.1}
+.logo-name small{display:block;font-family:var(--font-b);font-size:.65rem;font-weight:600;letter-spacing:.07em;color:var(--teal);text-transform:uppercase}
+.nav-links{display:flex;list-style:none;gap:.1rem;margin-left:auto}
+.nav-links>li{position:relative}
+.nav-links>li>a{display:flex;align-items:center;gap:.25rem;padding:.45rem .85rem;border-radius:8px;font-size:.88rem;font-weight:600;color:var(--slate);transition:all .2s;white-space:nowrap}
+.nav-links>li>a:hover,.nav-links>li>a.active{background:var(--teal-pale);color:var(--teal)}
+.nav-links>li>a .arr{font-size:.6rem;margin-top:1px}
+/* dropdown */
+.dropdown{position:absolute;top:calc(100% + 8px);left:0;background:#fff;border:1px solid var(--border);border-radius:10px;box-shadow:0 8px 32px rgba(13,124,111,.15);min-width:220px;padding:.5rem;opacity:0;pointer-events:none;transform:translateY(-6px);transition:all .2s;z-index:400}
+.nav-links>li:hover .dropdown{opacity:1;pointer-events:all;transform:none}
+.dropdown a{display:block;padding:.5rem .85rem;border-radius:7px;font-size:.84rem;font-weight:600;color:var(--slate);transition:all .15s}
+.dropdown a:hover{background:var(--teal-pale);color:var(--teal)}
+.dropdown a span{display:block;font-size:.73rem;font-weight:400;color:#888;margin-top:.05rem}
+.nav-cta{background:var(--teal);color:#fff!important;border-radius:50px!important;padding:.5rem 1.2rem!important;transition:background .2s,transform .15s!important}
+.nav-cta:hover{background:var(--teal-lt)!important;transform:translateY(-1px)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:.5rem;margin-left:auto;flex-shrink:0}
+.hamburger span{display:block;width:22px;height:2px;background:var(--navy);border-radius:2px;transition:all .3s}
 
-/* country select */
-.country-grid {
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: 10px;
-}
-.country-btn {
-  display: flex; align-items: center; gap: 10px;
-  background: rgba(255,255,255,.03);
-  border: 1.5px solid rgba(255,255,255,.08);
-  border-radius: 12px;
-  padding: 14px 16px;
-  cursor: pointer;
-  transition: all .2s;
-  font-family: 'Syne', sans-serif;
-  color: var(--white); font-size: 14px; font-weight: 700;
-  width: 100%;
-}
-.country-btn:hover { border-color: var(--gold); background: rgba(212,175,55,.06); }
-.country-btn.selected { border-color: var(--gold); background: rgba(212,175,55,.1); }
-.country-flag { font-size: 22px; }
-.country-price { font-size: 11px; color: var(--gold); margin-top: 2px; font-weight: 500; }
+/* ── MOBILE MENU ── */
+.mob-menu{display:none;position:fixed;inset:0;background:#fff;z-index:600;flex-direction:column;padding:1.5rem 1.75rem;overflow-y:auto}
+.mob-menu.open{display:flex}
+.mob-close{align-self:flex-end;background:none;border:none;font-size:2rem;color:var(--navy);cursor:pointer;line-height:1}
+.mob-menu ul{list-style:none;margin-top:1.5rem;display:flex;flex-direction:column;gap:.25rem}
+.mob-menu ul a{display:block;padding:.65rem .5rem;font-size:1.05rem;font-weight:700;color:var(--navy);border-bottom:1px solid var(--border)}
+.mob-menu .mob-cta{margin-top:1.5rem;display:inline-block;background:var(--teal);color:#fff;padding:.85rem 2rem;border-radius:50px;font-weight:800;font-size:1rem}
 
-/* next button */
-.next-btn {
-  width: 100%; margin-top: 24px;
-  background: linear-gradient(135deg, var(--gold-dk), var(--gold-lt));
-  color: var(--black);
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 22px; letter-spacing: 2px;
-  padding: 18px; border-radius: 12px;
-  border: none; cursor: pointer;
-  transition: transform .15s, opacity .15s;
-}
-.next-btn:hover:not(:disabled) { transform: scale(1.02); }
-.next-btn:disabled { opacity: .4; cursor: not-allowed; }
+/* ── HERO ── */
+.hero{background:linear-gradient(130deg,#052b1a 0%,#0a4a3a 45%,#0d7c6f 100%);color:#fff;padding:4.5rem 0 0;position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:80px;background:var(--mist);clip-path:ellipse(55% 100% at 50% 100%)}
+.hero-grid{display:grid;grid-template-columns:1fr 420px;gap:3rem;align-items:center;padding-bottom:4rem}
+.hero-pill{display:inline-flex;align-items:center;gap:.5rem;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.9);font-size:.75rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:.35rem 1rem;border-radius:50px;margin-bottom:1.25rem}
+.hero-pill::before{content:'●';color:#4ade80;font-size:.55rem}
+.hero h1{font-family:var(--font-h);font-size:clamp(2rem,4.2vw,3.3rem);line-height:1.2;margin-bottom:1.1rem}
+.hero h1 em{color:#67e8c8;font-style:italic}
+.hero-lead{font-size:1.03rem;color:rgba(255,255,255,.78);max-width:500px;margin-bottom:1.75rem}
+.hero-acts{display:flex;gap:.85rem;flex-wrap:wrap;margin-bottom:2.5rem}
+.btn{display:inline-flex;align-items:center;gap:.45rem;padding:.75rem 1.6rem;border-radius:50px;font-weight:700;font-size:.9rem;cursor:pointer;border:none;transition:all .2s;font-family:var(--font-b)}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,0,0,.2)}
+.btn-amber{background:var(--amber);color:var(--navy)}
+.btn-amber:hover{background:#f9b94a}
+.btn-outline-w{background:rgba(255,255,255,.1);color:#fff;border:1.5px solid rgba(255,255,255,.35)}
+.btn-outline-w:hover{background:rgba(255,255,255,.2)}
+.btn-teal{background:var(--teal);color:#fff}
+.btn-teal:hover{background:var(--teal-lt)}
+.btn-teal-o{background:transparent;color:var(--teal);border:2px solid var(--teal)}
+.btn-teal-o:hover{background:var(--teal-pale)}
+.btn-coral{background:var(--coral);color:#fff}
+.btn-coral:hover{background:#c74d22}
+.btn-sky{background:var(--sky);color:#fff}
+.btn-sky:hover{background:#2471a3}
+.btn-sm{padding:.5rem 1.1rem;font-size:.82rem}
+/* hero trust */
+.hero-trust{display:flex;gap:2rem;padding-top:1.75rem;border-top:1px solid rgba(255,255,255,.12)}
+.ht-item{display:flex;align-items:center;gap:.5rem;font-size:.82rem;color:rgba(255,255,255,.7)}
+.ht-num{font-family:var(--font-h);font-size:1.4rem;color:#67e8c8;line-height:1}
+/* quick appt card */
+.q-card{background:#fff;border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,.25);padding:1.75rem;color:var(--navy)}
+.q-card h3{font-family:var(--font-h);font-size:1.1rem;margin-bottom:1.1rem;display:flex;align-items:center;gap:.5rem}
+.fgrp{margin-bottom:.85rem}
+.fgrp label{display:block;font-size:.74rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--slate);margin-bottom:.3rem}
+.fgrp input,.fgrp select{width:100%;padding:.65rem .9rem;border:1.5px solid var(--border);border-radius:8px;font-size:.88rem;font-family:var(--font-b);color:var(--navy);background:var(--mist);outline:none;transition:border-color .2s}
+.fgrp input:focus,.fgrp select:focus{border-color:var(--teal);background:#fff}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:.65rem}
+.q-card .btn{width:100%;justify-content:center;border-radius:8px;margin-top:.4rem}
+.q-note{font-size:.72rem;color:var(--slate);text-align:center;margin-top:.6rem}
 
-/* ── RESULT SCREEN ────────────────────────────────────── */
-#result-screen {
-  display: none;
-  padding: 32px;
-  text-align: center;
-  animation: fadeUp .5s ease both;
-}
-.result-icon {
-  width: 80px; height: 80px; border-radius: 50%;
-  background: rgba(37,211,102,.1);
-  border: 2px solid rgba(37,211,102,.3);
-  margin: 0 auto 20px;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 36px;
-  animation: pulse 2s ease-in-out infinite;
-}
-.result-title {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 38px; letter-spacing: 1px; color: var(--white);
-  margin-bottom: 8px;
-}
-.result-title span { color: var(--wa); }
-.result-sub { font-size: 15px; color: var(--grey); line-height: 1.7; max-width: 400px; margin: 0 auto 28px; }
+/* ── TRUST STRIP ── */
+.trust-strip{background:#fff;border-bottom:1px solid var(--border);padding:1rem 0}
+.trust-items{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.ti-item{display:flex;align-items:center;gap:.55rem;font-size:.84rem;font-weight:600;color:var(--slate)}
+.ti-icon{font-size:1.15rem}
+.ti-item strong{color:var(--navy)}
 
-/* summary box */
-.summary-box {
-  background: rgba(255,255,255,.03);
-  border: 1px solid var(--border);
-  border-radius: 16px; padding: 20px 24px;
-  margin-bottom: 24px; text-align: left;
-}
-.summary-row {
-  display: flex; justify-content: space-between; align-items: center;
-  padding: 8px 0;
-  border-bottom: 1px solid rgba(255,255,255,.05);
-  font-size: 14px;
-}
-.summary-row:last-child { border-bottom: none; }
-.summary-key { color: var(--grey); }
-.summary-val { color: var(--white); font-weight: 700; }
-.summary-val.gold { color: var(--gold-lt); }
+/* ── SECTION HELPERS ── */
+.section{padding:4.5rem 0}
+.sec-badge{display:inline-block;background:var(--teal-pale);color:var(--teal);font-size:.72rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:.28rem .85rem;border-radius:50px;margin-bottom:.85rem}
+.sec-title{font-family:var(--font-h);font-size:clamp(1.7rem,3vw,2.4rem);color:var(--navy);line-height:1.25;margin-bottom:.65rem}
+.sec-sub{color:var(--slate);font-size:.98rem;max-width:560px}
+.sec-hd{margin-bottom:2.5rem}
+.sec-hd.center{text-align:center}
+.sec-hd.center .sec-sub{margin:0 auto}
+.sec-more{display:inline-flex;align-items:center;gap:.35rem;color:var(--teal);font-weight:700;font-size:.88rem;margin-top:1.5rem;border-bottom:2px solid transparent;transition:border-color .2s}
+.sec-more:hover{border-color:var(--teal)}
 
-/* WhatsApp CTA button */
-.wa-btn {
-  display: flex; align-items: center; justify-content: center; gap: 12px;
-  width: 100%;
-  background: var(--wa);
-  color: #fff;
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 24px; letter-spacing: 1.5px;
-  padding: 22px 32px; border-radius: 14px;
-  text-decoration: none;
-  animation: glow-pulse 3s ease-in-out infinite, wa-bounce 4s ease-in-out infinite;
-  transition: transform .15s;
-  position: relative; overflow: hidden;
-}
-.wa-btn::before {
-  content: '';
-  position: absolute; top: 0; left: -100%;
-  width: 60%; height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,.15), transparent);
-  animation: shimmer 3s linear infinite;
-}
-.wa-btn:hover { transform: scale(1.03); }
-.wa-icon { font-size: 28px; }
+/* ── AD SECTION ── */
+.ad-section{background:rgba(255,255,255,.6);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:.85rem 0;display:flex;justify-content:center}
 
-.wa-note {
-  margin-top: 14px;
-  font-family: 'DM Mono', monospace;
-  font-size: 11px; color: var(--grey); letter-spacing: 1px; text-align: center;
-}
+/* ── SERVICES ── */
+.services-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1.25rem}
+.svc-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;transition:all .25s;cursor:pointer;position:relative;overflow:hidden}
+.svc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--teal);transform:scaleX(0);transform-origin:left;transition:transform .25s}
+.svc-card:hover::before{transform:scaleX(1)}
+.svc-card:hover{box-shadow:var(--shadow);transform:translateY(-3px);border-color:var(--teal)}
+.svc-icon{width:48px;height:48px;background:var(--teal-pale);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:1rem}
+.svc-card h3{font-size:.98rem;font-weight:800;margin-bottom:.4rem}
+.svc-card p{font-size:.83rem;color:var(--slate);line-height:1.55}
+.svc-link{display:inline-flex;align-items:center;gap:.3rem;color:var(--teal);font-size:.8rem;font-weight:700;margin-top:.85rem;transition:gap .2s}
+.svc-link:hover{gap:.55rem}
+.svc-link::after{content:'→'}
 
-/* ── SOCIAL PROOF SECTION ─────────────────────────────── */
-.proof-section {
-  position: relative; z-index: 1;
-  max-width: 680px; margin: 60px auto 0;
-  padding: 0 20px;
-}
-.proof-heading {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 28px; letter-spacing: 1px; color: var(--white);
-  text-align: center; margin-bottom: 20px;
-}
-.proof-heading span { color: var(--gold); }
-.testimonials { display: flex; flex-direction: column; gap: 12px; }
-.testi {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-left: 3px solid var(--gold);
-  border-radius: 12px;
-  padding: 20px 22px;
-}
-.testi-text {
-  font-size: 14px; color: var(--grey); line-height: 1.7;
-  font-style: italic; margin-bottom: 12px;
-}
-.testi-text strong { color: var(--white); font-style: normal; }
-.testi-footer { display: flex; align-items: center; gap: 10px; }
-.testi-avatar {
-  width: 34px; height: 34px; border-radius: 50%;
-  background: linear-gradient(135deg, var(--gold-dk), var(--gold));
-  display: flex; align-items: center; justify-content: center;
-  font-size: 14px; font-weight: 800; color: var(--black);
-  flex-shrink: 0;
-}
-.testi-name { font-size: 13px; font-weight: 700; color: var(--white); }
-.testi-loc  { font-size: 11px; color: var(--grey); }
-.testi-stars{ margin-left: auto; color: var(--gold); font-size: 12px; }
+/* ── NICHE CTA CARDS ── */
+.niche-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem}
+.niche-card{border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;box-shadow:var(--shadow)}
+.niche-top{padding:1.75rem 1.75rem 1.25rem;color:#fff;flex:1}
+.niche-top h3{font-family:var(--font-h);font-size:1.2rem;margin-bottom:.5rem}
+.niche-top .niche-icon{font-size:2rem;margin-bottom:.75rem}
+.niche-top p{font-size:.86rem;opacity:.88;line-height:1.6;margin-bottom:1rem}
+.niche-facts{background:rgba(0,0,0,.15);border-radius:8px;padding:.75rem 1rem;font-size:.78rem;margin-bottom:1rem;line-height:1.7}
+.niche-facts strong{opacity:1}
+.niche-bottom{background:#fff;padding:1.1rem 1.75rem;display:flex;gap:.65rem;flex-wrap:wrap;align-items:center;border-top:none}
+.niche-bottom a{font-size:.8rem;font-weight:700;padding:.4rem 1rem;border-radius:50px}
+/* niche color themes */
+.nc-heart{background:linear-gradient(135deg,#c0392b,#e74c3c)}
+.nc-mind{background:linear-gradient(135deg,#6c3483,#9b59b6)}
+.nc-diabetes{background:linear-gradient(135deg,#1a6b3c,#27ae60)}
+.nc-women{background:linear-gradient(135deg,#c44569,#e84393)}
+.nc-men{background:linear-gradient(135deg,#1565c0,#2196f3)}
+.nc-kids{background:linear-gradient(135deg,#e67e22,#f39c12)}
+.nc-seniors{background:linear-gradient(135deg,#2980b9,#5dade2)}
+.nc-cancer{background:linear-gradient(135deg,#7b241c,#cb4335)}
+.nc-weight{background:linear-gradient(135deg,#148f77,#1abc9c)}
+.nc-sleep{background:linear-gradient(135deg,#1b2a4a,#2e4077)}
 
-/* ── WHAT YOU GET STRIP ──────────────────────────────── */
-.features-strip {
-  position: relative; z-index: 1;
-  max-width: 680px; margin: 48px auto 0;
-  padding: 0 20px;
-}
-.features-grid {
-  display: grid; grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-}
-.feat-box {
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 14px; padding: 20px 16px;
-  text-align: center;
-  transition: border-color .2s, transform .2s;
-}
-.feat-box:hover { border-color: var(--gold); transform: translateY(-3px); }
-.feat-icon { font-size: 28px; margin-bottom: 8px; }
-.feat-title {
-  font-size: 12px; font-weight: 800;
-  letter-spacing: .5px; text-transform: uppercase;
-  color: var(--white); margin-bottom: 4px; line-height: 1.3;
-}
-.feat-sub { font-size: 11px; color: var(--grey); }
+/* ── HEALTH INFO STRIPS ── */
+.hinfo-block{background:#fff;border-radius:var(--radius);border:1px solid var(--border);padding:1.75rem;margin-bottom:1.25rem}
+.hinfo-block h3{font-family:var(--font-h);font-size:1.15rem;margin-bottom:.75rem;display:flex;align-items:center;gap:.5rem}
+.hinfo-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:.75rem;margin-top:1rem}
+.hinfo-item{background:var(--teal-pale);border-radius:8px;padding:.85rem 1rem}
+.hinfo-item strong{display:block;font-size:.82rem;font-weight:800;color:var(--teal-dk);margin-bottom:.2rem}
+.hinfo-item span{font-size:.8rem;color:var(--slate)}
+.stat-pill{display:inline-block;background:var(--teal);color:#fff;font-size:.72rem;font-weight:800;padding:.2rem .65rem;border-radius:50px;margin-right:.35rem;margin-bottom:.35rem}
+.stat-pill.red{background:#e74c3c}
+.stat-pill.orange{background:var(--coral)}
+.stat-pill.purple{background:#8e44ad}
+.stat-pill.blue{background:var(--sky)}
 
-/* ── URGENCY BANNER ──────────────────────────────────── */
-.urgency-banner {
-  position: relative; z-index: 1;
-  max-width: 680px; margin: 40px auto 0;
-  padding: 0 20px;
-}
-.urgency-inner {
-  background: linear-gradient(135deg, rgba(239,68,68,.1), rgba(212,175,55,.05));
-  border: 1px solid rgba(239,68,68,.25);
-  border-radius: 16px; padding: 20px 24px;
-  display: flex; align-items: center; gap: 16px;
-}
-.urgency-icon { font-size: 28px; flex-shrink: 0; }
-.urgency-text { font-size: 14px; color: var(--grey); line-height: 1.6; }
-.urgency-text strong { color: var(--white); }
+/* ── 2-COL LAYOUT ── */
+.two-col{display:grid;grid-template-columns:1fr 340px;gap:2.5rem;align-items:start}
+.sidebar{display:flex;flex-direction:column;gap:1.5rem}
+.sidebar-sticky{position:sticky;top:82px;display:flex;flex-direction:column;gap:1.5rem}
+.widget{background:#fff;border-radius:var(--radius);border:1px solid var(--border);overflow:hidden}
+.widget-hd{background:var(--navy);color:#fff;padding:.8rem 1.25rem;font-family:var(--font-h);font-size:.98rem}
+.widget-body{padding:1.1rem 1.25rem}
+.widget-body ul{list-style:none;display:flex;flex-direction:column;gap:.5rem}
+.widget-body ul li{font-size:.85rem;display:flex;align-items:flex-start;gap:.5rem;color:var(--slate)}
+.widget-body ul li::before{content:'✓';color:var(--teal);font-weight:800;flex-shrink:0;margin-top:.05rem}
+.widget-body ul li a{color:var(--teal);font-weight:600}
+.emergency-box{background:linear-gradient(135deg,#c0392b,#e74c3c);color:#fff;border-radius:var(--radius);padding:1.4rem 1.25rem;text-align:center}
+.emergency-num{font-family:var(--font-h);font-size:1.9rem;color:#ffd5d5;margin:.3rem 0}
+.hotline-box{background:var(--teal);color:#fff;border-radius:var(--radius);padding:1.3rem 1.25rem;text-align:center}
+.hotline-num{font-family:var(--font-h);font-size:1.7rem;color:#a7f3e8;margin:.25rem 0}
 
-/* ── FOOTER ──────────────────────────────────────────── */
-footer {
-  position: relative; z-index: 1;
-  text-align: center;
-  padding: 48px 24px 32px;
-}
-.footer-trust {
-  display: flex; align-items: center; justify-content: center;
-  gap: 24px; flex-wrap: wrap; margin-bottom: 20px;
-}
-.trust-item {
-  display: flex; align-items: center; gap: 6px;
-  font-size: 12px; color: var(--grey);
-}
-.trust-icon { font-size: 14px; }
-.footer-copy {
-  font-family: 'DM Mono', monospace;
-  font-size: 11px; color: rgba(138,150,136,.5);
-  letter-spacing: .5px;
-}
+/* ── DOCTORS ── */
+.docs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:1.25rem}
+.doc-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:all .25s}
+.doc-card:hover{box-shadow:var(--shadow);transform:translateY(-3px)}
+.doc-photo{height:200px;display:flex;align-items:center;justify-content:center;font-size:4.5rem;position:relative}
+.dp1{background:linear-gradient(135deg,#d5f5e3,#a9dfbf)}
+.dp2{background:linear-gradient(135deg,#d6eaf8,#a9cce3)}
+.dp3{background:linear-gradient(135deg,#fdebd0,#f9c784)}
+.dp4{background:linear-gradient(135deg,#e8daef,#d2b4de)}
+.dp5{background:linear-gradient(135deg,#d1f2eb,#a2d9ce)}
+.dp6{background:linear-gradient(135deg,#fde8e8,#f5b7b1)}
+.avail-tag{position:absolute;top:10px;right:10px;background:#22c55e;color:#fff;font-size:.67rem;font-weight:800;padding:.2rem .6rem;border-radius:50px}
+.doc-info{padding:1.1rem}
+.doc-info h3{font-size:.95rem;font-weight:800;margin-bottom:.1rem}
+.doc-spec{font-size:.78rem;color:var(--teal);font-weight:700;margin-bottom:.4rem}
+.doc-creds{font-size:.75rem;color:var(--slate);margin-bottom:.5rem;line-height:1.5}
+.doc-rating{display:flex;align-items:center;gap:.35rem;font-size:.78rem;color:var(--slate)}
+.stars{color:var(--amber);letter-spacing:-.05em}
+.doc-info .btn{margin-top:.8rem;width:100%;justify-content:center;border-radius:8px;padding:.5rem 1rem}
 
-/* ── STICKY BOTTOM ───────────────────────────────────── */
-.sticky-bottom {
-  display: none;
-  position: fixed; bottom: 0; left: 0; right: 0; z-index: 200;
-  background: rgba(6,10,5,.96);
-  backdrop-filter: blur(20px);
-  border-top: 1px solid rgba(37,211,102,.2);
-  padding: 12px 20px;
-}
-@media(max-width: 640px) {
-  .sticky-bottom { display: block; }
-  body { padding-bottom: 80px; }
-  .features-grid { grid-template-columns: repeat(2, 1fr); }
-  .country-grid { grid-template-columns: 1fr 1fr; }
-}
-.sticky-bottom a {
-  display: flex; align-items: center; justify-content: center; gap: 10px;
-  background: var(--wa); color: #fff;
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 20px; letter-spacing: 1.5px;
-  padding: 14px; border-radius: 10px;
-  text-decoration: none;
-  animation: glow-pulse 3s ease-in-out infinite;
-}
+/* ── HEALTH INFO SECTION ── */
+.hinfo-section{background:#fff}
+.hinfo-tabs{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:2rem}
+.htab{padding:.45rem 1.1rem;border-radius:50px;border:1.5px solid var(--border);font-size:.83rem;font-weight:700;color:var(--slate);cursor:pointer;transition:all .2s;background:#fff}
+.htab.active,.htab:hover{background:var(--teal);color:#fff;border-color:var(--teal)}
+.hpanel{display:none}
+.hpanel.active{display:block}
+.hpanel-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:1.25rem}
+.hcard{background:var(--mist);border-radius:10px;padding:1.25rem;border-left:4px solid var(--teal)}
+.hcard.warn{border-color:#e74c3c}
+.hcard.info{border-color:var(--sky)}
+.hcard.tip{border-color:#f59e0b}
+.hcard h4{font-size:.92rem;font-weight:800;margin-bottom:.4rem}
+.hcard p{font-size:.83rem;color:var(--slate);line-height:1.6}
+.hcard ul{list-style:disc;padding-left:1.1rem;font-size:.83rem;color:var(--slate);line-height:1.8}
 
-/* ── SCROLL REVEAL ───────────────────────────────────── */
-.reveal { opacity: 0; transform: translateY(20px); transition: opacity .6s ease, transform .6s ease; }
-.reveal.vis { opacity: 1; transform: translateY(0); }
+/* ── BLOG ── */
+.blog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.25rem}
+.bcard{background:#fff;border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);transition:all .25s}
+.bcard:hover{box-shadow:var(--shadow);transform:translateY(-3px)}
+.bthumb{height:150px;display:flex;align-items:center;justify-content:center;font-size:2.75rem}
+.bt1{background:linear-gradient(135deg,#e8f7f2,#68dfc8)}
+.bt2{background:linear-gradient(135deg,#fef3e8,#fbbf70)}
+.bt3{background:linear-gradient(135deg,#eef2ff,#a5b4fc)}
+.bt4{background:linear-gradient(135deg,#fdf2f8,#f0abcf)}
+.bt5{background:linear-gradient(135deg,#f0fdf4,#86efac)}
+.bt6{background:linear-gradient(135deg,#fefce8,#fde047)}
+.bbody{padding:1.1rem}
+.btag{font-size:.68rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--teal);margin-bottom:.4rem}
+.bbody h3{font-size:.9rem;font-weight:800;margin-bottom:.4rem;line-height:1.4}
+.bbody p{font-size:.8rem;color:var(--slate);line-height:1.55}
+.bmeta{display:flex;align-items:center;gap:.5rem;font-size:.73rem;color:#888;margin-top:.7rem}
+
+/* ── TESTIMONIALS ── */
+.testi-bg{background:var(--navy)}
+.testi-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.25rem}
+.tcard{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius);padding:1.5rem}
+.tcard-stars{color:var(--amber);font-size:.95rem;margin-bottom:.65rem}
+.tcard p{color:rgba(255,255,255,.82);font-size:.88rem;line-height:1.7;margin-bottom:1.1rem}
+.tcard-auth{display:flex;align-items:center;gap:.65rem}
+.tavatar{width:40px;height:40px;border-radius:50%;background:var(--teal);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
+.tname{font-weight:800;color:#fff;font-size:.88rem}
+.trole{font-size:.74rem;color:rgba(255,255,255,.45)}
+
+/* ── APPT SECTION ── */
+.appt-bg{background:var(--teal-pale)}
+.appt-wrap{max-width:820px;margin:0 auto;text-align:center}
+.appt-form{background:#fff;border-radius:var(--radius);box-shadow:0 10px 40px rgba(13,124,111,.12);padding:2.25rem;text-align:left;margin-top:2rem}
+.appt-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem}
+.appt-grid .full{grid-column:1/-1}
+.appt-form textarea{width:100%;padding:.7rem .95rem;border:1.5px solid var(--border);border-radius:8px;font-family:var(--font-b);font-size:.88rem;color:var(--navy);resize:vertical;min-height:85px;outline:none}
+.appt-form textarea:focus{border-color:var(--teal)}
+.appt-cta{display:flex;justify-content:center;margin-top:1.25rem}
+.appt-note{font-size:.74rem;color:var(--slate);text-align:center;margin-top:.65rem}
+
+/* ── FOOTER ── */
+footer{background:var(--navy);color:rgba(255,255,255,.65)}
+.footer-ad{background:rgba(0,0,0,.2);border-bottom:1px solid rgba(255,255,255,.07);padding:.7rem 0;display:flex;justify-content:center}
+.footer-main{display:grid;grid-template-columns:2.2fr 1fr 1fr 1fr;gap:2.25rem;padding:3rem 0 2rem}
+.fbrand{font-family:var(--font-h);font-size:1.3rem;color:#fff;margin-bottom:.6rem}
+.fbrand span{color:#67e8c8}
+.footer-main p{font-size:.84rem;max-width:250px;margin-bottom:1rem}
+.fcontact{display:flex;flex-direction:column;gap:.4rem;font-size:.82rem}
+.fcontact a{color:rgba(255,255,255,.6);transition:color .2s}
+.fcontact a:hover{color:#67e8c8}
+.fcol h4{color:#fff;font-size:.75rem;letter-spacing:.09em;text-transform:uppercase;margin-bottom:.85rem}
+.fcol ul{list-style:none;display:flex;flex-direction:column;gap:.45rem}
+.fcol ul a{color:rgba(255,255,255,.55);font-size:.85rem;transition:color .2s}
+.fcol ul a:hover{color:#67e8c8}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding:1.25rem 0;display:flex;justify-content:space-between;align-items:center;font-size:.78rem;flex-wrap:wrap;gap:.65rem}
+.footer-bottom a{color:rgba(255,255,255,.4);margin-left:.75rem;transition:color .2s}
+.footer-bottom a:hover{color:#67e8c8}
+.accred{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:.85rem}
+.accred-badge{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:6px;padding:.3rem .7rem;font-size:.7rem;font-weight:700;color:rgba(255,255,255,.6)}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1050px){
+  .hero-grid{grid-template-columns:1fr;padding-bottom:3rem}
+  .q-card{max-width:500px}
+  .two-col{grid-template-columns:1fr}
+  .sidebar-sticky{position:static}
+  .footer-main{grid-template-columns:1fr 1fr}
+}
+@media(max-width:768px){
+  .nav-links{display:none}
+  .hamburger{display:flex}
+  .topbar .container{justify-content:center;text-align:center}
+  .topbar-l{flex-wrap:wrap;justify-content:center}
+  .topbar-r{display:none}
+  .hpanel-grid{grid-template-columns:1fr}
+  .appt-grid{grid-template-columns:1fr}
+  .appt-grid .full{grid-column:auto}
+  .section{padding:3rem 0}
+}
+@media(max-width:560px){
+  .hero-trust{flex-wrap:wrap;gap:1rem}
+  .footer-main{grid-template-columns:1fr}
+  .footer-bottom{flex-direction:column;text-align:center}
+  .trust-items{justify-content:center}
+  .ad-300x250{width:100%;max-width:300px}
+  .ad-300x600{width:100%;max-width:300px;height:250px}
+}
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+.hero-pill{animation:fadeUp .6s .05s both}
+.hero h1{animation:fadeUp .6s .15s both}
+.hero-lead{animation:fadeUp .6s .25s both}
+.hero-acts{animation:fadeUp .6s .35s both}
+.hero-trust{animation:fadeUp .6s .45s both}
+
+/* ── Affiliate / Story Cards ── */
+.story-box{background:linear-gradient(135deg,#f0fdf9 0%,#e8f8f4 100%);border-radius:14px;padding:1.5rem;margin:1.2rem 0;border-left:5px solid var(--teal);position:relative}
+.story-box::before{content:'📖 Real Story';position:absolute;top:-11px;left:1rem;background:var(--teal);color:#fff;font-size:.72rem;font-weight:800;padding:.2rem .7rem;border-radius:50px;letter-spacing:.04em}
+.story-box p{font-size:.88rem;line-height:1.75;color:#1a2e2a;font-style:italic}
+.story-box .story-author{font-size:.78rem;color:var(--teal);font-weight:700;margin-top:.6rem;font-style:normal}
+.remedy-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem;margin:1rem 0}
+.remedy-card{background:#fff;border:1.5px solid #d1f0e8;border-radius:12px;padding:1.1rem;transition:all .2s;text-align:center}
+.remedy-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(13,124,111,.13);border-color:var(--teal)}
+.remedy-card .r-icon{font-size:2rem;margin-bottom:.4rem}
+.remedy-card h5{font-size:.88rem;font-weight:800;color:#0b1f3a;margin-bottom:.3rem}
+.remedy-card p{font-size:.78rem;color:var(--slate);line-height:1.5;margin-bottom:.6rem}
+.remedy-card .r-badge{display:inline-block;font-size:.68rem;font-weight:700;background:#e8f8f4;color:var(--teal);padding:.2rem .55rem;border-radius:50px;margin-bottom:.5rem}
+.aff-cta{background:linear-gradient(135deg,#0d7c6f,#0b5e54);border-radius:14px;padding:1.4rem 1.6rem;margin-top:1.25rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.aff-cta-text h5{color:#fff;font-size:1rem;font-weight:800;margin-bottom:.25rem}
+.aff-cta-text p{color:rgba(255,255,255,.82);font-size:.8rem;margin:0}
+.aff-btn{display:inline-block;background:#fff;color:var(--teal);font-weight:800;font-size:.83rem;padding:.6rem 1.3rem;border-radius:50px;text-decoration:none;white-space:nowrap;transition:all .2s;border:none;cursor:pointer}
+.aff-btn:hover{background:#f0fdf9;transform:scale(1.04)}
+.aff-btn.gold{background:linear-gradient(135deg,#f59e0b,#d97706);color:#fff}
+.aff-btn.gold:hover{background:linear-gradient(135deg,#fbbf24,#f59e0b)}
+.disclaimer{font-size:.7rem;color:#888;margin-top:.5rem;font-style:italic}
+@media(max-width:640px){.aff-cta{flex-direction:column;text-align:center}}
+
 </style>
 </head>
 <body>
-
-<!-- TICKER -->
-<div class="ticker-wrap">
-  <div class="ticker-inner">
-    <span>🇳🇬 ₦10,000</span><span class="sep">·</span>
-    <span>🇬🇭 GH₵76</span><span class="sep">·</span>
-    <span>🇿🇦 R118</span><span class="sep">·</span>
-    <span>🇨🇲 FCFA 5,140</span><span class="sep">·</span>
-    <span>🇰🇪 KSh947</span><span class="sep">·</span>
-    <span>⭐ 4.9 Rating</span><span class="sep">·</span>
-    <span>2,400+ Students</span><span class="sep">·</span>
-    <span>Lifetime Access</span><span class="sep">·</span>
-    <span>🇳🇬 ₦10,000</span><span class="sep">·</span>
-    <span>🇬🇭 GH₵76</span><span class="sep">·</span>
-    <span>🇿🇦 R118</span><span class="sep">·</span>
-    <span>🇨🇲 FCFA 5,140</span><span class="sep">·</span>
-    <span>🇰🇪 KSh947</span><span class="sep">·</span>
-    <span>⭐ 4.9 Rating</span><span class="sep">·</span>
-    <span>2,400+ Students</span><span class="sep">·</span>
-    <span>Lifetime Access</span><span class="sep">·</span>
-  </div>
+<!-- ═══════════════════════════════════════════════
+     ADSENSE UNIT #1 — Header Leaderboard 728×90
+     Zone: header_top | pub-8176918589359902
+     ═══════════════════════════════════════════════ -->
+<div class="header-ad">
+<div class="container">
+<div class="adsense-wrap adsense-leaderboard" id="ad-header-leaderboard">
+<ins class="adsbygoogle" data-ad-client="ca-pub-8176918589359902" data-ad-format="horizontal" data-ad-slot="5218292376" data-full-width-responsive="true" style="display:inline-block;width:728px;height:90px"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
-
+</div>
+</div>
+<!-- TOPBAR -->
+<div class="topbar">
+<div class="container">
+<div class="topbar-l">
+<span>📍 485 Madison Ave, New York, NY 10022</span>
+<span class="topbar-sep">|</span>
+<span>Mon–Fri 7am–8pm  ·  Sat–Sun 8am–5pm</span>
+<span class="topbar-sep">|</span>
+<a href="tel:+12125550100">📞 (212) 555-0100</a>
+</div>
+<div class="topbar-r">
+<a class="t-emergency" href="#">🚨 Emergency: 911</a>
+<a href="#">Patient Portal</a>
+<a href="#">Pay My Bill</a>
+<a href="#">Careers</a>
+</div>
+</div>
+</div>
 <!-- NAV -->
 <nav>
-  <a href="#" class="nav-logo">PAM</a>
-  <div class="nav-pill">Spots Available</div>
+<div class="container">
+<div class="nav-inner">
+<a class="logo" href="#">
+<div class="logo-mark">⚕</div>
+<div class="logo-name">Healthy Living<small>Blueprint</small></div>
+</a>
+<ul class="nav-links">
+<li><a href="#">Home</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#health-info">Health Topics</a></li>
+<li><a href="#doctors">Doctors</a></li>
+<li><a href="#blog">Health Blog</a></li>
+<li><a class="nav-cta" href="#appointment">Book Appointment</a></li>
+</ul>
+<div class="hamburger" onclick="document.getElementById('mobMenu').classList.add('open')">
+<span></span><span></span><span></span>
+</div>
+</div>
+</div>
 </nav>
-
+<!-- MOBILE MENU -->
+<div class="mob-menu" id="mobMenu">
+<button class="mob-close" onclick="document.getElementById('mobMenu').classList.remove('open')">✕</button>
+<ul>
+<li><a href="#services" onclick="closeMob()">Services</a></li>
+<li><a href="#doctors" onclick="closeMob()">Find a Doctor</a></li>
+<li><a href="#health-info" onclick="closeMob()">Health Info</a></li>
+<li><a href="#niches" onclick="closeMob()">Health Topics</a></li>
+<li><a href="#blog" onclick="closeMob()">Health Blog</a></li>
+<li><a href="#appointment" onclick="closeMob()">Book Appointment</a></li>
+</ul>
+<a class="mob-cta" href="#appointment" onclick="closeMob()">📅 Book Now</a>
+</div>
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-eyebrow anim-1">Nigeria — Limited Time Offer</div>
-  <h1 class="anim-2">
-    <span class="white">PRICE<br>ACTION</span><br>
-    <span class="gold">MASTERY</span>
-  </h1>
-  <p class="hero-sub anim-3">
-    From <strong>Zero to Consistent</strong> — No Indicators. No Guesswork. Just Pure Price Action.
-  </p>
-  <div class="proof-bar anim-4">
-    <div class="proof-item"><span class="val">2,400+</span> Students</div>
-    <div class="proof-dot"></div>
-    <div class="proof-item"><span class="val">4.9 ★</span> Rating</div>
-    <div class="proof-dot"></div>
-    <div class="proof-item"><span class="val">10+ hrs</span> HD Video</div>
-    <div class="proof-dot"></div>
-    <div class="proof-item"><span class="val">Lifetime</span> Access</div>
-  </div>
+<div class="container">
+<div class="hero-grid">
+<div>
+<span class="hero-pill">Accepting New Patients — Same-Day Appointments Available</span>
+<h1>Expert Care for Every<br/><em>Stage of Your Life</em></h1>
+<p class="hero-lead">Healthy Living Blueprint brings together 200+ board-certified physicians across 25 specialties to deliver compassionate, evidence-based care in the heart of New York City — and virtually, anywhere you are.</p>
+<div class="hero-acts">
+<a class="btn btn-amber" href="#appointment">📅 Book an Appointment</a>
+<a class="btn btn-outline-w" href="#services">Explore Our Services</a>
+</div>
+<div class="hero-trust">
+<div class="ht-item"><div><div class="ht-num">200+</div><div style="font-size:.74rem;opacity:.7">Board-Certified MDs</div></div></div>
+<div class="ht-item"><div><div class="ht-num">58K+</div><div style="font-size:.74rem;opacity:.7">Patients Treated</div></div></div>
+<div class="ht-item"><div><div class="ht-num">25+</div><div style="font-size:.74rem;opacity:.7">Medical Specialties</div></div></div>
+<div class="ht-item"><div><div class="ht-num">4.9★</div><div style="font-size:.74rem;opacity:.7">Average Rating</div></div></div>
+</div>
+</div>
+<!-- QUICK BOOK -->
+<div class="q-card">
+<h3>📅 Quick Appointment</h3>
+<div class="fgrp"><label>Full Name *</label><input id="qn" placeholder="e.g. Maria Johnson" type="text"/></div>
+<div class="frow">
+<div class="fgrp"><label>Phone *</label><input id="qp" placeholder="(212) 555-0000" type="tel"/></div>
+<div class="fgrp"><label>Email *</label><input id="qe" placeholder="you@email.com" type="email"/></div>
+</div>
+<div class="fgrp">
+<label>Specialty / Department *</label>
+<select id="qs">
+<option value="">— Select Department —</option>
+<option>General Medicine &amp; Primary Care</option>
+<option>Cardiology</option>
+<option>Mental Health &amp; Psychiatry</option>
+<option>Pediatrics (Ages 0–18)</option>
+<option>Orthopedics &amp; Sports Medicine</option>
+<option>Women's Health &amp; OB-GYN</option>
+<option>Oncology &amp; Cancer Care</option>
+<option>Neurology</option>
+<option>Dermatology</option>
+<option>Endocrinology &amp; Diabetes</option>
+<option>Telehealth (Video Visit)</option>
+</select>
+</div>
+<div class="frow">
+<div class="fgrp"><label>Preferred Date *</label><input id="qd" type="date"/></div>
+<div class="fgrp"><label>Visit Type</label>
+<select id="qt"><option>In-Person</option><option>Telehealth (Video)</option><option>Phone Call</option></select>
+</div>
+</div>
+<button class="btn btn-teal" onclick="quickBook()" style="width:100%;justify-content:center;border-radius:8px;margin-top:.4rem">Request Appointment →</button>
+<p class="q-note">🔒 HIPAA-secure. Confirmation within 60 minutes during business hours.</p>
+</div>
+</div>
+</div>
 </section>
-
-<!-- FILTER CARD -->
-<div class="filter-wrap anim-5">
-  <div class="filter-card">
-
-    <div class="filter-header">
-      <div class="filter-header-tag">Step-by-Step · Takes 60 Seconds</div>
-      <h2>Answer 4 Quick Questions</h2>
-      <p>We'll personalise your access and connect you instantly</p>
-    </div>
-
-    <div class="filter-body">
-
-      <!-- PROGRESS -->
-      <div class="progress-wrap">
-        <div class="progress-label">
-          <span id="step-label">Question 1 of 4</span>
-          <span id="step-pct">0%</span>
-        </div>
-        <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
-      </div>
-
-      <!-- STEP 1: Experience -->
-      <div class="step active" id="step-1">
-        <div class="step-q">What's your current trading <span>experience level?</span></div>
-        <div class="step-hint">Select the option that best describes you right now.</div>
-        <div class="options">
-          <button class="opt-btn" data-step="1" data-val="beginner" onclick="selectOpt(this)">
-            <div class="opt-icon">🌱</div>
-            <div><div class="opt-label">Complete Beginner</div><div class="opt-sub">Just getting started, learning the basics</div></div>
-            <div class="opt-check">✓</div>
-          </button>
-          <button class="opt-btn" data-step="1" data-val="struggling" onclick="selectOpt(this)">
-            <div class="opt-icon">📉</div>
-            <div><div class="opt-label">Struggling Trader</div><div class="opt-sub">Been trading but losing money or breaking even</div></div>
-            <div class="opt-check">✓</div>
-          </button>
-          <button class="opt-btn" data-step="1" data-val="intermediate" onclick="selectOpt(this)">
-            <div class="opt-icon">📊</div>
-            <div><div class="opt-label">Intermediate</div><div class="opt-sub">Some wins but not consistent yet</div></div>
-            <div class="opt-check">✓</div>
-          </button>
-          <button class="opt-btn" data-step="1" data-val="advanced" onclick="selectOpt(this)">
-            <div class="opt-icon">🏆</div>
-            <div><div class="opt-label">Advanced Trader</div><div class="opt-sub">Looking to sharpen my edge further</div></div>
-            <div class="opt-check">✓</div>
-          </button>
-        </div>
-        <button class="next-btn" id="next-1" disabled onclick="goNext(2)">Continue →</button>
-      </div>
-
-      <!-- STEP 2: Goal -->
-      <div class="step" id="step-2">
-        <div class="step-q">What's your <span>main goal</span> with trading?</div>
-        <div class="step-hint">Be honest — this helps us personalise your experience.</div>
-        <div class="options">
-          <button class="opt-btn" data-step="2" data-val="income" onclick="selectOpt(this)">
-            <div class="opt-icon">💰</div>
-            <div><div class="opt-label">Build a Full-Time Income</div><div class="opt-sub">Replace my job or primary income</div></div>
-            <div class="opt-check">✓</div>
-          </button>
-          <button class="opt-btn" data-step="2" data-val="side" onclick="selectOpt(this)">
-            <div class="opt-icon">📈</div>
-            <div><div class="opt-label">Generate Side Income</div><div class="opt-sub">Supplement my current earnings</div></div>
-            <div class="opt-check">✓</div>
-          </button>
-          <button class="opt-btn" data-step="2" data-val="consistent" onclick="selectOpt(this)">
-            <div class="opt-icon">🎯</div>
-            <div><div class="opt-label">Become Consistently Profitable</div><div class="opt-sub">Stop losing and start winning reliably</div></div>
-            <div class="opt-check">✓</div>
-          </button>
-          <button class="opt-btn" data-step="2" data-val="skill" onclick="selectOpt(this)">
-            <div class="opt-icon">🧠</div>
-            <div><div class="opt-label">Master the Skill</div><div class="opt-sub">Deep understanding of how markets move</div></div>
-            <div class="opt-check">✓</div>
-          </button>
-        </div>
-        <button class="next-btn" id="next-2" disabled onclick="goNext(3)">Continue →</button>
-      </div>
-
-      <!-- STEP 3: Country -->
-      <div class="step" id="step-3">
-        <div class="step-q">Which <span>country</span> are you based in?</div>
-        <div class="step-hint">We'll show your local currency price.</div>
-        <div class="country-grid">
-          <button class="country-btn" data-step="3" data-val="NG" data-price="₦10,000" data-flag="🇳🇬" onclick="selectOpt(this)">
-            <div class="country-flag">🇳🇬</div>
-            <div><div>Nigeria</div><div class="country-price">₦10,000</div></div>
-          </button>
-          <button class="country-btn" data-step="3" data-val="GH" data-price="GH₵76" data-flag="🇬🇭" onclick="selectOpt(this)">
-            <div class="country-flag">🇬🇭</div>
-            <div><div>Ghana</div><div class="country-price">GH₵76</div></div>
-          </button>
-          <button class="country-btn" data-step="3" data-val="ZA" data-price="R118" data-flag="🇿🇦" onclick="selectOpt(this)">
-            <div class="country-flag">🇿🇦</div>
-            <div><div>South Africa</div><div class="country-price">R118</div></div>
-          </button>
-          <button class="country-btn" data-step="3" data-val="CM" data-price="FCFA 5,140" data-flag="🇨🇲" onclick="selectOpt(this)">
-            <div class="country-flag">🇨🇲</div>
-            <div><div>Cameroon</div><div class="country-price">FCFA 5,140</div></div>
-          </button>
-          <button class="country-btn" data-step="3" data-val="KE" data-price="KSh947" data-flag="🇰🇪" onclick="selectOpt(this)">
-            <div class="country-flag">🇰🇪</div>
-            <div><div>Kenya</div><div class="country-price">KSh947</div></div>
-          </button>
-          <button class="country-btn" data-step="3" data-val="OTHER" data-price="₦10,000" data-flag="🌍" onclick="selectOpt(this)">
-            <div class="country-flag">🌍</div>
-            <div><div>Other</div><div class="country-price">NGN equiv.</div></div>
-          </button>
-        </div>
-        <button class="next-btn" id="next-3" disabled onclick="goNext(4)">Continue →</button>
-      </div>
-
-      <!-- STEP 4: Name + WhatsApp -->
-      <div class="step" id="step-4">
-        <div class="step-q">Almost there! <span>Who should we send access to?</span></div>
-        <div class="step-hint">Your details are safe — we only use this to send your course access.</div>
-        <div class="field-group">
-          <label class="field-label" for="fname">First Name</label>
-          <input class="field-input" id="fname" type="text" placeholder="e.g. Emeka" autocomplete="given-name" oninput="checkStep4()">
-        </div>
-        <div class="field-group">
-          <label class="field-label" for="fphone">WhatsApp Number</label>
-          <input class="field-input" id="fphone" type="tel" placeholder="e.g. +2348012345678" autocomplete="tel" oninput="checkStep4()">
-        </div>
-        <button class="next-btn" id="next-4" disabled onclick="showResult()">Get My Access Now →</button>
-      </div>
-
-      <!-- RESULT SCREEN -->
-      <div id="result-screen">
-        <div class="result-icon">✓</div>
-        <div class="result-title">You're <span>Ready!</span></div>
-        <p class="result-sub" id="result-sub">
-          Tap the button below and send us a message on WhatsApp. We'll send your access within minutes.
-        </p>
-
-        <div class="summary-box" id="summary-box">
-          <div class="summary-row"><span class="summary-key">Name</span><span class="summary-val" id="s-name">—</span></div>
-          <div class="summary-row"><span class="summary-key">Country</span><span class="summary-val" id="s-country">—</span></div>
-          <div class="summary-row"><span class="summary-key">Your Price</span><span class="summary-val gold" id="s-price">—</span></div>
-          <div class="summary-row"><span class="summary-key">Access Type</span><span class="summary-val">Lifetime · Instant Delivery</span></div>
-        </div>
-
-        <a id="wa-link" href="#" target="_blank" class="wa-btn">
-          <span class="wa-icon">💬</span>
-          SEND MESSAGE ON WHATSAPP
-        </a>
-        <p class="wa-note">💬 Average response time: under 5 minutes &nbsp;·&nbsp; Safe & Secure</p>
-      </div>
-
-    </div><!-- /filter-body -->
-  </div><!-- /filter-card -->
-</div><!-- /filter-wrap -->
-
-<!-- WHAT YOU GET -->
-<div class="features-strip reveal" style="margin-top:60px;">
-  <div style="text-align:center;margin-bottom:20px;">
-    <span style="font-family:'DM Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);">What's Inside</span>
-  </div>
-  <div class="features-grid">
-    <div class="feat-box">
-      <div class="feat-icon">📈</div>
-      <div class="feat-title">Market Structure</div>
-      <div class="feat-sub">Trend & direction mastery</div>
-    </div>
-    <div class="feat-box">
-      <div class="feat-icon">🎯</div>
-      <div class="feat-title">High-Prob Setups</div>
-      <div class="feat-sub">Zero indicators needed</div>
-    </div>
-    <div class="feat-box">
-      <div class="feat-icon">🧱</div>
-      <div class="feat-title">Supply & Demand</div>
-      <div class="feat-sub">Precision zones</div>
-    </div>
-    <div class="feat-box">
-      <div class="feat-icon">🛡️</div>
-      <div class="feat-title">Risk Management</div>
-      <div class="feat-sub">Protect your capital</div>
-    </div>
-    <div class="feat-box">
-      <div class="feat-icon">🎥</div>
-      <div class="feat-title">10+ Hrs HD Video</div>
-      <div class="feat-sub">Step-by-step training</div>
-    </div>
-    <div class="feat-box">
-      <div class="feat-icon">📄</div>
-      <div class="feat-title">Bonus PDF</div>
-      <div class="feat-sub">Cheat sheets & tools</div>
-    </div>
-  </div>
+<!-- TRUST STRIP -->
+<div class="trust-strip">
+<div class="container">
+<div class="trust-items">
+<div class="ti-item"><span class="ti-icon">🏥</span><div><strong>HIPAA Compliant</strong><br/><span style="font-size:.75rem;color:#888">Patient privacy protected</span></div></div>
+<div class="ti-item"><span class="ti-icon">✅</span><div><strong>Board-Certified Physicians</strong><br/><span style="font-size:.75rem;color:#888">All doctors verified</span></div></div>
+<div class="ti-item"><span class="ti-icon">💊</span><div><strong>On-Site Pharmacy</strong><br/><span style="font-size:.75rem;color:#888">Same-day prescriptions</span></div></div>
+<div class="ti-item"><span class="ti-icon">🌐</span><div><strong>Telehealth 24/7</strong><br/><span style="font-size:.75rem;color:#888">See a doctor from home</span></div></div>
+<div class="ti-item"><span class="ti-icon">🛡️</span><div><strong>Most Insurance Accepted</strong><br/><span style="font-size:.75rem;color:#888">Including Medicare &amp; Medicaid</span></div></div>
+<div class="ti-item"><span class="ti-icon">🏆</span><div><strong>Top-Rated in NYC</strong><br/><span style="font-size:.75rem;color:#888">U.S. News 2024 honoree</span></div></div>
 </div>
-
+</div>
+</div>
+<!-- SERVICES -->
+<section class="section" id="services">
+<div class="container">
+<div class="sec-hd">
+<span class="sec-badge">What We Offer</span>
+<h2 class="sec-title">Comprehensive Care<br/>Across 25+ Specialties</h2>
+<p class="sec-sub">From routine annual physicals to complex surgical consultations — our specialists deliver evidence-based care tailored to you.</p>
+</div>
+<div class="services-grid">
+<div class="svc-card"><div class="svc-icon">🩺</div><h3>General Medicine &amp; Primary Care</h3><p>Annual physicals, chronic disease management, preventive screenings, vaccinations, and same-day sick visits for all ages.</p><span class="svc-link">Learn More</span></div>
+<div class="svc-card"><div class="svc-icon">❤️</div><h3>Cardiology</h3><p>ECGs, echocardiograms, stress tests, hypertension management, arrhythmia care, and cardiac rehabilitation programs.</p><span class="svc-link">Learn More</span></div>
+<div class="svc-card"><div class="svc-icon">🧠</div><h3>Mental Health &amp; Psychiatry</h3><p>Individual therapy, psychiatry evaluations, medication management, CBT, and group therapy for anxiety, depression, PTSD, and more.</p><span class="svc-link">Learn More</span></div>
+<div class="svc-card"><div class="svc-icon">👶</div><h3>Pediatrics</h3><p>Well-child visits, immunizations, developmental screenings, adolescent health, and same-day sick appointments for ages 0–18.</p><span class="svc-link">Learn More</span></div>
+<div class="svc-card"><div class="svc-icon">🦴</div><h3>Orthopedics &amp; Sports Medicine</h3><p>Joint replacements, ACL repairs, fracture care, physical therapy, and sports injury assessment for athletes at every level.</p><span class="svc-link">Learn More</span></div>
+<div class="svc-card"><div class="svc-icon">🌸</div><h3>Women's Health &amp; OB-GYN</h3><p>Gynecological exams, prenatal care, menopause management, family planning, fertility consultations, and cervical cancer screening.</p><span class="svc-link">Learn More</span></div>
+<div class="svc-card"><div class="svc-icon">🔬</div><h3>Lab &amp; Diagnostic Imaging</h3><p>On-site bloodwork, urinalysis, X-ray, MRI, CT scan, ultrasound, and rapid STI &amp; COVID testing with same-day results.</p><span class="svc-link">Learn More</span></div>
+<div class="svc-card"><div class="svc-icon">🎗️</div><h3>Oncology &amp; Cancer Screening</h3><p>Cancer screenings (mammography, colonoscopy, PSA), chemotherapy support, radiation oncology referrals, and survivorship care.</p><span class="svc-link">Learn More</span></div>
+<div class="svc-card"><div class="svc-icon">💉</div><h3>Endocrinology &amp; Diabetes</h3><p>Type 1 &amp; 2 diabetes management, insulin therapy, thyroid disorders, adrenal conditions, and continuous glucose monitoring.</p><span class="svc-link">Learn More</span></div>
+<div class="svc-card"><div class="svc-icon">🧬</div><h3>Neurology</h3><p>Migraine treatment, epilepsy care, Parkinson's disease management, multiple sclerosis monitoring, and nerve conduction studies.</p><span class="svc-link">Learn More</span></div>
+<div class="svc-card"><div class="svc-icon">🌿</div><h3>Preventive Wellness</h3><p>Personalized wellness plans, nutrition counseling, weight management, smoking cessation, and executive health programs.</p><span class="svc-link">Learn More</span></div>
+<div class="svc-card"><div class="svc-icon">💻</div><h3>Telehealth — 24/7 Virtual Visits</h3><p>See a Healthy Living Blueprint physician from your phone or computer. Available nights, weekends, and holidays. Prescriptions sent directly to your pharmacy.</p><span class="svc-link">Start Visit</span></div>
+</div>
+</div>
+</section>
+<!-- ═══════════════════════════════════════════════
+     ADSENSE UNIT #2 — In-Content 1 (After Services)
+     Zone: in_content_services | pub-8176918589359902
+     ═══════════════════════════════════════════════ -->
+<div class="adsense-section">
+<div class="container" style="display:flex;justify-content:center">
+<div class="adsense-wrap adsense-leaderboard" id="ad-in-content-1">
+<ins class="adsbygoogle" data-ad-client="ca-pub-8176918589359902" data-ad-format="horizontal" data-ad-slot="5218292376" data-full-width-responsive="true" style="display:block;width:728px;height:90px"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+</div>
+</div>
+<!-- HEALTH INFO SECTION (tabbed) -->
+<section class="section hinfo-section" id="health-info">
+<div class="container">
+<div class="sec-hd">
+<span class="sec-badge">Health Information</span>
+<h2 class="sec-title">Know Your Health — Evidence-Based Information</h2>
+<p class="sec-sub">Our clinical team curates up-to-date, medically reviewed health information to help you understand, prevent, and manage common conditions.</p>
+</div>
+<div class="hinfo-tabs">
+<button class="htab active" onclick="showTab('heart')">❤️ Heart Health</button>
+<button class="htab" onclick="showTab('diabetes')">💉 Diabetes</button>
+<button class="htab" onclick="showTab('mental')">🧠 Mental Health</button>
+<button class="htab" onclick="showTab('cancer')">🎗️ Cancer Prevention</button>
+<button class="htab" onclick="showTab('nutrition')">🥗 Nutrition</button>
+<button class="htab" onclick="showTab('womens')">🌸 Women's Health</button>
+<button class="htab" onclick="showTab('mens')">🏃 Men's Health</button>
+<button class="htab" onclick="showTab('sleep')">🌙 Sleep Health</button>
+<button class="htab" onclick="showTab('weight')">⚖️ Weight Loss</button>
+<button class="htab" onclick="showTab('kids')">👶 Children's Health</button>
+</div>
+<!-- HEART -->
+<div class="hpanel active" id="tab-heart">
+<div style="background:var(--teal-pale);border-radius:10px;padding:1.25rem 1.5rem;margin-bottom:1rem;border-left:4px solid #e74c3c">
+<strong style="color:#c0392b">⚠️ Heart Disease is the #1 cause of death in the United States</strong> — responsible for 1 in every 4 deaths. The good news: up to 80% of cardiovascular events are preventable with the right lifestyle changes and medical care.
+      </div>
+<div class="story-box">
+<p>"At 52, I thought chest tightness was just stress from work. My wife begged me to see a doctor. Turns out my arteries were 70% blocked. The cardiologist said I was weeks away from a massive heart attack. After starting a combination of prescribed meds, a plant-based diet, and adding Hawthorn Berry and CoQ10 supplements my doctor approved — my blood pressure dropped from 158/94 to 118/76 in just 4 months. I got my life back."</p>
+<div class="story-author">— Robert M., 52, New York · Verified Patient</div>
+</div>
+<div class="hpanel-grid">
+<div class="hcard warn"><h4>⚠️ Warning Signs of a Heart Attack</h4><ul><li>Chest pressure, tightness, or squeezing pain</li><li>Pain radiating to arm, jaw, neck, or back</li><li>Shortness of breath at rest or with mild activity</li><li>Cold sweat, nausea, or lightheadedness</li><li>Unusual fatigue — especially in women</li></ul><p style="margin-top:.6rem;font-size:.78rem;color:#c0392b;font-weight:700">Call 911 immediately if you experience these symptoms.</p></div>
+<div class="hcard"><h4>✅ Know Your Numbers</h4>
+<span class="stat-pill">Blood Pressure: &lt;120/80 mmHg</span>
+<span class="stat-pill">LDL Cholesterol: &lt;100 mg/dL</span>
+<span class="stat-pill">Resting Heart Rate: 60–100 bpm</span>
+<span class="stat-pill">BMI: 18.5–24.9</span>
+<span class="stat-pill">Blood Sugar (fasting): &lt;100 mg/dL</span>
+<p style="margin-top:.7rem;font-size:.82rem;color:var(--slate)">Schedule annual screenings with your primary care provider to monitor these key indicators.</p></div>
+<div class="hcard tip"><h4>🏃 Heart-Healthy Lifestyle Tips</h4><ul><li>150 minutes of moderate aerobic exercise per week</li><li>Mediterranean or DASH diet — rich in vegetables, fish, and whole grains</li><li>Quit smoking — risk halves within 1 year of stopping</li><li>Limit alcohol to ≤2 drinks/day (men), ≤1 (women)</li><li>Manage stress with mindfulness, yoga, or therapy</li><li>Sleep 7–9 hours per night</li></ul></div>
+<div class="hcard info"><h4>📋 Recommended Heart Screenings</h4><ul><li><strong>Ages 18+:</strong> Blood pressure every 1–2 years</li><li><strong>Ages 35+ (men), 45+ (women):</strong> Cholesterol panel every 5 years</li><li><strong>Ages 40–70 (overweight):</strong> Diabetes screening every 3 years</li><li><strong>Ages 65+:</strong> Abdominal aortic aneurysm ultrasound (men who smoked)</li><li><strong>High-risk patients:</strong> Coronary artery calcium (CAC) score</li></ul></div>
+</div>
+<h4 style="margin:1.4rem 0 .8rem;font-size:.95rem;color:#0b1f3a">🌿 Nature's Heart Helpers — Clinician-Reviewed Herbal Remedies</h4>
+<div class="remedy-grid">
+<div class="remedy-card">
+<div class="r-icon">🌸</div>
+<span class="r-badge">Circulation</span>
+<h5>Hawthorn Berry Extract</h5>
+<p>Used for centuries to support healthy blood pressure and improve coronary blood flow. Studies show measurable reduction in systolic pressure.</p>
+<a class="aff-btn gold" href="https://amzn.to/hawthorn-heart" rel="nofollow sponsored" target="_blank">Shop Best Sellers →</a>
+</div>
+<div class="remedy-card">
+<div class="r-icon">⚡</div>
+<span class="r-badge">Energy + Heart</span>
+<h5>CoQ10 (Ubiquinol)</h5>
+<p>A powerful antioxidant that fuels heart muscle cells. Especially important for anyone on statin medications, which deplete natural CoQ10 levels.</p>
+<a class="aff-btn gold" href="https://amzn.to/coq10-heart" rel="nofollow sponsored" target="_blank">Shop Best Sellers →</a>
+</div>
+<div class="remedy-card">
+<div class="r-icon">🐟</div>
+<span class="r-badge">Cholesterol</span>
+<h5>Omega-3 Fish Oil</h5>
+<p>EPA and DHA in fish oil lower triglycerides, reduce inflammation, and support healthy arterial function. AHA-recommended for heart health.</p>
+<a class="aff-btn gold" href="https://amzn.to/omega3-heart" rel="nofollow sponsored" target="_blank">Shop Best Sellers →</a>
+</div>
+<div class="remedy-card">
+<div class="r-icon">🧄</div>
+<span class="r-badge">Blood Pressure</span>
+<h5>Aged Garlic Extract</h5>
+<p>Clinical trials show aged garlic extract reduces both systolic and diastolic blood pressure and helps lower LDL cholesterol naturally.</p>
+<a class="aff-btn gold" href="https://amzn.to/garlic-extract" rel="nofollow sponsored" target="_blank">Shop Best Sellers →</a>
+</div>
+</div>
+<p class="disclaimer">* These statements have not been evaluated by the FDA. Supplements are not intended to diagnose, treat, cure, or prevent any disease. Always consult your physician before starting any supplement regimen.</p>
+<div class="aff-cta">
+<div class="aff-cta-text">
+<h5>❤️ Ready to Take Control of Your Heart Health?</h5>
+<p>Get a complete cardiac risk assessment + personalized supplement plan reviewed by our cardiologists.</p>
+</div>
+<div style="display:flex;gap:.6rem;flex-wrap:wrap">
+<a class="aff-btn" href="#appointment" style="background:#e74c3c;color:#fff">Book Cardiac Screening</a>
+<a class="aff-btn gold" href="https://amzn.to/heart-bundle" rel="nofollow sponsored" target="_blank">View Heart Health Bundle →</a>
+</div>
+</div>
+</div>
+<!-- DIABETES -->
+<div class="hpanel" id="tab-diabetes">
+<div style="background:var(--teal-pale);border-radius:10px;padding:1.25rem 1.5rem;margin-bottom:1rem;border-left:4px solid #27ae60">
+<strong>37.3 million Americans</strong> have diabetes — and 8.5 million of them are undiagnosed. Another 96 million adults have prediabetes. Early detection and management can prevent or delay serious complications.
+      </div>
+<div class="story-box">
+<p>"I was diagnosed with Type 2 diabetes at 44 and felt like my life was over. My doctor put me on Metformin, but I also started researching natural support. I added Berberine, Ceylon cinnamon, and bitter melon to my daily routine alongside a low-carb diet. In 6 months my HbA1c dropped from 8.9% to 6.4%. My doctor was shocked — she called it 'remarkable.' I still take my medication, but these natural allies made a real difference."</p>
+<div class="story-author">— Diane T., 44, Chicago · Verified Patient</div>
+</div>
+<div class="hpanel-grid">
+<div class="hcard warn"><h4>⚠️ Symptoms of High Blood Sugar</h4><ul><li>Frequent urination, especially at night</li><li>Excessive thirst and dry mouth</li><li>Unexplained weight loss</li><li>Blurred vision</li><li>Slow-healing cuts or bruises</li><li>Tingling, numbness, or pain in hands/feet</li><li>Fatigue and irritability</li></ul></div>
+<div class="hcard"><h4>📊 Blood Sugar Targets (ADA Guidelines)</h4>
+<span class="stat-pill">Fasting (Non-diabetic): 70–99 mg/dL</span>
+<span class="stat-pill red">Prediabetes (Fasting): 100–125 mg/dL</span>
+<span class="stat-pill red">Diabetes (Fasting): ≥126 mg/dL</span>
+<span class="stat-pill blue">HbA1c Target (Diabetic): &lt;7%</span>
+<p style="margin-top:.65rem;font-size:.82rem;color:var(--slate)">The HbA1c test reflects your average blood sugar over the past 2–3 months and is the gold standard for diabetes monitoring.</p>
+</div>
+<div class="hcard tip"><h4>💡 Managing Diabetes Daily</h4><ul><li>Test blood glucose as prescribed — fasting and post-meal</li><li>Follow a low-glycemic diet: whole grains, legumes, non-starchy vegetables</li><li>30 minutes of walking daily can reduce HbA1c by 0.5–1%</li><li>Take medications and insulin as prescribed — never skip doses</li><li>Check feet daily for cuts, blisters, or numbness</li><li>Get annual eye, kidney, and nerve function exams</li></ul></div>
+<div class="hcard info"><h4>📋 Diabetes Screening Schedule</h4><ul><li><strong>Age 35+, overweight:</strong> Screen every 3 years</li><li><strong>Any age with risk factors:</strong> BMI ≥25, family history, gestational diabetes, hypertension</li><li><strong>Pregnant women:</strong> GDM screen at 24–28 weeks</li><li><strong>Diagnosed prediabetes:</strong> Retest annually</li></ul></div>
+</div>
+<h4 style="margin:1.4rem 0 .8rem;font-size:.95rem;color:#0b1f3a">🌿 Herbal &amp; Natural Blood Sugar Support</h4>
+<div class="remedy-grid">
+<div class="remedy-card">
+<div class="r-icon">🌱</div>
+<span class="r-badge">Blood Sugar</span>
+<h5>Berberine HCl 1200mg</h5>
+<p>Shown in multiple studies to lower fasting blood glucose and HbA1c comparably to Metformin. Activates AMPK — the body's metabolic master switch.</p>
+<a class="aff-btn gold" href="https://amzn.to/berberine-blood-sugar" rel="nofollow sponsored" target="_blank">Shop Best Sellers →</a>
+</div>
+<div class="remedy-card">
+<div class="r-icon">🍂</div>
+<span class="r-badge">Insulin Sensitivity</span>
+<h5>Ceylon Cinnamon</h5>
+<p>True Ceylon cinnamon (not Cassia) improves insulin sensitivity and slows carbohydrate absorption, reducing post-meal glucose spikes naturally.</p>
+<a class="aff-btn gold" href="https://amzn.to/ceylon-cinnamon" rel="nofollow sponsored" target="_blank">Shop Best Sellers →</a>
+</div>
+<div class="remedy-card">
+<div class="r-icon">🍈</div>
+<span class="r-badge">Traditional Remedy</span>
+<h5>Bitter Melon Extract</h5>
+<p>Used in Ayurvedic and Traditional Chinese Medicine for centuries, bitter melon contains charantin and polypeptide-p, which mimic insulin action.</p>
+<a class="aff-btn gold" href="https://amzn.to/bitter-melon" rel="nofollow sponsored" target="_blank">Shop Best Sellers →</a>
+</div>
+<div class="remedy-card">
+<div class="r-icon">🪨</div>
+<span class="r-badge">Glucose Metabolism</span>
+<h5>Chromium Picolinate</h5>
+<p>An essential mineral that enhances insulin's action and helps regulate carbohydrate and fat metabolism. Widely studied for prediabetes management.</p>
+<a class="aff-btn gold" href="https://amzn.to/chromium-diabetes" rel="nofollow sponsored" target="_blank">Shop Best Sellers →</a>
+</div>
+</div>
+<p class="disclaimer">* These statements have not been evaluated by the FDA. Supplements are not intended to diagnose, treat, cure, or prevent any disease. Always consult your physician before starting supplements, especially if you take diabetes medications.</p>
+<div class="aff-cta">
+<div class="aff-cta-text">
+<h5>💉 Take Charge of Your Blood Sugar Today</h5>
+<p>Our endocrinologists create personalized plans combining medical treatment with clinically-supported natural approaches.</p>
+</div>
+<div style="display:flex;gap:.6rem;flex-wrap:wrap">
+<a class="aff-btn" href="#appointment" style="background:#27ae60;color:#fff">Book Diabetes Consult</a>
+<a class="aff-btn gold" href="https://amzn.to/diabetes-natural-kit" rel="nofollow sponsored" target="_blank">View Diabetes Support Bundle →</a>
+</div>
+</div>
+</div>
+<!-- MENTAL -->
+<div class="hpanel" id="tab-mental">
+<div style="background:var(--teal-pale);border-radius:10px;padding:1.25rem 1.5rem;margin-bottom:1rem;border-left:4px solid #8e44ad">
+<strong>1 in 5 adults</strong> in the U.S. experiences a mental health condition each year. Despite this, nearly 60% never receive treatment. Mental health conditions are real medical conditions — and treatment works.
+      </div>
+<div class="story-box">
+<p>"Anxiety had taken over my life. I couldn't sleep, couldn't focus at work, and started cancelling plans with friends. I was resistant to medication, so my therapist suggested we try an integrative approach first. I started taking Ashwagandha KSM-66, L-Theanine, and a high-potency magnesium glycinate alongside weekly CBT sessions. Within 8 weeks, my GAD symptoms dropped significantly. I finally feel like myself again — calm, present, and sleeping through the night."</p>
+<div class="story-author">— Keisha R., 31, Atlanta · Verified Patient</div>
+</div>
+<div class="hpanel-grid">
+<div class="hcard warn"><h4>⚠️ Signs You May Need Support</h4><ul><li>Persistent sadness, emptiness, or hopelessness lasting 2+ weeks</li><li>Excessive worry or fear that interferes with daily life</li><li>Mood swings, irritability, or emotional outbursts</li><li>Withdrawal from friends, family, or activities you once enjoyed</li><li>Changes in sleep — insomnia or sleeping too much</li><li>Thoughts of self-harm or suicide — seek help immediately</li></ul></div>
+<div class="hcard"><h4>🩺 Common Conditions We Treat</h4><ul><li><strong>Major Depressive Disorder (MDD)</strong></li><li><strong>Generalized Anxiety Disorder (GAD)</strong></li><li><strong>Post-Traumatic Stress Disorder (PTSD)</strong></li><li><strong>Bipolar I and II Disorder</strong></li><li><strong>Obsessive-Compulsive Disorder (OCD)</strong></li><li><strong>ADHD in adults and children</strong></li><li><strong>Eating disorders</strong></li><li><strong>Substance use disorders</strong></li></ul></div>
+<div class="hcard tip"><h4>💡 Evidence-Based Self-Care</h4><ul><li>Regular aerobic exercise reduces depression symptoms by 30–40%</li><li>Cognitive Behavioral Therapy (CBT) is as effective as medication for many conditions</li><li>Sleep hygiene: fixed wake time, no screens 1 hour before bed</li><li>Social connection — even brief daily interactions matter significantly</li><li>Mindfulness-Based Stress Reduction (MBSR) reduces anxiety by up to 38%</li></ul></div>
+<div class="hcard info"><h4>📞 Crisis Resources</h4><ul><li><strong>988 Suicide &amp; Crisis Lifeline:</strong> Call or text 988</li><li><strong>Crisis Text Line:</strong> Text HOME to 741741</li><li><strong>NAMI Helpline:</strong> 1-800-950-6264</li><li><strong>SAMHSA National Helpline:</strong> 1-800-662-4357 (free, confidential, 24/7)</li><li><strong>Emergency:</strong> Call 911 or go to your nearest ER</li></ul></div>
+</div>
+<h4 style="margin:1.4rem 0 .8rem;font-size:.95rem;color:#0b1f3a">🌿 Clinically-Studied Herbal Mood &amp; Calm Support</h4>
+<div class="remedy-grid">
+<div class="remedy-card">
+<div class="r-icon">🌿</div>
+<span class="r-badge">Stress &amp; Anxiety</span>
+<h5>Ashwagandha KSM-66</h5>
+<p>The most clinically studied form of Ashwagandha. Reduces cortisol by up to 28%, supports adrenal health, and improves stress resilience and sleep quality.</p>
+<a class="aff-btn gold" href="https://amzn.to/ashwagandha-ksm66" rel="nofollow sponsored" target="_blank">Shop Best Sellers →</a>
+</div>
+<div class="remedy-card">
+<div class="r-icon">🍵</div>
+<span class="r-badge">Calm Focus</span>
+<h5>L-Theanine 200mg</h5>
+<p>An amino acid found in green tea that promotes calm alertness without sedation. Increases alpha brain waves — the same state produced by meditation.</p>
+<a class="aff-btn gold" href="https://amzn.to/ltheanine-calm" rel="nofollow sponsored" target="_blank">Shop Best Sellers →</a>
+</div>
+<div class="remedy-card">
+<div class="r-icon">🌼</div>
+<span class="r-badge">Mood Balance</span>
+<h5>St. John's Wort Extract</h5>
+<p>Backed by over 30 clinical trials, St. John's Wort extract (0.3% hypericin) has shown effectiveness comparable to antidepressants for mild-to-moderate depression.</p>
+<a class="aff-btn gold" href="https://amzn.to/stjohnswort" rel="nofollow sponsored" target="_blank">Shop Best Sellers →</a>
+</div>
+<div class="remedy-card">
+<div class="r-icon">💊</div>
+<span class="r-badge">Sleep &amp; Nerves</span>
+<h5>Magnesium Glycinate</h5>
+<p>Magnesium deficiency is linked to anxiety, insomnia, and depression. Glycinate form has superior absorption and calms the nervous system without digestive upset.</p>
+<a class="aff-btn gold" href="https://amzn.to/magnesium-glycinate" rel="nofollow sponsored" target="_blank">Shop Best Sellers →</a>
+</div>
+</div>
+<p class="disclaimer">* These statements have not been evaluated by the FDA. Supplements are not a substitute for professional mental health treatment. If you are in crisis, please call 988 immediately.</p>
+<div class="aff-cta">
+<div class="aff-cta-text">
+<h5>🧠 Your Mental Health Deserves Expert Attention</h5>
+<p>Our psychiatrists blend evidence-based therapy with integrative approaches — including nutrition and supplementation review — for a whole-person plan.</p>
+</div>
+<div style="display:flex;gap:.6rem;flex-wrap:wrap">
+<a class="aff-btn" href="#appointment" style="background:#8e44ad;color:#fff">Book Mental Health Eval</a>
+<a class="aff-btn gold" href="https://amzn.to/mental-calm-bundle" rel="nofollow sponsored" target="_blank">View Calm &amp; Mood Bundle →</a>
+</div>
+</div>
+</div>
+<!-- CANCER -->
+<!-- CANCER -->
+<div class="hpanel" id="tab-cancer">
+<div style="background:var(--teal-pale);border-radius:10px;padding:1.25rem 1.5rem;margin-bottom:1rem;border-left:4px solid #cb4335">
+<strong>1.9 million new cancer diagnoses</strong> are made in the U.S. each year. When caught early, many cancers have 5-year survival rates above 90%. Screening saves lives — don't wait for symptoms.
+      </div>
+<div class="story-box">
+<p>"My mother died of breast cancer at 58 because it was caught too late. I was terrified the same would happen to me. At 42, I started getting annual mammograms and also worked with an integrative oncologist who recommended DIM (diindolylmethane) from cruciferous vegetables, medicinal mushroom extracts, and high-dose Vitamin D3 to support healthy estrogen metabolism and immune function. Three years later, an early-stage tumor was caught and fully treated. Early screening literally saved my life."</p>
+<div class="story-author">— Marcia F., 45, Houston · Verified Patient</div>
+</div>
+<div class="hpanel-grid">
+<div class="hcard info"><h4>📋 Recommended Cancer Screenings</h4><ul><li><strong>Breast cancer:</strong> Mammogram annually, starting at age 40 (or 30 with family history)</li><li><strong>Colorectal cancer:</strong> Colonoscopy every 10 years starting at age 45</li><li><strong>Cervical cancer:</strong> Pap smear every 3 years (age 21–65)</li><li><strong>Lung cancer:</strong> Low-dose CT annually if 50+ with 20-pack-year smoking history</li><li><strong>Prostate cancer:</strong> PSA discussion with doctor at age 50 (45 if high-risk)</li><li><strong>Skin cancer:</strong> Annual full-body dermatology exam</li></ul></div>
+<div class="hcard warn"><h4>⚠️ 7 Cancer Warning Signs (ACS)</h4><ul><li><strong>C</strong> — Change in bowel or bladder habits</li><li><strong>A</strong> — A sore that does not heal</li><li><strong>U</strong> — Unusual bleeding or discharge</li><li><strong>T</strong> — Thickening or lump in breast or elsewhere</li><li><strong>I</strong> — Indigestion or difficulty swallowing</li><li><strong>O</strong> — Obvious change in wart or mole</li><li><strong>N</strong> — Nagging cough or hoarseness</li></ul></div>
+<div class="hcard tip"><h4>🛡️ Evidence-Based Prevention</h4><ul><li>Quit smoking — causes 30% of all cancer deaths</li><li>Maintain healthy weight — obesity linked to 13 cancer types</li><li>Limit alcohol — every drink increases cancer risk slightly</li><li>Protect skin with SPF 30+ daily, avoid tanning beds</li><li>Get vaccinated: HPV vaccine prevents 6 cancer types</li><li>Eat a plant-rich diet — aim for 5 servings of fruits/vegetables daily</li></ul></div>
+<div class="hcard"><h4>💊 Our Oncology Services</h4><ul><li>Low-dose CT lung cancer screening</li><li>3D mammography (tomosynthesis)</li><li>Colonoscopy with same-day results discussion</li><li>Genetic cancer risk counseling (BRCA, Lynch syndrome)</li><li>Chemotherapy coordination and support</li><li>Cancer survivorship and follow-up care plans</li></ul></div>
+</div>
+<h4 style="margin:1.4rem 0 .8rem;font-size:.95rem;color:#0b1f3a">🌿 Immune-Boosting &amp; Anti-Cancer Herbal Support</h4>
+<div class="remedy-grid">
+<div class="remedy-card">
+<div class="r-icon">🍄</div>
+<span class="r-badge">Immune Defense</span>
+<h5>Turkey Tail Mushroom</h5>
+<p>Contains PSK and PSP polysaccharides studied extensively in Japan for immune support alongside cancer treatment. Enhances NK cell and T-cell activity naturally.</p>
+<a class="aff-btn gold" href="https://amzn.to/turkey-tail-mushroom" rel="nofollow sponsored" target="_blank">Shop Best Sellers →</a>
+</div>
+<div class="remedy-card">
+<div class="r-icon">🥦</div>
+<span class="r-badge">Estrogen Balance</span>
+<h5>DIM (Diindolylmethane)</h5>
+<p>Naturally derived from cruciferous vegetables like broccoli and cabbage, DIM supports healthy estrogen metabolism and is studied for hormone-related cancer prevention.</p>
+<a class="aff-btn gold" href="https://amzn.to/dim-supplement" rel="nofollow sponsored" target="_blank">Shop Best Sellers →</a>
+</div>
+<div class="remedy-card">
+<div class="r-icon">☀️</div>
+<span class="r-badge">Cell Protection</span>
+<h5>Vitamin D3 + K2</h5>
+<p>Low vitamin D is strongly linked to increased cancer risk. D3 supports immune surveillance and cell regulation. K2 ensures calcium is routed to bones, not arteries.</p>
+<a class="aff-btn gold" href="https://amzn.to/vitd3k2-cancer" rel="nofollow sponsored" target="_blank">Shop Best Sellers →</a>
+</div>
+<div class="remedy-card">
+<div class="r-icon">🌾</div>
+<span class="r-badge">Antioxidant</span>
+<h5>Curcumin + Bioperine</h5>
+<p>Turmeric's active compound curcumin has shown anti-tumor properties in laboratory studies. Bioperine (black pepper extract) increases curcumin absorption by 2,000%.</p>
+<a class="aff-btn gold" href="https://amzn.to/curcumin-bioperine" rel="nofollow sponsored" target="_blank">Shop Best Sellers →</a>
+</div>
+</div>
+<p class="disclaimer">* Supplements do not treat or cure cancer. Always consult your oncologist before using any supplement during cancer treatment, as interactions are possible.</p>
+<div class="aff-cta">
+<div class="aff-cta-text">
+<h5>🎗️ Don't Wait — Early Detection Saves Lives</h5>
+<p>Book your comprehensive cancer screening today. Our oncology team also reviews your supplement and nutrition plan for maximum protective benefit.</p>
+</div>
+<div style="display:flex;gap:.6rem;flex-wrap:wrap">
+<a class="aff-btn" href="#appointment" style="background:#cb4335;color:#fff">Schedule Screening Now</a>
+<a class="aff-btn gold" href="https://amzn.to/immune-defense-bundle" rel="nofollow sponsored" target="_blank">View Immune Defense Bundle →</a>
+</div>
+</div>
+</div>
+<!-- NUTRITION -->
+<div class="hpanel" id="tab-nutrition">
+<div style="background:var(--teal-pale);border-radius:10px;padding:1.25rem 1.5rem;margin-bottom:1rem;border-left:4px solid #27ae60">
+<strong>You are what you eat</strong> — and science now confirms that nutrition is the single most powerful lever for preventing chronic disease, optimizing energy, and extending healthy lifespan. Food is your daily medicine.
+      </div>
+<div class="story-box">
+<p>"I was 38, exhausted all the time, 40 pounds overweight, and pre-diabetic. My doctor told me to 'eat better' but gave me no real guidance. I finally saw a functional medicine nutritionist here who ran micronutrient testing and discovered I was severely deficient in magnesium, Vitamin D, and B12. She put me on a whole-food protocol, added targeted supplements, and within 90 days I had lost 22 pounds, my energy was back, and my fasting glucose normalized. Food truly is medicine."</p>
+<div class="story-author">— Andre L., 38, Miami · Verified Patient</div>
+</div>
+<div class="hpanel-grid">
+<div class="hcard tip"><h4>🥗 Evidence-Based Dietary Guidelines</h4><ul><li>Fill half your plate with fruits and vegetables at every meal</li><li>Choose whole grains (oats, quinoa, brown rice) over refined carbs</li><li>Lean proteins: fish, poultry, legumes, nuts, and tofu</li><li>Limit ultra-processed foods, added sugars, and trans fats</li><li>Reduce sodium to &lt;2,300 mg/day (&lt;1,500 if hypertensive)</li><li>Drink 8–10 cups of water daily; limit sugary drinks</li></ul></div>
+<div class="hcard info"><h4>📊 Key Nutritional Targets (Adults)</h4>
+<span class="stat-pill">Fiber: 25–38g/day</span>
+<span class="stat-pill">Protein: 0.8–1.2g per kg body weight</span>
+<span class="stat-pill">Omega-3s: 1.1–1.6g/day (ALA)</span>
+<span class="stat-pill">Vitamin D: 600–2,000 IU/day</span>
+<span class="stat-pill">Calcium: 1,000–1,200 mg/day</span>
+<p style="margin-top:.65rem;font-size:.82rem;color:var(--slate)">Individual needs vary. Our registered dietitians create personalized plans based on micronutrient testing.</p>
+</div>
+<div class="hcard"><h4>🍽️ The Mediterranean Diet</h4><ul><li>Abundant: olive oil, vegetables, legumes, whole grains, fish</li><li>Moderate: poultry, eggs, dairy</li><li>Rare: red meat, processed foods, sweets</li><li>Associated with 25% lower cardiovascular risk (PREDIMED trial)</li><li>Reduces type 2 diabetes risk by up to 23%</li></ul></div>
+<div class="hcard warn"><h4>⚠️ Signs of Nutritional Deficiency</h4><ul><li><strong>Iron:</strong> Fatigue, pale skin, brittle nails, cold hands</li><li><strong>Vitamin D:</strong> Bone pain, muscle weakness, depression</li><li><strong>B12:</strong> Numbness, memory issues, fatigue (especially vegans)</li><li><strong>Magnesium:</strong> Muscle cramps, insomnia, anxiety</li></ul></div>
+</div>
+<h4 style="margin:1.4rem 0 .8rem;font-size:.95rem;color:#0b1f3a">🌿 Top Evidence-Backed Nutritional Supplements</h4>
+<div class="remedy-grid">
+<div class="remedy-card"><div class="r-icon">🌱</div><span class="r-badge">Gut &amp; Immunity</span><h5>Probiotic 50 Billion CFU</h5><p>A diverse multi-strain probiotic restores gut microbiome balance, supports immune function, reduces bloating, and improves nutrient absorption from food.</p><a class="aff-btn gold" href="https://amzn.to/probiotic-50b" rel="nofollow sponsored" target="_blank">Shop Best Sellers →</a></div>
+<div class="remedy-card"><div class="r-icon">🍃</div><span class="r-badge">Detox &amp; Liver</span><h5>Milk Thistle (Silymarin)</h5><p>Used for 2,000 years for liver protection. Silymarin is a potent antioxidant that regenerates liver cells, supports detoxification, and protects against toxin damage.</p><a class="aff-btn gold" href="https://amzn.to/milk-thistle" rel="nofollow sponsored" target="_blank">Shop Best Sellers →</a></div>
+<div class="remedy-card"><div class="r-icon">🍋</div><span class="r-badge">Energy</span><h5>B-Complex + Folate</h5><p>B vitamins are the backbone of cellular energy production. A complete B-complex supports metabolism, nerve function, and mood — especially vital for vegans and older adults.</p><a class="aff-btn gold" href="https://amzn.to/bcomplex-energy" rel="nofollow sponsored" target="_blank">Shop Best Sellers →</a></div>
+<div class="remedy-card"><div class="r-icon">🥬</div><span class="r-badge">Greens Powder</span><h5>Organic Super Greens</h5><p>One scoop delivers the phytonutrient equivalent of 8+ servings of vegetables — spinach, spirulina, chlorella, wheatgrass, and more. Perfect for busy days when eating clean is hard.</p><a class="aff-btn gold" href="https://amzn.to/supergreens-organic" rel="nofollow sponsored" target="_blank">Shop Best Sellers →</a></div>
+</div>
+<p class="disclaimer">* These statements have not been evaluated by the FDA. Always consult a registered dietitian or physician for personalized nutrition advice.</p>
+<div class="aff-cta">
+<div class="aff-cta-text"><h5>🥗 Ready to Eat Your Way to Better Health?</h5><p>Our registered dietitians offer comprehensive micronutrient testing and personalized meal plans — no guessing, just science.</p></div>
+<div style="display:flex;gap:.6rem;flex-wrap:wrap">
+<a class="aff-btn" href="#appointment" style="background:#27ae60;color:#fff">Book Nutrition Consult</a>
+<a class="aff-btn gold" href="https://amzn.to/nutrition-starter-kit" rel="nofollow sponsored" target="_blank">View Nutrition Starter Kit →</a>
+</div>
+</div>
+</div>
+<!-- WOMEN'S -->
+<div class="hpanel" id="tab-womens">
+<div style="background:var(--teal-pale);border-radius:10px;padding:1.25rem 1.5rem;margin-bottom:1rem;border-left:4px solid #e84393">
+<strong>Women's health is uniquely complex</strong> — from the hormonal shifts of the menstrual cycle to the transitions of pregnancy, perimenopause, and beyond. Understanding your body is the first step to thriving in every decade.
+      </div>
+<div class="story-box">
+<p>"At 47 I thought I was going crazy. Hot flashes at 3am, brain fog so thick I forgot my own schedule, and a temper I didn't recognize as my own. My OB confirmed I was in perimenopause and we discussed HRT options. Meanwhile I started Vitex (chaste tree berry) and Black Cohosh for the shorter term, and added evening primrose oil for the hot flashes. Within 6 weeks the night sweats cut in half. Combined with the low-dose HRT my doctor prescribed, I feel like a human again — and I finally sleep."</p>
+<div class="story-author">— Sandra K., 47, Boston · Verified Patient</div>
+</div>
+<div class="hpanel-grid">
+<div class="hcard info"><h4>📋 Women's Preventive Care Schedule</h4><ul><li><strong>Annual:</strong> Well-woman exam, blood pressure, weight, depression screen</li><li><strong>Every 1–3 years:</strong> Pap smear (age 21+), STI screening if sexually active</li><li><strong>Every 1–2 years:</strong> Mammogram (age 40+)</li><li><strong>Age 50+:</strong> Colonoscopy every 10 years, bone density scan (DXA)</li><li><strong>Ongoing:</strong> Folic acid supplementation in reproductive-age women</li></ul></div>
+<div class="hcard tip"><h4>🌸 Menopause — What to Expect</h4><ul><li>Average onset: age 51 (perimenopause begins 4–8 years earlier)</li><li>Hot flashes affect 75% of women; can last 7+ years</li><li>Hormone Replacement Therapy (HRT) is safe for most women under 60</li><li>Weight-bearing exercise protects bone density after menopause</li><li>Vaginal estrogen therapy relieves dryness with minimal systemic risk</li><li>Sleep disruption is common — CBT-I is first-line treatment</li></ul></div>
+<div class="hcard warn"><h4>⚠️ Symptoms That Need Attention</h4><ul><li>Abnormal uterine bleeding or postmenopausal bleeding</li><li>Pelvic pain or pressure lasting more than a few days</li><li>Breast lump, nipple discharge, or skin changes</li><li>Severe or sudden pelvic pain</li><li>Urinary leakage, frequent infections, or painful urination</li></ul></div>
+<div class="hcard"><h4>🤰 Prenatal Care Milestones</h4><ul><li><strong>Week 8–10:</strong> First OB visit, confirmation ultrasound</li><li><strong>Week 11–13:</strong> First trimester screening (NIPT)</li><li><strong>Week 18–22:</strong> Anatomy scan ultrasound</li><li><strong>Week 24–28:</strong> Gestational diabetes screening</li><li><strong>Week 36+:</strong> Weekly visits, GBS screening</li></ul></div>
+</div>
+<h4 style="margin:1.4rem 0 .8rem;font-size:.95rem;color:#0b1f3a">🌿 Herbal Remedies for Women's Hormonal Wellness</h4>
+<div class="remedy-grid">
+<div class="remedy-card"><div class="r-icon">🌿</div><span class="r-badge">Hormone Balance</span><h5>Vitex (Chaste Tree Berry)</h5><p>One of the most extensively studied herbs for women's hormonal health. Supports luteal phase progesterone production and relieves PMS symptoms including bloating, mood swings, and breast tenderness.</p><a class="aff-btn gold" href="https://amzn.to/vitex-womens" rel="nofollow sponsored" target="_blank">Shop Best Sellers →</a></div>
+<div class="remedy-card"><div class="r-icon">🖤</div><span class="r-badge">Menopause Relief</span><h5>Black Cohosh Extract</h5><p>The most studied herb for menopause. Clinical evidence supports its ability to significantly reduce hot flashes, night sweats, and mood-related symptoms during perimenopause.</p><a class="aff-btn gold" href="https://amzn.to/black-cohosh" rel="nofollow sponsored" target="_blank">Shop Best Sellers →</a></div>
+<div class="remedy-card"><div class="r-icon">🌺</div><span class="r-badge">Bone &amp; Skin</span><h5>Evening Primrose Oil</h5><p>Rich in GLA (gamma-linolenic acid), evening primrose oil reduces hot flash frequency, supports skin elasticity, and helps with hormonal acne and breast tenderness.</p><a class="aff-btn gold" href="https://amzn.to/evening-primrose" rel="nofollow sponsored" target="_blank">Shop Best Sellers →</a></div>
+<div class="remedy-card"><div class="r-icon">🦴</div><span class="r-badge">Bone Density</span><h5>Calcium + Magnesium + D3</h5><p>Women lose bone mass rapidly after menopause. This triple combination is the gold-standard supplement for maintaining bone density and preventing osteoporosis naturally.</p><a class="aff-btn gold" href="https://amzn.to/womens-bone-support" rel="nofollow sponsored" target="_blank">Shop Best Sellers →</a></div>
+</div>
+<p class="disclaimer">* These statements have not been evaluated by the FDA. Herbal supplements can interact with hormonal medications. Always consult your OB-GYN before use.</p>
+<div class="aff-cta">
+<div class="aff-cta-text"><h5>🌸 Your Health Deserves a Whole-Woman Approach</h5><p>Our OB-GYNs and women's health specialists integrate conventional care with evidence-based natural therapies for every stage of life.</p></div>
+<div style="display:flex;gap:.6rem;flex-wrap:wrap">
+<a class="aff-btn" href="#appointment" style="background:#e84393;color:#fff">Book Women's Health Appt</a>
+<a class="aff-btn gold" href="https://amzn.to/womens-wellness-bundle" rel="nofollow sponsored" target="_blank">View Women's Wellness Bundle →</a>
+</div>
+</div>
+</div>
+<!-- MEN'S -->
+<div class="hpanel" id="tab-mens">
+<div style="background:var(--teal-pale);border-radius:10px;padding:1.25rem 1.5rem;margin-bottom:1rem;border-left:4px solid #2196f3">
+<strong>Men die on average 5 years younger than women</strong> — largely due to avoiding doctors and ignoring symptoms. Taking control of your health is the single most powerful act of strength a man can make.
+      </div>
+<div class="story-box">
+<p>"I was 45, constantly exhausted, putting on belly fat despite working out, and my libido had flatlined. I assumed it was 'just getting older.' My doctor ran a testosterone panel — my total T was 287 ng/dL (well below the optimal 600–800 range). She recommended lifestyle changes first: resistance training, sleep optimization, zinc, ashwagandha, and vitamin D. In 4 months my testosterone climbed to 541 ng/dL naturally. My energy, mood, and strength are better than my 30s."</p>
+<div class="story-author">— Marcus D., 45, Dallas · Verified Patient</div>
+</div>
+<div class="hpanel-grid">
+<div class="hcard info"><h4>📋 Men's Preventive Screening Schedule</h4><ul><li><strong>Annual:</strong> Blood pressure, BMI, lipid panel, depression screen</li><li><strong>Age 35+:</strong> Fasting blood glucose every 3 years</li><li><strong>Age 45+:</strong> Colorectal cancer screening; discuss PSA testing</li><li><strong>Age 65+:</strong> Abdominal aortic aneurysm ultrasound</li><li><strong>Age 50+:</strong> Lung cancer screening if smoking history</li></ul></div>
+<div class="hcard tip"><h4>🏃 Men's Top Preventable Health Risks</h4><ul><li><strong>Heart disease:</strong> Leading cause of death in men — 1 in 4</li><li><strong>Prostate cancer:</strong> Most common cancer in men; 1 in 8 diagnosed</li><li><strong>Testicular cancer:</strong> Most common in men aged 15–35</li><li><strong>Colon cancer:</strong> Colonoscopy at 45 can prevent it entirely</li><li><strong>Suicide:</strong> Men account for 78% of suicides — seek help early</li></ul></div>
+<div class="hcard warn"><h4>⚠️ Low Testosterone Warning Signs</h4><ul><li>Persistent fatigue and low energy despite adequate sleep</li><li>Reduced muscle mass and increased belly fat</li><li>Decreased libido and sexual function</li><li>Brain fog, difficulty concentrating, or mood changes</li><li>Irritability, depression, or emotional withdrawal</li><li>Reduced body hair, weaker erections</li></ul></div>
+<div class="hcard"><h4>💪 Optimizing Testosterone Naturally</h4><ul><li>Resistance training 3–4x weekly — especially compound lifts</li><li>Sleep 7–9 hours — 70% of daily testosterone is made during sleep</li><li>Reduce body fat — adipose tissue converts testosterone to estrogen</li><li>Manage stress — cortisol directly suppresses testosterone production</li><li>Minimize alcohol — even moderate amounts lower T levels</li></ul></div>
+</div>
+<h4 style="margin:1.4rem 0 .8rem;font-size:.95rem;color:#0b1f3a">🌿 Natural Testosterone &amp; Men's Vitality Support</h4>
+<div class="remedy-grid">
+<div class="remedy-card"><div class="r-icon">🌿</div><span class="r-badge">Testosterone</span><h5>Ashwagandha KSM-66</h5><p>A landmark study found KSM-66 ashwagandha increased testosterone by 17% and DHEA-S by 18% in healthy men. Also reduces cortisol, the primary testosterone suppressor.</p><a class="aff-btn gold" href="https://amzn.to/ashwagandha-mens" rel="nofollow sponsored" target="_blank">Shop Best Sellers →</a></div>
+<div class="remedy-card"><div class="r-icon">🔩</div><span class="r-badge">T-Support</span><h5>Zinc + Magnesium (ZMA)</h5><p>Zinc is essential for testosterone synthesis. Magnesium improves sleep quality — and better sleep means higher testosterone. ZMA is the classic men's vitality stack for good reason.</p><a class="aff-btn gold" href="https://amzn.to/zma-testosterone" rel="nofollow sponsored" target="_blank">Shop Best Sellers →</a></div>
+<div class="remedy-card"><div class="r-icon">🌱</div><span class="r-badge">Prostate Health</span><h5>Saw Palmetto Extract</h5><p>Saw palmetto inhibits 5-alpha-reductase, reducing DHT conversion and supporting prostate health. Widely used for BPH (enlarged prostate) symptoms and urinary flow improvement.</p><a class="aff-btn gold" href="https://amzn.to/saw-palmetto" rel="nofollow sponsored" target="_blank">Shop Best Sellers →</a></div>
+<div class="remedy-card"><div class="r-icon">🔥</div><span class="r-badge">Libido &amp; Stamina</span><h5>Tongkat Ali (Eurycoma)</h5><p>Used for centuries in Southeast Asia as a men's tonic. Modern studies confirm it raises free testosterone by reducing SHBG, improves sperm quality, and significantly enhances libido.</p><a class="aff-btn gold" href="https://amzn.to/tongkat-ali-mens" rel="nofollow sponsored" target="_blank">Shop Best Sellers →</a></div>
+</div>
+<p class="disclaimer">* These statements have not been evaluated by the FDA. Testosterone optimization supplements are not a substitute for proper diagnosis. Always confirm hormone levels via blood test before supplementing.</p>
+<div class="aff-cta">
+<div class="aff-cta-text"><h5>💪 Real Men Take Care of Their Health</h5><p>Get a complete men's hormone panel, cardiovascular risk assessment, and personalized vitality plan from our men's health specialists.</p></div>
+<div style="display:flex;gap:.6rem;flex-wrap:wrap">
+<a class="aff-btn" href="#appointment" style="background:#2196f3;color:#fff">Book Men's Health Check</a>
+<a class="aff-btn gold" href="https://amzn.to/mens-vitality-bundle" rel="nofollow sponsored" target="_blank">View Men's Vitality Bundle →</a>
+</div>
+</div>
+</div>
+<!-- KIDS -->
+<div class="hpanel" id="tab-sleep">
+<div style="background:var(--teal-pale);border-radius:10px;padding:1.25rem 1.5rem;margin-bottom:1rem;border-left:4px solid #2e4077">
+<strong>70 million Americans</strong> suffer from a chronic sleep disorder. Poor sleep is not just tiredness — it directly causes obesity, diabetes, heart disease, depression, dementia, and early death. Sleep is the single most undervalued pillar of health.
+      </div>
+<div class="story-box">
+<p>"I hadn't slept more than 4 broken hours a night in 3 years. I was irritable, gaining weight, and my doctor said my cortisol levels were through the roof. I started seeing our sleep specialist who put me on CBT-I therapy. She also recommended magnesium glycinate, ashwagandha, passionflower extract, and tart cherry juice before bed. Within 6 weeks I was sleeping 6.5 hours. Now at 3 months I sleep a full 7–8 hours most nights. I feel like I have a new life."</p>
+<div class="story-author">— Jared N., 41, Phoenix · Verified Patient</div>
+</div>
+<div class="hpanel-grid">
+<div class="hcard warn"><h4>⚠️ Signs of a Sleep Disorder</h4><ul><li>Taking more than 30 minutes to fall asleep most nights</li><li>Waking frequently and struggling to fall back asleep</li><li>Loud snoring, gasping, or choking during sleep</li><li>Excessive daytime sleepiness despite adequate time in bed</li><li>Restless, uncomfortable leg sensations at night</li><li>Needing caffeine to function normally throughout the day</li></ul></div>
+<div class="hcard"><h4>😴 What Happens During Healthy Sleep</h4>
+<span class="stat-pill">Stage 1–2: Light sleep, brain waves slow</span>
+<span class="stat-pill">Stage 3: Deep sleep — body repairs tissue</span>
+<span class="stat-pill">REM: Memory consolidation, emotional processing</span>
+<span class="stat-pill">Optimal Duration: 7–9 hours for adults</span>
+<p style="margin-top:.65rem;font-size:.82rem;color:var(--slate)">Each sleep cycle is ~90 minutes. Most adults need 5 full cycles. Deep and REM sleep are critical — and both are disrupted by alcohol, stress, and screen light.</p>
+</div>
+<div class="hcard tip"><h4>💡 Proven Sleep Hygiene Habits</h4><ul><li>Fix your wake time — even on weekends</li><li>No screens (phone, TV) for 60 minutes before bed</li><li>Keep bedroom cool: 65–68°F (18–20°C) is optimal</li><li>Avoid caffeine after 2pm — it has a 6-hour half-life</li><li>No alcohol within 3 hours of sleep — it destroys REM</li><li>15 minutes of morning sunlight resets your circadian clock</li></ul></div>
+<div class="hcard info"><h4>📋 Sleep Conditions We Treat</h4><ul><li><strong>Insomnia:</strong> CBT-I is the #1 evidence-based treatment</li><li><strong>Obstructive Sleep Apnea:</strong> CPAP, oral devices, positional therapy</li><li><strong>Restless Legs Syndrome:</strong> Iron supplementation, medications</li><li><strong>Narcolepsy &amp; hypersomnia:</strong> Specialist evaluation and treatment</li><li><strong>Shift work disorder:</strong> Light therapy and melatonin protocols</li></ul></div>
+</div>
+<h4 style="margin:1.4rem 0 .8rem;font-size:.95rem;color:#0b1f3a">🌿 Nature's Most Effective Sleep Remedies</h4>
+<div class="remedy-grid">
+<div class="remedy-card"><div class="r-icon">🌼</div><span class="r-badge">Deep Sleep</span><h5>Passionflower Extract</h5><p>Clinical trials show passionflower improves overall sleep quality and reduces the time to fall asleep. It works by raising GABA levels in the brain — the same mechanism as sleep medications, but gently.</p><a class="aff-btn gold" href="https://amzn.to/passionflower-sleep" rel="nofollow sponsored" target="_blank">Shop Best Sellers →</a></div>
+<div class="remedy-card"><div class="r-icon">🌿</div><span class="r-badge">Calm &amp; Sleep</span><h5>Valerian Root Extract</h5><p>One of the most studied sleep herbs in the world. Valerian reduces the time to fall asleep, improves sleep quality, and reduces nighttime waking — without the morning grogginess of sleep medications.</p><a class="aff-btn gold" href="https://amzn.to/valerian-root-sleep" rel="nofollow sponsored" target="_blank">Shop Best Sellers →</a></div>
+<div class="remedy-card"><div class="r-icon">🍒</div><span class="r-badge">Natural Melatonin</span><h5>Tart Cherry Extract</h5><p>Tart (Montmorency) cherries are one of the few natural food sources of melatonin. Studies show tart cherry supplementation increases sleep time by 85 minutes and improves sleep efficiency significantly.</p><a class="aff-btn gold" href="https://amzn.to/tart-cherry-sleep" rel="nofollow sponsored" target="_blank">Shop Best Sellers →</a></div>
+<div class="remedy-card"><div class="r-icon">💊</div><span class="r-badge">Nervous System</span><h5>Magnesium Glycinate</h5><p>Magnesium activates the parasympathetic "rest and digest" nervous system and regulates melatonin production. Glycinate form is best absorbed and won't cause digestive upset. A foundational sleep supplement.</p><a class="aff-btn gold" href="https://amzn.to/magnesium-glycinate-sleep" rel="nofollow sponsored" target="_blank">Shop Best Sellers →</a></div>
+</div>
+<p class="disclaimer">* These statements have not been evaluated by the FDA. Natural sleep aids are not a substitute for diagnosis and treatment of sleep disorders. Consult your physician, especially if you take medications.</p>
+<div class="aff-cta">
+<div class="aff-cta-text"><h5>🌙 Stop Surviving on Bad Sleep — Start Thriving</h5><p>Our sleep medicine specialists offer full polysomnography sleep studies, CBT-I therapy, and integrative sleep protocols tailored to you.</p></div>
+<div style="display:flex;gap:.6rem;flex-wrap:wrap">
+<a class="aff-btn" href="#appointment" style="background:#2e4077;color:#fff">Book Sleep Consultation</a>
+<a class="aff-btn gold" href="https://amzn.to/sleep-remedy-bundle" rel="nofollow sponsored" target="_blank">View Natural Sleep Bundle →</a>
+</div>
+</div>
+</div>
+<div class="hpanel" id="tab-weight">
+<div style="background:var(--teal-pale);border-radius:10px;padding:1.25rem 1.5rem;margin-bottom:1rem;border-left:4px solid #1abc9c">
+<strong>73% of American adults are overweight or obese.</strong> But weight is not a willpower problem — it is a metabolic, hormonal, and environmental challenge. The right combination of medical support and targeted natural remedies can change everything.
+      </div>
+<div class="story-box">
+<p>"I had tried every diet for 15 years — keto, intermittent fasting, weight watchers. Nothing stuck. Then my doctor here found I had insulin resistance and low thyroid function that had never been properly treated. She put me on a protocol: dietary changes, resistance training, berberine for insulin sensitivity, green tea EGCG, and a high-protein diet. In 5 months I lost 38 pounds. The difference was treating the underlying metabolism — not just cutting calories."</p>
+<div class="story-author">— Tanya W., 39, Philadelphia · Verified Patient</div>
+</div>
+<div class="hpanel-grid">
+<div class="hcard warn"><h4>⚠️ Signs of Metabolic Dysfunction</h4><ul><li>Weight gain despite calorie restriction or normal eating</li><li>Belly fat that won't respond to diet or exercise</li><li>Extreme fatigue after meals, especially carbohydrate-heavy ones</li><li>Constant cravings for sugar or processed food</li><li>Blood sugar above 100 mg/dL fasting (prediabetes range)</li><li>Triglycerides above 150, low HDL cholesterol</li></ul></div>
+<div class="hcard"><h4>📊 Understanding Your Metabolic Numbers</h4>
+<span class="stat-pill">Healthy BMI: 18.5–24.9</span>
+<span class="stat-pill">Waist (Men): &lt;40 inches</span>
+<span class="stat-pill">Waist (Women): &lt;35 inches</span>
+<span class="stat-pill">Fasting Insulin: &lt;10 µIU/mL</span>
+<span class="stat-pill">Triglycerides: &lt;150 mg/dL</span>
+<p style="margin-top:.65rem;font-size:.82rem;color:var(--slate)">Our metabolic panel goes beyond BMI to assess insulin resistance, hormone levels, inflammation markers, and gut health — the true drivers of weight.</p>
+</div>
+<div class="hcard tip"><h4>💡 Evidence-Based Weight Loss Principles</h4><ul><li>Protein-first meals (1g per lb of body weight) preserve muscle while burning fat</li><li>Resistance training 3×/week is superior to cardio for metabolic rate</li><li>Sleep deprivation raises ghrelin (hunger) and lowers leptin (fullness)</li><li>Stress raises cortisol — which directly causes abdominal fat storage</li><li>A 500-calorie daily deficit = approximately 1 lb of fat loss per week</li></ul></div>
+<div class="hcard info"><h4>💊 Our Medical Weight Loss Options</h4><ul><li>Comprehensive metabolic panel &amp; body composition (DEXA)</li><li>GLP-1 agonists: Semaglutide (Ozempic/Wegovy), Tirzepatide</li><li>Thyroid optimization if clinically indicated</li><li>Registered dietitian meal planning</li><li>Behavioral coaching and stress management</li><li>Monthly progress tracking with physician oversight</li></ul></div>
+</div>
+<h4 style="margin:1.4rem 0 .8rem;font-size:.95rem;color:#0b1f3a">🌿 Clinically-Studied Natural Metabolism Boosters</h4>
+<div class="remedy-grid">
+<div class="remedy-card"><div class="r-icon">🌱</div><span class="r-badge">Insulin Sensitivity</span><h5>Berberine HCl 1200mg</h5><p>Called "nature's Ozempic," berberine activates AMPK (the metabolic master switch), improves insulin sensitivity, reduces fat storage, and lowers blood sugar — with clinical results rivaling Metformin.</p><a class="aff-btn gold" href="https://amzn.to/berberine-weight" rel="nofollow sponsored" target="_blank">Shop Best Sellers →</a></div>
+<div class="remedy-card"><div class="r-icon">🍵</div><span class="r-badge">Fat Burning</span><h5>Green Tea EGCG Extract</h5><p>EGCG, the active polyphenol in green tea, increases fat oxidation by 17% and boosts metabolic rate. Studies show it specifically targets visceral (belly) fat — the most dangerous type.</p><a class="aff-btn gold" href="https://amzn.to/greentea-egcg" rel="nofollow sponsored" target="_blank">Shop Best Sellers →</a></div>
+<div class="remedy-card"><div class="r-icon">🌶️</div><span class="r-badge">Thermogenic</span><h5>Capsaicin (Cayenne Pepper)</h5><p>Capsaicin activates brown adipose tissue (BAT), raises core temperature, and boosts metabolic rate for 4–5 hours after ingestion. Clinical studies show 50–100mg daily reduces appetite and increases energy expenditure.</p><a class="aff-btn gold" href="https://amzn.to/capsaicin-metabolism" rel="nofollow sponsored" target="_blank">Shop Best Sellers →</a></div>
+<div class="remedy-card"><div class="r-icon">🥑</div><span class="r-badge">Body Composition</span><h5>CLA (Conjugated Linoleic Acid)</h5><p>A naturally occurring fatty acid that reduces body fat while preserving lean muscle mass. Most effective when combined with resistance training. Studies show 3.2g daily reduces fat mass by an average of 0.2 lbs/week.</p><a class="aff-btn gold" href="https://amzn.to/cla-body-composition" rel="nofollow sponsored" target="_blank">Shop Best Sellers →</a></div>
+</div>
+<p class="disclaimer">* These statements have not been evaluated by the FDA. Supplements support but do not replace a calorie-appropriate diet and exercise program. Consult your physician before use, especially if taking diabetes medications.</p>
+<div class="aff-cta">
+<div class="aff-cta-text"><h5>⚖️ Your Weight Is a Medical Issue — Treat It Like One</h5><p>Our physician-led weight loss program gets to the root cause: hormones, metabolism, gut health, and habits — for results that last.</p></div>
+<div style="display:flex;gap:.6rem;flex-wrap:wrap">
+<a class="aff-btn" href="#appointment" style="background:#1abc9c;color:#fff">Start Medical Weight Program</a>
+<a class="aff-btn gold" href="https://amzn.to/weight-loss-bundle" rel="nofollow sponsored" target="_blank">View Metabolism Bundle →</a>
+</div>
+</div>
+</div>
+<div class="hpanel" id="tab-kids">
+<div style="background:var(--teal-pale);border-radius:10px;padding:1.25rem 1.5rem;margin-bottom:1rem;border-left:4px solid #e67e22">
+<strong>The first 1,000 days of life</strong> — from conception to age 2 — lay the biological foundation for lifelong health. Well-child care, proper nutrition, and a healthy gut microbiome during childhood create advantages that last a lifetime.
+      </div>
+<div class="story-box">
+<p>"My 7-year-old had constant ear infections, eczema, and was always the first to catch every cold going around school. Our pediatrician suggested we look at gut health. We added a children's probiotic, elderberry syrup, and vitamin D drops to her routine, and overhauled her diet to remove processed foods. Over the next school year she had zero ear infections — compared to six the year before. Her skin cleared up too. I wish we had known sooner."</p>
+<div class="story-author">— Priya S., mother of 7-year-old · Chicago · Verified Patient</div>
+</div>
+<div class="hpanel-grid">
+<div class="hcard info"><h4>📋 Well-Child Visit Schedule (AAP)</h4><ul><li><strong>Newborn:</strong> 3–5 days, 1 month, 2 months</li><li><strong>Infancy:</strong> 4, 6, 9, 12 months</li><li><strong>Toddler:</strong> 15, 18, 24, 30 months</li><li><strong>Preschool:</strong> Age 3, 4, 5 years</li><li><strong>School-age:</strong> Annual visit ages 6–21</li></ul></div>
+<div class="hcard tip"><h4>💉 Childhood Immunization Milestones</h4><ul><li><strong>Birth:</strong> Hepatitis B (dose 1)</li><li><strong>2 months:</strong> DTaP, Hib, IPV, PCV15, Rotavirus</li><li><strong>6 months:</strong> Influenza (annually thereafter)</li><li><strong>12–15 months:</strong> MMR, Varicella, Hep A</li><li><strong>4–6 years:</strong> DTaP, MMR, Varicella boosters</li><li><strong>11–12 years:</strong> HPV series, Tdap, MenACWY</li></ul></div>
+<div class="hcard warn"><h4>⚠️ When to Seek Urgent Pediatric Care</h4><ul><li>Fever over 100.4°F in infants under 3 months</li><li>Difficulty breathing or ribs visibly showing</li><li>Stiff neck, severe headache with fever</li><li>First seizure — any age</li><li>Significant head injury or loss of consciousness</li><li>Rash with high fever</li></ul></div>
+<div class="hcard"><h4>🧒 Childhood Developmental Milestones</h4><ul><li><strong>2 months:</strong> Smiles at people, coos and makes sounds</li><li><strong>6 months:</strong> Sits with support, responds to name</li><li><strong>12 months:</strong> Says "mama/dada," pulls to stand</li><li><strong>24 months:</strong> 50+ words, follows 2-step instructions</li><li><strong>36 months:</strong> 3-word sentences, can dress with help</li></ul></div>
+</div>
+<h4 style="margin:1.4rem 0 .8rem;font-size:.95rem;color:#0b1f3a">🌿 Pediatrician-Approved Natural Supplements for Kids</h4>
+<div class="remedy-grid">
+<div class="remedy-card"><div class="r-icon">🫐</div><span class="r-badge">Immune Boost</span><h5>Elderberry Syrup for Kids</h5><p>Sambucus elderberry is one of the most studied immune herbs for children. Studies show it reduces cold duration by 56% and cuts flu severity significantly. Delicious and kid-approved.</p><a class="aff-btn gold" href="https://amzn.to/elderberry-kids" rel="nofollow sponsored" target="_blank">Shop Best Sellers →</a></div>
+<div class="remedy-card"><div class="r-icon">🦠</div><span class="r-badge">Gut Health</span><h5>Children's Probiotic Gummies</h5><p>A healthy gut microbiome in childhood is foundational for immunity, behavior, and mood. Multi-strain children's probiotics reduce ear infections, eczema, and antibiotic-associated diarrhea.</p><a class="aff-btn gold" href="https://amzn.to/kids-probiotic" rel="nofollow sponsored" target="_blank">Shop Best Sellers →</a></div>
+<div class="remedy-card"><div class="r-icon">☀️</div><span class="r-badge">Bone &amp; Immunity</span><h5>Vitamin D3 Drops for Kids</h5><p>Over 60% of children are Vitamin D deficient, especially in northern climates. Adequate D3 is essential for bone development, immune function, and mood regulation in growing children.</p><a class="aff-btn gold" href="https://amzn.to/vitd-kids-drops" rel="nofollow sponsored" target="_blank">Shop Best Sellers →</a></div>
+<div class="remedy-card"><div class="r-icon">🧠</div><span class="r-badge">Brain Development</span><h5>Omega-3 DHA for Kids</h5><p>DHA is the primary structural fat of the developing brain. Children who consume adequate DHA show better focus, reading ability, and behavior. Essential for kids who don't eat fish regularly.</p><a class="aff-btn gold" href="https://amzn.to/omega3-dha-kids" rel="nofollow sponsored" target="_blank">Shop Best Sellers →</a></div>
+</div>
+<p class="disclaimer">* Always consult your child's pediatrician before starting any supplement. Dosages vary by age and weight.</p>
+<div class="aff-cta">
+<div class="aff-cta-text"><h5>👶 Give Your Child the Healthiest Foundation</h5><p>Our pediatricians take a whole-child approach — combining preventive care, nutritional guidance, and developmental support for every stage of childhood.</p></div>
+<div style="display:flex;gap:.6rem;flex-wrap:wrap">
+<a class="aff-btn" href="#appointment" style="background:#e67e22;color:#fff">Book Pediatric Visit</a>
+<a class="aff-btn gold" href="https://amzn.to/kids-wellness-bundle" rel="nofollow sponsored" target="_blank">View Kids Wellness Bundle →</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ═══════════════════════════════════════════════
+     ADSENSE UNIT #3 — In-Content 2 (After Health Info)
+     Zone: in_content_healthinfo | pub-8176918589359902
+     ═══════════════════════════════════════════════ -->
+<div class="adsense-section">
+<div class="container" style="display:flex;justify-content:center">
+<div class="adsense-wrap adsense-leaderboard" id="ad-in-content-2">
+<ins class="adsbygoogle" data-ad-client="ca-pub-8176918589359902" data-ad-format="horizontal" data-ad-slot="5218292376" data-full-width-responsive="true" style="display:block;width:728px;height:90px"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+</div>
+</div>
+<!-- HEALTH NICHE CTAs -->
+<section class="section" id="niches" style="background:#fff">
+<div class="container">
+<div class="sec-hd">
+<span class="sec-badge">Health Topics</span>
+<h2 class="sec-title">Explore Specialized Health Programs</h2>
+<p class="sec-sub">Healthy Living Blueprint offers dedicated programs for the most common and serious health conditions — each backed by our specialist teams and the latest clinical evidence.</p>
+</div>
+<div class="niche-grid">
+<!-- HEART -->
+<div class="niche-card">
+<div class="niche-top nc-heart">
+<div class="niche-icon">❤️</div>
+<h3>Heart Disease &amp; Cardiovascular Health</h3>
+<p>Heart disease is America's #1 killer — but up to 80% of heart attacks are preventable. Our cardiologists offer advanced diagnostics and personalized prevention programs that combine modern medicine with nature's most powerful heart herbs.</p>
+<div class="niche-facts"><strong>⭐ Patient Win:</strong> "I lowered my blood pressure from 158/94 to 118/76 in 4 months using a combination of Hawthorn Berry, CoQ10, omega-3s, and my cardiologist's protocol. No side effects — just results."<br/>— Robert M., 52</div>
+<div style="margin-top:.8rem;display:flex;gap:.5rem;flex-wrap:wrap">
+<span style="font-size:.72rem;background:rgba(255,255,255,.25);color:#fff;padding:.2rem .6rem;border-radius:50px;font-weight:700">🌿 Hawthorn Berry</span>
+<span style="font-size:.72rem;background:rgba(255,255,255,.25);color:#fff;padding:.2rem .6rem;border-radius:50px;font-weight:700">⚡ CoQ10</span>
+<span style="font-size:.72rem;background:rgba(255,255,255,.25);color:#fff;padding:.2rem .6rem;border-radius:50px;font-weight:700">🐟 Omega-3</span>
+<span style="font-size:.72rem;background:rgba(255,255,255,.25);color:#fff;padding:.2rem .6rem;border-radius:50px;font-weight:700">🧄 Aged Garlic</span>
+</div>
+</div>
+<div class="niche-bottom" style="display:flex;flex-direction:column;gap:.5rem">
+<a class="btn btn-sm" href="#appointment" style="background:#e74c3c;color:#fff;text-align:center">❤️ Book Cardiac Screening</a>
+<a class="btn btn-sm" href="https://amzn.to/heart-bundle" rel="nofollow sponsored" style="background:linear-gradient(135deg,#f59e0b,#d97706);color:#fff;text-align:center" target="_blank">🛒 Shop Heart Health Supplements →</a>
+<a class="btn btn-sm btn-teal-o" href="#health-info" style="text-align:center">Read Full Heart Guide</a>
+</div>
+</div>
+<!-- MENTAL HEALTH -->
+<div class="niche-card">
+<div class="niche-top nc-mind">
+<div class="niche-icon">🧠</div>
+<h3>Mental Wellness &amp; Behavioral Health</h3>
+<p>Depression, anxiety, PTSD, and ADHD are treatable — yet most people suffer for years before seeking help. Our mental health team pairs evidence-based therapy with clinically-studied natural mood support.</p>
+<div class="niche-facts"><strong>⭐ Patient Win:</strong> "Ashwagandha, L-Theanine, and magnesium glycinate alongside CBT sessions changed my life. My anxiety symptoms dropped dramatically in 8 weeks without going straight to medication."<br/>— Keisha R., 31</div>
+<div style="margin-top:.8rem;display:flex;gap:.5rem;flex-wrap:wrap">
+<span style="font-size:.72rem;background:rgba(255,255,255,.25);color:#fff;padding:.2rem .6rem;border-radius:50px;font-weight:700">🌿 Ashwagandha</span>
+<span style="font-size:.72rem;background:rgba(255,255,255,.25);color:#fff;padding:.2rem .6rem;border-radius:50px;font-weight:700">🍵 L-Theanine</span>
+<span style="font-size:.72rem;background:rgba(255,255,255,.25);color:#fff;padding:.2rem .6rem;border-radius:50px;font-weight:700">🌼 St. John's Wort</span>
+<span style="font-size:.72rem;background:rgba(255,255,255,.25);color:#fff;padding:.2rem .6rem;border-radius:50px;font-weight:700">💊 Magnesium</span>
+</div>
+</div>
+<div class="niche-bottom" style="display:flex;flex-direction:column;gap:.5rem">
+<a class="btn btn-sm" href="#appointment" style="background:#9b59b6;color:#fff;text-align:center">🧠 Book Mental Health Eval</a>
+<a class="btn btn-sm" href="https://amzn.to/mental-calm-bundle" rel="nofollow sponsored" style="background:linear-gradient(135deg,#f59e0b,#d97706);color:#fff;text-align:center" target="_blank">🛒 Shop Calm &amp; Mood Bundle →</a>
+<a class="btn btn-sm" href="#health-info" style="color:#9b59b6;border:2px solid #9b59b6;border-radius:50px;background:transparent;text-align:center">Read Full Mental Health Guide</a>
+</div>
+</div>
+<!-- DIABETES -->
+<div class="niche-card">
+<div class="niche-top nc-diabetes">
+<div class="niche-icon">💉</div>
+<h3>Diabetes &amp; Blood Sugar Management</h3>
+<p>Our endocrinology team specializes in Type 1, Type 2, and prediabetes using CGM technology, nutrition therapy, and powerful natural blood sugar support shown in clinical trials to rival some medications.</p>
+<div class="niche-facts"><strong>⭐ Patient Win:</strong> "Berberine, Ceylon cinnamon, and a low-carb diet dropped my HbA1c from 8.9% to 6.4% in 6 months. My doctor called it remarkable."<br/>— Diane T., 44</div>
+<div style="margin-top:.8rem;display:flex;gap:.5rem;flex-wrap:wrap">
+<span style="font-size:.72rem;background:rgba(255,255,255,.25);color:#fff;padding:.2rem .6rem;border-radius:50px;font-weight:700">🌱 Berberine</span>
+<span style="font-size:.72rem;background:rgba(255,255,255,.25);color:#fff;padding:.2rem .6rem;border-radius:50px;font-weight:700">🍂 Ceylon Cinnamon</span>
+<span style="font-size:.72rem;background:rgba(255,255,255,.25);color:#fff;padding:.2rem .6rem;border-radius:50px;font-weight:700">🍈 Bitter Melon</span>
+<span style="font-size:.72rem;background:rgba(255,255,255,.25);color:#fff;padding:.2rem .6rem;border-radius:50px;font-weight:700">🪨 Chromium</span>
+</div>
+</div>
+<div class="niche-bottom" style="display:flex;flex-direction:column;gap:.5rem">
+<a class="btn btn-sm" href="#appointment" style="background:#27ae60;color:#fff;text-align:center">💉 Book Diabetes Consult</a>
+<a class="btn btn-sm" href="https://amzn.to/diabetes-natural-kit" rel="nofollow sponsored" style="background:linear-gradient(135deg,#f59e0b,#d97706);color:#fff;text-align:center" target="_blank">🛒 Shop Diabetes Support Bundle →</a>
+<a class="btn btn-sm" href="#health-info" style="color:#27ae60;border:2px solid #27ae60;border-radius:50px;background:transparent;text-align:center">Read Full Diabetes Guide</a>
+</div>
+</div>
+<!-- WOMEN'S HEALTH -->
+<div class="niche-card">
+<div class="niche-top nc-women">
+<div class="niche-icon">🌸</div>
+<h3>Women's Health, Hormones &amp; OB-GYN</h3>
+<p>Comprehensive women's health from adolescence through menopause — prenatal care, PCOS, endometriosis, hormone balance, and natural remedies for every stage of a woman's life.</p>
+<div class="niche-facts"><strong>⭐ Patient Win:</strong> "Vitex and Black Cohosh cut my perimenopausal night sweats in half within 6 weeks. Combined with low-dose HRT, I finally sleep again."<br/>— Sandra K., 47</div>
+<div style="margin-top:.8rem;display:flex;gap:.5rem;flex-wrap:wrap">
+<span style="font-size:.72rem;background:rgba(255,255,255,.25);color:#fff;padding:.2rem .6rem;border-radius:50px;font-weight:700">🌿 Vitex</span>
+<span style="font-size:.72rem;background:rgba(255,255,255,.25);color:#fff;padding:.2rem .6rem;border-radius:50px;font-weight:700">🖤 Black Cohosh</span>
+<span style="font-size:.72rem;background:rgba(255,255,255,.25);color:#fff;padding:.2rem .6rem;border-radius:50px;font-weight:700">🌺 Evening Primrose</span>
+<span style="font-size:.72rem;background:rgba(255,255,255,.25);color:#fff;padding:.2rem .6rem;border-radius:50px;font-weight:700">🦴 Calcium+D3</span>
+</div>
+</div>
+<div class="niche-bottom" style="display:flex;flex-direction:column;gap:.5rem">
+<a class="btn btn-sm" href="#appointment" style="background:#e84393;color:#fff;text-align:center">🌸 Book Women's Health Appt</a>
+<a class="btn btn-sm" href="https://amzn.to/womens-wellness-bundle" rel="nofollow sponsored" style="background:linear-gradient(135deg,#f59e0b,#d97706);color:#fff;text-align:center" target="_blank">🛒 Shop Women's Wellness Bundle →</a>
+<a class="btn btn-sm" href="#health-info" style="color:#e84393;border:2px solid #e84393;border-radius:50px;background:transparent;text-align:center">Read Full Women's Health Guide</a>
+</div>
+</div>
+<!-- MEN'S HEALTH -->
+<div class="niche-card">
+<div class="niche-top nc-men">
+<div class="niche-icon">🏃</div>
+<h3>Men's Health, Testosterone &amp; Vitality</h3>
+<p>From prostate health and testosterone optimization to cardiovascular risk and mental wellness — our men's health clinic provides confidential, comprehensive care with powerful natural vitality support.</p>
+<div class="niche-facts"><strong>⭐ Patient Win:</strong> "Ashwagandha, ZMA, and lifestyle changes raised my testosterone from 287 to 541 ng/dL naturally in 4 months. My energy and strength are better than my 30s."<br/>— Marcus D., 45</div>
+<div style="margin-top:.8rem;display:flex;gap:.5rem;flex-wrap:wrap">
+<span style="font-size:.72rem;background:rgba(255,255,255,.25);color:#fff;padding:.2rem .6rem;border-radius:50px;font-weight:700">🌿 Ashwagandha</span>
+<span style="font-size:.72rem;background:rgba(255,255,255,.25);color:#fff;padding:.2rem .6rem;border-radius:50px;font-weight:700">🔩 ZMA</span>
+<span style="font-size:.72rem;background:rgba(255,255,255,.25);color:#fff;padding:.2rem .6rem;border-radius:50px;font-weight:700">🌱 Saw Palmetto</span>
+<span style="font-size:.72rem;background:rgba(255,255,255,.25);color:#fff;padding:.2rem .6rem;border-radius:50px;font-weight:700">🔥 Tongkat Ali</span>
+</div>
+</div>
+<div class="niche-bottom" style="display:flex;flex-direction:column;gap:.5rem">
+<a class="btn btn-sm" href="#appointment" style="background:#2196f3;color:#fff;text-align:center">💪 Book Men's Health Check</a>
+<a class="btn btn-sm" href="https://amzn.to/mens-vitality-bundle" rel="nofollow sponsored" style="background:linear-gradient(135deg,#f59e0b,#d97706);color:#fff;text-align:center" target="_blank">🛒 Shop Men's Vitality Bundle →</a>
+<a class="btn btn-sm" href="#health-info" style="color:#2196f3;border:2px solid #2196f3;border-radius:50px;background:transparent;text-align:center">Read Full Men's Health Guide</a>
+</div>
+</div>
+<!-- WEIGHT MANAGEMENT -->
+<div class="niche-card">
+<div class="niche-top nc-weight">
+<div class="niche-icon">⚖️</div>
+<h3>Medical Weight Management &amp; Metabolism</h3>
+<p>Our physician-led weight loss program combines metabolic testing, nutrition counseling, behavioral therapy, FDA-approved medications, and the most effective herbal metabolism boosters backed by science.</p>
+<div class="niche-facts"><strong>⭐ Patient Win:</strong> "Between my doctor's GLP-1 protocol and adding Berberine, green tea extract, and a high-protein diet — I lost 38 pounds in 5 months. My metabolic panel is completely normal now."<br/>— Tanya W., 39</div>
+<div style="margin-top:.8rem;display:flex;gap:.5rem;flex-wrap:wrap">
+<span style="font-size:.72rem;background:rgba(255,255,255,.25);color:#fff;padding:.2rem .6rem;border-radius:50px;font-weight:700">🌱 Berberine</span>
+<span style="font-size:.72rem;background:rgba(255,255,255,.25);color:#fff;padding:.2rem .6rem;border-radius:50px;font-weight:700">🍵 Green Tea Extract</span>
+<span style="font-size:.72rem;background:rgba(255,255,255,.25);color:#fff;padding:.2rem .6rem;border-radius:50px;font-weight:700">🌶️ Capsaicin</span>
+<span style="font-size:.72rem;background:rgba(255,255,255,.25);color:#fff;padding:.2rem .6rem;border-radius:50px;font-weight:700">🥑 CLA</span>
+</div>
+</div>
+<div class="niche-bottom" style="display:flex;flex-direction:column;gap:.5rem">
+<a class="btn btn-sm" href="#appointment" style="background:#1abc9c;color:#fff;text-align:center">⚖️ Start Weight Loss Program</a>
+<a class="btn btn-sm" href="https://amzn.to/weight-loss-bundle" rel="nofollow sponsored" style="background:linear-gradient(135deg,#f59e0b,#d97706);color:#fff;text-align:center" target="_blank">🛒 Shop Metabolism Bundle →</a>
+<a class="btn btn-sm" href="#health-info" style="color:#1abc9c;border:2px solid #1abc9c;border-radius:50px;background:transparent;text-align:center">Read Full Weight Guide</a>
+</div>
+</div>
+<!-- SENIORS -->
+<div class="niche-card">
+<div class="niche-top nc-seniors">
+<div class="niche-icon">🧓</div>
+<h3>Senior Health, Longevity &amp; Cognitive Care</h3>
+<p>Specialized care for adults 65+ — managing chronic conditions, medication safety, fall prevention, and cognitive health. We also provide evidence-based longevity and brain-supporting natural therapies.</p>
+<div class="niche-facts"><strong>⭐ Patient Win:</strong> "At 71 my memory was slipping and I feared the worst. My geriatrician added Lion's Mane mushroom, phosphatidylserine, and a Mediterranean diet to my care plan. Six months later my cognitive scores improved significantly."<br/>— George P., 71</div>
+<div style="margin-top:.8rem;display:flex;gap:.5rem;flex-wrap:wrap">
+<span style="font-size:.72rem;background:rgba(255,255,255,.25);color:#fff;padding:.2rem .6rem;border-radius:50px;font-weight:700">🍄 Lion's Mane</span>
+<span style="font-size:.72rem;background:rgba(255,255,255,.25);color:#fff;padding:.2rem .6rem;border-radius:50px;font-weight:700">🧠 Phosphatidylserine</span>
+<span style="font-size:.72rem;background:rgba(255,255,255,.25);color:#fff;padding:.2rem .6rem;border-radius:50px;font-weight:700">🌿 Ginkgo Biloba</span>
+<span style="font-size:.72rem;background:rgba(255,255,255,.25);color:#fff;padding:.2rem .6rem;border-radius:50px;font-weight:700">⚡ CoQ10</span>
+</div>
+</div>
+<div class="niche-bottom" style="display:flex;flex-direction:column;gap:.5rem">
+<a class="btn btn-sm" href="#appointment" style="background:#5dade2;color:#fff;text-align:center">🧓 Book Geriatric Evaluation</a>
+<a class="btn btn-sm" href="https://amzn.to/senior-brain-bundle" rel="nofollow sponsored" style="background:linear-gradient(135deg,#f59e0b,#d97706);color:#fff;text-align:center" target="_blank">🛒 Shop Senior Brain &amp; Longevity Bundle →</a>
+<a class="btn btn-sm" href="#health-info" style="color:#5dade2;border:2px solid #5dade2;border-radius:50px;background:transparent;text-align:center">Read Longevity Guide</a>
+</div>
+</div>
+<!-- CANCER -->
+<div class="niche-card">
+<div class="niche-top nc-cancer">
+<div class="niche-icon">🎗️</div>
+<h3>Cancer Prevention, Screening &amp; Oncology Support</h3>
+<p>Early detection is your best defense. Our oncology team provides comprehensive screenings, genetic risk counseling, and evidence-based immune-support supplements studied alongside cancer treatment.</p>
+<div class="niche-facts"><strong>⭐ Patient Win:</strong> "I combined annual mammograms with DIM, Turkey Tail mushroom, and high-dose Vitamin D3. An early-stage tumor was caught and fully treated. Early screening literally saved my life."<br/>— Marcia F., 45</div>
+<div style="margin-top:.8rem;display:flex;gap:.5rem;flex-wrap:wrap">
+<span style="font-size:.72rem;background:rgba(255,255,255,.25);color:#fff;padding:.2rem .6rem;border-radius:50px;font-weight:700">🍄 Turkey Tail</span>
+<span style="font-size:.72rem;background:rgba(255,255,255,.25);color:#fff;padding:.2rem .6rem;border-radius:50px;font-weight:700">🥦 DIM</span>
+<span style="font-size:.72rem;background:rgba(255,255,255,.25);color:#fff;padding:.2rem .6rem;border-radius:50px;font-weight:700">☀️ Vitamin D3</span>
+<span style="font-size:.72rem;background:rgba(255,255,255,.25);color:#fff;padding:.2rem .6rem;border-radius:50px;font-weight:700">🌾 Curcumin</span>
+</div>
+</div>
+<div class="niche-bottom" style="display:flex;flex-direction:column;gap:.5rem">
+<a class="btn btn-sm" href="#appointment" style="background:#cb4335;color:#fff;text-align:center">🎗️ Schedule Cancer Screening</a>
+<a class="btn btn-sm" href="https://amzn.to/immune-defense-bundle" rel="nofollow sponsored" style="background:linear-gradient(135deg,#f59e0b,#d97706);color:#fff;text-align:center" target="_blank">🛒 Shop Immune Defense Bundle →</a>
+<a class="btn btn-sm" href="#health-info" style="color:#cb4335;border:2px solid #cb4335;border-radius:50px;background:transparent;text-align:center">Read Full Cancer Prevention Guide</a>
+</div>
+</div>
+<!-- SLEEP -->
+<div class="niche-card">
+<div class="niche-top nc-sleep">
+<div class="niche-icon">🌙</div>
+<h3>Sleep Disorders, Insomnia &amp; Recovery</h3>
+<p>Chronic sleep problems devastate cognition, metabolism, immunity, and mental health. Our sleep specialists diagnose and treat insomnia and sleep apnea — and pair treatment with proven natural sleep remedies.</p>
+<div class="niche-facts"><strong>⭐ Patient Win:</strong> "I hadn't slept more than 4 hours straight in 3 years. My sleep doctor combined CBT-I therapy with magnesium glycinate, ashwagandha, and passionflower extract. I now sleep 7 hours. I am a different person."<br/>— Jared N., 41</div>
+<div style="margin-top:.8rem;display:flex;gap:.5rem;flex-wrap:wrap">
+<span style="font-size:.72rem;background:rgba(255,255,255,.25);color:#fff;padding:.2rem .6rem;border-radius:50px;font-weight:700">🌼 Passionflower</span>
+<span style="font-size:.72rem;background:rgba(255,255,255,.25);color:#fff;padding:.2rem .6rem;border-radius:50px;font-weight:700">💊 Magnesium</span>
+<span style="font-size:.72rem;background:rgba(255,255,255,.25);color:#fff;padding:.2rem .6rem;border-radius:50px;font-weight:700">🌿 Valerian Root</span>
+<span style="font-size:.72rem;background:rgba(255,255,255,.25);color:#fff;padding:.2rem .6rem;border-radius:50px;font-weight:700">🍒 Tart Cherry</span>
+</div>
+</div>
+<div class="niche-bottom" style="display:flex;flex-direction:column;gap:.5rem">
+<a class="btn btn-sm" href="#appointment" style="background:#2e4077;color:#fff;text-align:center">🌙 Book Sleep Consultation</a>
+<a class="btn btn-sm" href="https://amzn.to/sleep-remedy-bundle" rel="nofollow sponsored" style="background:linear-gradient(135deg,#f59e0b,#d97706);color:#fff;text-align:center" target="_blank">🛒 Shop Natural Sleep Bundle →</a>
+<a class="btn btn-sm" href="#health-info" style="color:#2e4077;border:2px solid #2e4077;border-radius:50px;background:transparent;text-align:center">Read Full Sleep Guide</a>
+</div>
+</div>
+<!-- KIDS -->
+<div class="niche-card">
+<div class="niche-top nc-kids">
+<div class="niche-icon">👶</div>
+<h3>Children's Health, Immunity &amp; Development</h3>
+<p>Our pediatricians care for children from birth through adolescence — well-child visits, immunizations, ADHD support, and the safest, most effective natural supplements for growing bodies and developing minds.</p>
+<div class="niche-facts"><strong>⭐ Parent Win:</strong> "My daughter went from 6 ear infections a year to zero after we added elderberry syrup, a children's probiotic, and Vitamin D drops. Her eczema cleared too. We wish we'd known sooner."<br/>— Priya S., Chicago</div>
+<div style="margin-top:.8rem;display:flex;gap:.5rem;flex-wrap:wrap">
+<span style="font-size:.72rem;background:rgba(255,255,255,.25);color:#fff;padding:.2rem .6rem;border-radius:50px;font-weight:700">🫐 Elderberry</span>
+<span style="font-size:.72rem;background:rgba(255,255,255,.25);color:#fff;padding:.2rem .6rem;border-radius:50px;font-weight:700">🦠 Probiotics</span>
+<span style="font-size:.72rem;background:rgba(255,255,255,.25);color:#fff;padding:.2rem .6rem;border-radius:50px;font-weight:700">☀️ Vitamin D3</span>
+<span style="font-size:.72rem;background:rgba(255,255,255,.25);color:#fff;padding:.2rem .6rem;border-radius:50px;font-weight:700">🧠 DHA Omega-3</span>
+</div>
+</div>
+<div class="niche-bottom" style="display:flex;flex-direction:column;gap:.5rem">
+<a class="btn btn-sm" href="#appointment" style="background:#e67e22;color:#fff;text-align:center">👶 Book Pediatric Visit</a>
+<a class="btn btn-sm" href="https://amzn.to/kids-wellness-bundle" rel="nofollow sponsored" style="background:linear-gradient(135deg,#f59e0b,#d97706);color:#fff;text-align:center" target="_blank">🛒 Shop Kids Wellness Bundle →</a>
+<a class="btn btn-sm" href="#health-info" style="color:#e67e22;border:2px solid #e67e22;border-radius:50px;background:transparent;text-align:center">Read Full Children's Health Guide</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- HEALTH RESOURCES LINKS SECTION -->
+<section class="section" style="background:var(--teal-pale);padding:3rem 0">
+<div class="container">
+<div class="sec-hd center">
+<span class="sec-badge">Trusted Resources</span>
+<h2 class="sec-title">Free Health Information by Topic</h2>
+<p class="sec-sub" style="margin:0 auto">Access our curated library of patient guides, screening checklists, and condition-specific resources — all reviewed by Healthy Living Blueprint physicians.</p>
+</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1rem;margin-top:2rem">
+<a href="#health-info" onmouseout="this.style.borderColor='var(--border)';this.style.boxShadow='none'" onmouseover="this.style.borderColor='#0d7c6f';this.style.boxShadow='0 4px 18px rgba(13,124,111,.12)'" style="display:flex;align-items:center;gap:.9rem;background:#fff;border:1px solid var(--border);border-radius:10px;padding:1.1rem 1.25rem;text-decoration:none;transition:all .2s;color:var(--navy)">
+<span style="font-size:1.75rem;flex-shrink:0">❤️</span>
+<div><strong style="display:block;font-size:.88rem">Heart Disease Guide</strong><span style="font-size:.76rem;color:var(--slate)">Prevention, symptoms &amp; screenings</span></div>
+</a>
+<a href="#health-info" onmouseout="this.style.borderColor='var(--border)';this.style.boxShadow='none'" onmouseover="this.style.borderColor='#0d7c6f';this.style.boxShadow='0 4px 18px rgba(13,124,111,.12)'" style="display:flex;align-items:center;gap:.9rem;background:#fff;border:1px solid var(--border);border-radius:10px;padding:1.1rem 1.25rem;text-decoration:none;transition:all .2s;color:var(--navy)">
+<span style="font-size:1.75rem;flex-shrink:0">💉</span>
+<div><strong style="display:block;font-size:.88rem">Diabetes Resource Center</strong><span style="font-size:.76rem;color:var(--slate)">Blood sugar targets, diet &amp; CGM</span></div>
+</a>
+<a href="#health-info" onmouseout="this.style.borderColor='var(--border)';this.style.boxShadow='none'" onmouseover="this.style.borderColor='#0d7c6f';this.style.boxShadow='0 4px 18px rgba(13,124,111,.12)'" style="display:flex;align-items:center;gap:.9rem;background:#fff;border:1px solid var(--border);border-radius:10px;padding:1.1rem 1.25rem;text-decoration:none;transition:all .2s;color:var(--navy)">
+<span style="font-size:1.75rem;flex-shrink:0">🧠</span>
+<div><strong style="display:block;font-size:.88rem">Mental Health Library</strong><span style="font-size:.76rem;color:var(--slate)">Anxiety, depression, PTSD &amp; more</span></div>
+</a>
+<a href="#health-info" onmouseout="this.style.borderColor='var(--border)';this.style.boxShadow='none'" onmouseover="this.style.borderColor='#0d7c6f';this.style.boxShadow='0 4px 18px rgba(13,124,111,.12)'" style="display:flex;align-items:center;gap:.9rem;background:#fff;border:1px solid var(--border);border-radius:10px;padding:1.1rem 1.25rem;text-decoration:none;transition:all .2s;color:var(--navy)">
+<span style="font-size:1.75rem;flex-shrink:0">🌸</span>
+<div><strong style="display:block;font-size:.88rem">Women's Health Hub</strong><span style="font-size:.76rem;color:var(--slate)">OB-GYN, hormones &amp; prenatal care</span></div>
+</a>
+<a href="#health-info" onmouseout="this.style.borderColor='var(--border)';this.style.boxShadow='none'" onmouseover="this.style.borderColor='#0d7c6f';this.style.boxShadow='0 4px 18px rgba(13,124,111,.12)'" style="display:flex;align-items:center;gap:.9rem;background:#fff;border:1px solid var(--border);border-radius:10px;padding:1.1rem 1.25rem;text-decoration:none;transition:all .2s;color:var(--navy)">
+<span style="font-size:1.75rem;flex-shrink:0">🏃</span>
+<div><strong style="display:block;font-size:.88rem">Men's Health Center</strong><span style="font-size:.76rem;color:var(--slate)">Prostate, testosterone &amp; wellness</span></div>
+</a>
+<a href="#health-info" onmouseout="this.style.borderColor='var(--border)';this.style.boxShadow='none'" onmouseover="this.style.borderColor='#0d7c6f';this.style.boxShadow='0 4px 18px rgba(13,124,111,.12)'" style="display:flex;align-items:center;gap:.9rem;background:#fff;border:1px solid var(--border);border-radius:10px;padding:1.1rem 1.25rem;text-decoration:none;transition:all .2s;color:var(--navy)">
+<span style="font-size:1.75rem;flex-shrink:0">👶</span>
+<div><strong style="display:block;font-size:.88rem">Children's Health Guide</strong><span style="font-size:.76rem;color:var(--slate)">Vaccines, milestones &amp; urgent care</span></div>
+</a>
+<a href="#health-info" onmouseout="this.style.borderColor='var(--border)';this.style.boxShadow='none'" onmouseover="this.style.borderColor='#0d7c6f';this.style.boxShadow='0 4px 18px rgba(13,124,111,.12)'" style="display:flex;align-items:center;gap:.9rem;background:#fff;border:1px solid var(--border);border-radius:10px;padding:1.1rem 1.25rem;text-decoration:none;transition:all .2s;color:var(--navy)">
+<span style="font-size:1.75rem;flex-shrink:0">🎗️</span>
+<div><strong style="display:block;font-size:.88rem">Cancer Screening Checklist</strong><span style="font-size:.76rem;color:var(--slate)">By age, gender &amp; risk level</span></div>
+</a>
+<a href="#health-info" onmouseout="this.style.borderColor='var(--border)';this.style.boxShadow='none'" onmouseover="this.style.borderColor='#0d7c6f';this.style.boxShadow='0 4px 18px rgba(13,124,111,.12)'" style="display:flex;align-items:center;gap:.9rem;background:#fff;border:1px solid var(--border);border-radius:10px;padding:1.1rem 1.25rem;text-decoration:none;transition:all .2s;color:var(--navy)">
+<span style="font-size:1.75rem;flex-shrink:0">🥗</span>
+<div><strong style="display:block;font-size:.88rem">Nutrition &amp; Diet Guides</strong><span style="font-size:.76rem;color:var(--slate)">Mediterranean, DASH, low-glycemic</span></div>
+</a>
+<a href="#health-info" onmouseout="this.style.borderColor='var(--border)';this.style.boxShadow='none'" onmouseover="this.style.borderColor='#0d7c6f';this.style.boxShadow='0 4px 18px rgba(13,124,111,.12)'" style="display:flex;align-items:center;gap:.9rem;background:#fff;border:1px solid var(--border);border-radius:10px;padding:1.1rem 1.25rem;text-decoration:none;transition:all .2s;color:var(--navy)">
+<span style="font-size:1.75rem;flex-shrink:0">🌙</span>
+<div><strong style="display:block;font-size:.88rem">Sleep Health Program</strong><span style="font-size:.76rem;color:var(--slate)">Sleep apnea, insomnia &amp; CBT-I</span></div>
+</a>
+<a href="#niches" onmouseout="this.style.borderColor='var(--border)';this.style.boxShadow='none'" onmouseover="this.style.borderColor='#0d7c6f';this.style.boxShadow='0 4px 18px rgba(13,124,111,.12)'" style="display:flex;align-items:center;gap:.9rem;background:#fff;border:1px solid var(--border);border-radius:10px;padding:1.1rem 1.25rem;text-decoration:none;transition:all .2s;color:var(--navy)">
+<span style="font-size:1.75rem;flex-shrink:0">🧓</span>
+<div><strong style="display:block;font-size:.88rem">Senior &amp; Geriatric Health</strong><span style="font-size:.76rem;color:var(--slate)">Medications, falls &amp; dementia care</span></div>
+</a>
+<a href="#niches" onmouseout="this.style.borderColor='var(--border)';this.style.boxShadow='none'" onmouseover="this.style.borderColor='#0d7c6f';this.style.boxShadow='0 4px 18px rgba(13,124,111,.12)'" style="display:flex;align-items:center;gap:.9rem;background:#fff;border:1px solid var(--border);border-radius:10px;padding:1.1rem 1.25rem;text-decoration:none;transition:all .2s;color:var(--navy)">
+<span style="font-size:1.75rem;flex-shrink:0">⚖️</span>
+<div><strong style="display:block;font-size:.88rem">Weight Management Program</strong><span style="font-size:.76rem;color:var(--slate)">GLP-1, metabolic testing &amp; coaching</span></div>
+</a>
+<a href="#appointment" onmouseout="this.style.background='var(--teal)'" onmouseover="this.style.background='#095e54'" style="display:flex;align-items:center;gap:.9rem;background:var(--teal);border:1px solid var(--teal);border-radius:10px;padding:1.1rem 1.25rem;text-decoration:none;transition:all .2s;color:#fff">
+<span style="font-size:1.75rem;flex-shrink:0">📅</span>
+<div><strong style="display:block;font-size:.88rem">Book an Appointment</strong><span style="font-size:.76rem;opacity:.85">Same-day &amp; next-day available</span></div>
+</a>
+</div>
+</div>
+</section>
+<section class="section" id="doctors" style="background:var(--mist)">
+<div class="container">
+<div class="two-col">
+<div>
+<div class="sec-hd">
+<span class="sec-badge">Our Physicians</span>
+<h2 class="sec-title">Meet Our Board-Certified Doctors</h2>
+<p class="sec-sub">All Healthy Living Blueprint physicians are U.S. board-certified, fellowship-trained, and selected through a rigorous credentialing process. Average patient rating: 4.9/5.</p>
+</div>
+<div class="docs-grid">
+<div class="doc-card">
+<div class="doc-photo dp1">👩‍⚕️<span class="avail-tag">Available Today</span></div>
+<div class="doc-info">
+<h3>Dr. Sarah E. Mitchell, MD</h3>
+<div class="doc-spec">Cardiology &amp; Heart Failure</div>
+<div class="doc-creds">Weill Cornell Medicine · 18 yrs experience<br/>Fellowship: Johns Hopkins Hospital, Baltimore</div>
+<div class="doc-rating"><span class="stars">★★★★★</span> 4.9  (412 reviews)</div>
+<a class="btn btn-teal btn-sm" href="#appointment">Book Appointment</a>
+</div>
+</div>
+<div class="doc-card">
+<div class="doc-photo dp2">👨‍⚕️<span class="avail-tag">Available Today</span></div>
+<div class="doc-info">
+<h3>Dr. James O. Adeyemi, MD</h3>
+<div class="doc-spec">General Medicine &amp; Preventive Care</div>
+<div class="doc-creds">NYU School of Medicine · 12 yrs experience<br/>Residency: Mount Sinai, New York</div>
+<div class="doc-rating"><span class="stars">★★★★★</span> 4.8  (339 reviews)</div>
+<a class="btn btn-teal btn-sm" href="#appointment">Book Appointment</a>
+</div>
+</div>
+<div class="doc-card">
+<div class="doc-photo dp3">👩‍⚕️</div>
+<div class="doc-info">
+<h3>Dr. Priya R. Sharma, MD, PhD</h3>
+<div class="doc-spec">Psychiatry &amp; Cognitive Behavioral Therapy</div>
+<div class="doc-creds">Columbia University · 15 yrs experience<br/>Fellowship: McLean Hospital, Harvard</div>
+<div class="doc-rating"><span class="stars">★★★★★</span> 5.0  (287 reviews)</div>
+<a class="btn btn-teal btn-sm" href="#appointment">Book Appointment</a>
+</div>
+</div>
+<div class="doc-card">
+<div class="doc-photo dp4">👨‍⚕️<span class="avail-tag">Available Today</span></div>
+<div class="doc-info">
+<h3>Dr. Kevin R. Torres, MD</h3>
+<div class="doc-spec">Pediatrics &amp; Adolescent Medicine</div>
+<div class="doc-creds">Albert Einstein College · 10 yrs experience<br/>Residency: Children's Hospital of Philadelphia</div>
+<div class="doc-rating"><span class="stars">★★★★★</span> 4.9  (501 reviews)</div>
+<a class="btn btn-teal btn-sm" href="#appointment">Book Appointment</a>
+</div>
+</div>
+<div class="doc-card">
+<div class="doc-photo dp5">👩‍⚕️<span class="avail-tag">Available Today</span></div>
+<div class="doc-info">
+<h3>Dr. Lin Wei, MD, FACOG</h3>
+<div class="doc-spec">OB-GYN &amp; Women's Health</div>
+<div class="doc-creds">Harvard Medical School · 14 yrs experience<br/>Fellowship: NYU Langone, New York</div>
+<div class="doc-rating"><span class="stars">★★★★★</span> 4.9  (378 reviews)</div>
+<a class="btn btn-teal btn-sm" href="#appointment">Book Appointment</a>
+</div>
+</div>
+<div class="doc-card">
+<div class="doc-photo dp6">👨‍⚕️</div>
+<div class="doc-info">
+<h3>Dr. Michael B. Okafor, MD</h3>
+<div class="doc-spec">Endocrinology &amp; Diabetes Care</div>
+<div class="doc-creds">Stanford University School of Med · 11 yrs<br/>Fellowship: Joslin Diabetes Center, Boston</div>
+<div class="doc-rating"><span class="stars">★★★★★</span> 4.8  (256 reviews)</div>
+<a class="btn btn-teal btn-sm" href="#appointment">Book Appointment</a>
+</div>
+</div>
+</div>
+<a class="sec-more" href="#appointment">View All 200+ Physicians</a>
+</div>
+<!-- SIDEBAR -->
+<div class="sidebar">
+<div class="sidebar-sticky">
+<!-- ═══════════════════════════════════════════════
+               ADSENSE UNIT #4 — Sidebar MRect 1 (300×250)
+               Zone: sidebar_top | pub-8176918589359902
+               ═══════════════════════════════════════════════ -->
+<div class="adsense-wrap adsense-mrec" id="ad-sidebar-1" style="border-radius:12px;overflow:hidden">
+<ins class="adsbygoogle" data-ad-client="ca-pub-8176918589359902" data-ad-format="rectangle" data-ad-slot="5218292376" data-full-width-responsive="false" style="display:inline-block;width:300px;height:250px"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+<!-- EMERGENCY -->
+<div class="emergency-box">
+<div style="font-size:1.4rem">🚨</div>
+<div style="font-weight:800;color:#fff;margin:.3rem 0 .15rem;font-size:.9rem">Medical Emergency?</div>
+<div class="emergency-num">Call 911</div>
+<div style="font-size:.78rem;opacity:.85">For chest pain, stroke symptoms, difficulty breathing, or severe injury — go to your nearest ER or call 911 immediately.</div>
+</div>
+<!-- HOTLINE -->
+<div class="hotline-box">
+<div style="font-size:1.2rem">📞</div>
+<div style="font-weight:800;font-size:.88rem;margin-top:.25rem">24/7 Nurse Advice Line</div>
+<div class="hotline-num">(212) 555-0100</div>
+<div style="font-size:.78rem;opacity:.85">Speak with a registered nurse any time — free for all Healthy Living Blueprint patients.</div>
+</div>
+<!-- QUICK LINKS -->
+<div class="widget">
+<div class="widget-hd">Patient Resources</div>
+<div class="widget-body">
+<ul>
+<li><a href="#appointment">Book an Appointment Online</a></li>
+<li><a href="#">Access Patient Portal (MyChart)</a></li>
+<li><a href="#">View Lab Results</a></li>
+<li><a href="#">Request Medical Records</a></li>
+<li><a href="#">Pay My Bill Online</a></li>
+<li><a href="#">Prescription Refill Request</a></li>
+<li><a href="#">Telehealth — Start Visit Now</a></li>
+<li><a href="#">Insurance &amp; Coverage Questions</a></li>
+</ul>
+</div>
+</div>
+<!-- ═══════════════════════════════════════════════
+               ADSENSE UNIT #5 — Sidebar MRect 2 (300×250)
+               Zone: sidebar_mid | pub-8176918589359902
+               ═══════════════════════════════════════════════ -->
+<div class="adsense-wrap adsense-mrec" id="ad-sidebar-2" style="border-radius:12px;overflow:hidden">
+<ins class="adsbygoogle" data-ad-client="ca-pub-8176918589359902" data-ad-format="rectangle" data-ad-slot="5218292376" data-full-width-responsive="false" style="display:inline-block;width:300px;height:250px"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+<!-- INSURANCE -->
+<div class="widget">
+<div class="widget-hd">Accepted Insurance Plans</div>
+<div class="widget-body">
+<ul>
+<li>Blue Cross Blue Shield (all plans)</li>
+<li>Aetna PPO &amp; HMO</li>
+<li>UnitedHealthcare Choice Plus</li>
+<li>Cigna Open Access Plus</li>
+<li>Medicare Part A &amp; B</li>
+<li>Medicaid (New York State)</li>
+<li>Humana Gold Plus</li>
+<li>Oxford Health Plans</li>
+<li>Empire BlueCross</li>
+</ul>
+<p style="font-size:.75rem;color:#888;margin-top:.75rem">Self-pay options and payment plans are available. Call us for more information.</p>
+</div>
+</div>
+<!-- TRUSTED HEALTH RESOURCES WIDGET -->
+<div class="widget">
+<div class="widget-hd" style="background:var(--teal)">📚 Trusted Health Resources</div>
+<div class="widget-body">
+<p style="font-size:.78rem;color:var(--slate);margin-bottom:.85rem;line-height:1.55">Vetted external resources from leading health organizations — all links open in a new tab.</p>
+<ul>
+<li><a href="https://www.nih.gov/health-information" rel="noopener" target="_blank">NIH Health Information Library</a></li>
+<li><a href="https://www.cdc.gov/healthyweight" rel="noopener" target="_blank">CDC Healthy Weight &amp; Nutrition</a></li>
+<li><a href="https://www.heart.org/en/health-topics" rel="noopener" target="_blank">American Heart Association — Heart Topics</a></li>
+<li><a href="https://diabetes.org/health-wellness" rel="noopener" target="_blank">American Diabetes Association</a></li>
+<li><a href="https://www.nami.org/Support-Education" rel="noopener" target="_blank">NAMI Mental Health Support</a></li>
+<li><a href="https://www.cancer.org/cancer/screening.html" rel="noopener" target="_blank">ACS Cancer Screening Guidelines</a></li>
+<li><a href="https://www.womenshealth.gov" rel="noopener" target="_blank">Office on Women's Health (HHS)</a></li>
+<li><a href="https://www.cdc.gov/vaccines/schedules" rel="noopener" target="_blank">CDC Adult Immunization Schedule</a></li>
+</ul>
+<div style="background:var(--teal-pale);border-radius:8px;padding:.75rem;margin-top:.85rem;font-size:.75rem;color:var(--teal-dk);line-height:1.5">
+<strong>Note:</strong> External links are provided for informational purposes. Healthy Living Blueprint is not responsible for third-party website content.
+              </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
 <!-- TESTIMONIALS -->
-<div class="proof-section reveal">
-  <div class="proof-heading">What <span>Real Students</span> Say</div>
-  <div class="testimonials">
-    <div class="testi">
-      <div class="testi-text">"Within 6 weeks I had my first profitable month. Made <strong>₦184,000 in 3 weeks</strong> applying the supply and demand method. I almost cried."</div>
-      <div class="testi-footer">
-        <div class="testi-avatar">C</div>
-        <div><div class="testi-name">Chukwuemeka O.</div><div class="testi-loc">Lagos, Nigeria</div></div>
-        <div class="testi-stars">★★★★★</div>
-      </div>
-    </div>
-    <div class="testi">
-      <div class="testi-text">"Deleted all my indicators after Module 1. <strong>My chart is clean now and my results are sharper than they've ever been.</strong> This course is the real deal."</div>
-      <div class="testi-footer">
-        <div class="testi-avatar">K</div>
-        <div><div class="testi-name">Kwame A.</div><div class="testi-loc">Accra, Ghana</div></div>
-        <div class="testi-stars">★★★★★</div>
-      </div>
-    </div>
-    <div class="testi">
-      <div class="testi-text">"The risk management module alone <strong>saved my account.</strong> Now I'm consistent, calm, and profitable. Worth every kobo."</div>
-      <div class="testi-footer">
-        <div class="testi-avatar">F</div>
-        <div><div class="testi-name">Fatima B.</div><div class="testi-loc">Abuja, Nigeria</div></div>
-        <div class="testi-stars">★★★★★</div>
-      </div>
-    </div>
-  </div>
+<section class="section testi-bg">
+<div class="container">
+<div class="sec-hd center">
+<span class="sec-badge" style="background:rgba(255,255,255,.1);color:#67e8c8">Patient Stories</span>
+<h2 class="sec-title" style="color:#fff">What Our Patients Are Saying</h2>
+<p class="sec-sub" style="color:rgba(255,255,255,.65);margin:0 auto">Real experiences from real patients — unedited and verified through our patient satisfaction program.</p>
 </div>
-
-<!-- URGENCY -->
-<div class="urgency-banner reveal">
-  <div class="urgency-inner">
-    <div class="urgency-icon">⚠️</div>
-    <div class="urgency-text">
-      <strong>This introductory price won't last.</strong> Once the offer ends, the price increases permanently.
-      Every day you wait is another day trading without the right foundation.
-    </div>
-  </div>
+<div class="testi-grid">
+<div class="tcard">
+<div class="tcard-stars">★★★★★</div>
+<p>"Dr. Mitchell caught an irregular heartbeat during a routine EKG that I'd had for years without knowing. She referred me immediately to an electrophysiologist and I had an ablation within 3 weeks. This practice literally saved my life."</p>
+<div class="tcard-auth"><div class="tavatar">👤</div><div><div class="tname">Robert K., 58</div><div class="trole">Cardiology Patient · Verified Review</div></div></div>
 </div>
-
+<div class="tcard">
+<div class="tcard-stars">★★★★★</div>
+<p>"Dr. Sharma understood immediately what I was going through with anxiety and burnout. Within 4 sessions of CBT and medication adjustment, I was sleeping properly and back to myself. The mental health team here is genuinely extraordinary."</p>
+<div class="tcard-auth"><div class="tavatar">👤</div><div><div class="tname">Danielle M., 34</div><div class="trole">Mental Health Patient · Verified Review</div></div></div>
+</div>
+<div class="tcard">
+<div class="tcard-stars">★★★★★</div>
+<p>"The telehealth service is incredible. At 11:30 PM my daughter had a severe ear infection. Within 20 minutes I was speaking to a pediatrician, and a prescription was sent to our pharmacy by midnight. Absolutely life-changing."</p>
+<div class="tcard-auth"><div class="tavatar">👤</div><div><div class="tname">Patricia L., 41</div><div class="trole">Pediatrics / Telehealth Patient · Verified Review</div></div></div>
+</div>
+<div class="tcard">
+<div class="tcard-stars">★★★★★</div>
+<p>"I came in with an HbA1c of 9.8 and feeling terrible. Dr. Okafor's team put me on a CGM, adjusted my insulin, and connected me with their dietitian. Six months later my HbA1c is 6.9 and I've lost 22 pounds. Amazing care."</p>
+<div class="tcard-auth"><div class="tavatar">👤</div><div><div class="tname">Marcus T., 52</div><div class="trole">Diabetes Program Patient · Verified Review</div></div></div>
+</div>
+<div class="tcard">
+<div class="tcard-stars">★★★★★</div>
+<p>"Dr. Wei guided me through an incredibly difficult pregnancy with gestational diabetes and preeclampsia. Her thoroughness, compassion, and availability — even by message on weekends — made the whole experience manageable. I'm so grateful."</p>
+<div class="tcard-auth"><div class="tavatar">👤</div><div><div class="tname">Sofia G., 29</div><div class="trole">OB-GYN Patient · Verified Review</div></div></div>
+</div>
+<div class="tcard">
+<div class="tcard-stars">★★★★★</div>
+<p>"After seeing three other doctors who dismissed my symptoms, Dr. Adeyemi spent 45 minutes with me, ordered the right labs, and diagnosed hypothyroidism. Finally feeling like myself again after two years of being unwell."</p>
+<div class="tcard-auth"><div class="tavatar">👤</div><div><div class="tname">Angela B., 47</div><div class="trole">Primary Care Patient · Verified Review</div></div></div>
+</div>
+</div>
+</div>
+</section>
+<!-- ═══════════════════════════════════════════════
+     ADSENSE UNIT #9 — In-Article (Between Testimonials & Blog)
+     Zone: in_article_mid | pub-8176918589359902
+     ═══════════════════════════════════════════════ -->
+<div class="adsense-section">
+<div class="container" style="display:flex;justify-content:center">
+<div class="adsense-wrap adsense-leaderboard" id="ad-in-article">
+<ins class="adsbygoogle" data-ad-client="ca-pub-8176918589359902" data-ad-format="fluid" data-ad-layout="in-article" data-ad-slot="5218292376" data-full-width-responsive="true" style="display:block;width:728px;height:90px"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+</div>
+</div>
+<!-- BLOG -->
+<section class="section" id="blog">
+<div class="container">
+<div class="sec-hd">
+<span class="sec-badge">Health Blog</span>
+<h2 class="sec-title">Medically Reviewed Health Articles</h2>
+<p class="sec-sub">All articles written and reviewed by Healthy Living Blueprint physicians. Updated with the latest clinical evidence.</p>
+</div>
+<!-- ═══════════════════════════════════════════════
+         ADSENSE UNIT #6 — In-Content 3 (Before Blog)
+         Zone: in_content_blog | pub-8176918589359902
+         ═══════════════════════════════════════════════ -->
+<div style="margin-bottom:1.75rem;display:flex;justify-content:center">
+<div class="adsense-wrap adsense-leaderboard" id="ad-in-content-3">
+<ins class="adsbygoogle" data-ad-client="ca-pub-8176918589359902" data-ad-format="fluid" data-ad-slot="7348111780" data-full-width-responsive="true" style="display:block;width:728px;height:90px"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+</div>
+<div class="blog-grid">
+<div class="bcard"><div class="bthumb bt1">🫀</div><div class="bbody"><div class="btag">Cardiology</div><h3>The Silent Warning Signs of Heart Disease You're Probably Ignoring</h3><p>Fatigue, swollen ankles, and shortness of breath on stairs aren't just signs of aging. A Healthy Living Blueprint cardiologist explains what your body may be trying to tell you.</p><div class="bmeta">✍️ Dr. S. Mitchell, MD  ·  7 min read  ·  Medically Reviewed</div></div></div>
+<div class="bcard"><div class="bthumb bt2">🍽️</div><div class="bbody"><div class="btag">Nutrition &amp; Diabetes</div><h3>What a Registered Dietitian Actually Eats to Keep Blood Sugar Stable</h3><p>Specific meal patterns, foods, and timing strategies that help prevent the blood sugar spikes and crashes that drive hunger, fatigue, and weight gain.</p><div class="bmeta">✍️ Healthy Living Blueprint Nutrition Team  ·  6 min read  ·  Medically Reviewed</div></div></div>
+<div class="bcard"><div class="bthumb bt3">🧘</div><div class="bbody"><div class="btag">Mental Health</div><h3>5 Therapy Techniques That Work as Well as Medication for Mild-to-Moderate Anxiety</h3><p>CBT, ACT, EMDR, and mindfulness-based approaches — our psychiatrists break down the evidence for non-medication treatments and when they're appropriate.</p><div class="bmeta">✍️ Dr. P. Sharma, MD PhD  ·  8 min read  ·  Medically Reviewed</div></div></div>
+<div class="bcard"><div class="bthumb bt4">🌸</div><div class="bbody"><div class="btag">Women's Health</div><h3>Perimenopause Starts Earlier Than You Think — Here's What to Watch For</h3><p>Irregular periods, sleep disruption, mood changes, and brain fog can begin in your late 30s. Our OB-GYN explains the timeline and your treatment options.</p><div class="bmeta">✍️ Dr. L. Wei, MD FACOG  ·  9 min read  ·  Medically Reviewed</div></div></div>
+<div class="bcard"><div class="bthumb bt5">🧒</div><div class="bbody"><div class="btag">Pediatrics</div><h3>ADHD in Children: When Behavior Is a Medical Issue, Not a Parenting Problem</h3><p>Signs, diagnosis criteria, and the full range of treatment options for childhood ADHD — from behavioral therapy to medication, explained by our pediatric team.</p><div class="bmeta">✍️ Dr. K. Torres, MD  ·  7 min read  ·  Medically Reviewed</div></div></div>
+<div class="bcard"><div class="bthumb bt6">💊</div><div class="bbody"><div class="btag">Men's Health</div><h3>Testosterone Replacement Therapy: Who Needs It, Who Doesn't, and What the Evidence Says</h3><p>Our endocrinologist cuts through the hype to explain who is actually a candidate for TRT, what it can and can't do, and how to talk to your doctor about it.</p><div class="bmeta">✍️ Dr. M. Okafor, MD  ·  10 min read  ·  Medically Reviewed</div></div></div>
+</div>
+<a class="sec-more" href="#" style="margin-top:2rem">Read All Articles in Our Health Library</a>
+</div>
+</section>
+<!-- ═══════════════════════════════════════════════
+     ADSENSE UNIT #7 — Pre-Footer Billboard 970×90
+     Zone: pre_footer | pub-8176918589359902
+     ═══════════════════════════════════════════════ -->
+<div class="adsense-section">
+<div class="container" style="display:flex;justify-content:center">
+<div class="adsense-wrap adsense-billboard" id="ad-pre-footer">
+<ins class="adsbygoogle" data-ad-client="ca-pub-8176918589359902" data-ad-format="horizontal" data-ad-slot="5218292376" data-full-width-responsive="true" style="display:block;width:970px;height:90px"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+</div>
+</div>
+<!-- APPOINTMENT SECTION -->
+<section class="section appt-bg" id="appointment">
+<div class="container">
+<div class="appt-wrap">
+<span class="sec-badge">Get Started Today</span>
+<h2 class="sec-title">Book Your Appointment</h2>
+<p class="sec-sub" style="margin:0 auto">Complete the form below and our scheduling team will confirm your appointment within 60 minutes during business hours (Mon–Fri 7am–8pm, Sat–Sun 8am–5pm).</p>
+<div class="appt-form">
+<div class="appt-grid">
+<div class="fgrp"><label>First Name *</label><input id="af-fn" placeholder="Maria" required="" type="text"/></div>
+<div class="fgrp"><label>Last Name *</label><input id="af-ln" placeholder="Johnson" required="" type="text"/></div>
+<div class="fgrp"><label>Email Address *</label><input id="af-em" placeholder="maria@email.com" required="" type="email"/></div>
+<div class="fgrp"><label>Phone Number *</label><input id="af-ph" placeholder="(212) 555-0000" required="" type="tel"/></div>
+<div class="fgrp"><label>Date of Birth</label><input id="af-dob" type="date"/></div>
+<div class="fgrp"><label>Insurance Provider</label>
+<select id="af-ins">
+<option>Select insurance plan…</option>
+<option>Blue Cross Blue Shield</option>
+<option>Aetna</option>
+<option>UnitedHealthcare</option>
+<option>Cigna</option>
+<option>Medicare</option>
+<option>Medicaid (NY)</option>
+<option>Humana</option>
+<option>Oxford Health Plans</option>
+<option>Self-Pay / Uninsured</option>
+</select>
+</div>
+<div class="fgrp"><label>Department / Specialty *</label>
+<select id="af-dept" required="">
+<option value="">— Select Department —</option>
+<option>General Medicine &amp; Primary Care</option>
+<option>Cardiology</option>
+<option>Mental Health &amp; Psychiatry</option>
+<option>Pediatrics (Ages 0–18)</option>
+<option>Orthopedics &amp; Sports Medicine</option>
+<option>Women's Health &amp; OB-GYN</option>
+<option>Oncology &amp; Cancer Screening</option>
+<option>Endocrinology &amp; Diabetes</option>
+<option>Neurology</option>
+<option>Dermatology</option>
+<option>Sleep Medicine</option>
+<option>Lab &amp; Diagnostic Imaging</option>
+<option>Telehealth (Video Visit)</option>
+</select>
+</div>
+<div class="fgrp"><label>Visit Type</label>
+<select id="af-type">
+<option>In-Person Visit</option>
+<option>Telehealth (Video Call)</option>
+<option>Phone Consultation</option>
+</select>
+</div>
+<div class="fgrp"><label>Preferred Date *</label><input id="af-date" required="" type="date"/></div>
+<div class="fgrp"><label>Preferred Time</label>
+<select id="af-time">
+<option>Morning — 7:00 AM – 9:00 AM</option>
+<option>Morning — 9:00 AM – 11:00 AM</option>
+<option>Midday — 11:00 AM – 1:00 PM</option>
+<option>Afternoon — 1:00 PM – 3:00 PM</option>
+<option>Afternoon — 3:00 PM – 5:00 PM</option>
+<option>Evening — 5:00 PM – 8:00 PM</option>
+</select>
+</div>
+<div class="fgrp full"><label>Reason for Visit / Symptoms *</label>
+<textarea id="af-reason" placeholder="Please describe your symptoms, concerns, or reason for the appointment in as much detail as possible. Include how long you've had symptoms and any treatments you've tried."></textarea>
+</div>
+<div class="fgrp full"><label>Are you an existing Healthy Living Blueprint patient?</label>
+<select id="af-existing">
+<option>No — I am a new patient</option>
+<option>Yes — I have visited Healthy Living Blueprint before</option>
+<option>I have visited another provider in the network</option>
+</select>
+</div>
+</div>
+<div class="appt-cta">
+<button class="btn btn-teal" onclick="submitAppt()" style="font-size:1rem;padding:.9rem 2.5rem">📅 Request My Appointment</button>
+</div>
+<p class="appt-note">🔒 Your information is protected under HIPAA privacy regulations and will never be shared without your written consent. By submitting this form you agree to our <a href="#" style="color:var(--teal)">Privacy Policy</a> and <a href="#" style="color:var(--teal)">Terms of Service</a>.</p>
+</div>
+</div>
+</div>
+</section>
 <!-- FOOTER -->
-<footer>
-  <div class="footer-trust reveal">
-    <div class="trust-item"><span class="trust-icon">🔒</span> Secure Payment</div>
-    <div class="trust-item"><span class="trust-icon">⚡</span> Instant Delivery</div>
-    <div class="trust-item"><span class="trust-icon">♾️</span> Lifetime Access</div>
-    <div class="trust-item"><span class="trust-icon">💬</span> WhatsApp Support</div>
-  </div>
-  <p class="footer-copy">© 2026 Price Action Mastery · Learn Today · Trade Better Tomorrow · Build Wealth for Life</p>
-</footer>
-
-<!-- STICKY BOTTOM -->
-<div class="sticky-bottom">
-  <a href="https://wa.link/kvmend" target="_blank">💬 GET INSTANT ACCESS — ₦10,000</a>
+<footer id="contact">
+<!-- ═══════════════════════════════════════════════
+       ADSENSE UNIT #8 — Footer Leaderboard 728×90
+       Zone: footer | pub-8176918589359902
+       ═══════════════════════════════════════════════ -->
+<div class="footer-ad" style="display:flex;justify-content:center;padding:1rem 0">
+<div class="adsense-wrap adsense-leaderboard" id="ad-footer" style="background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.1)">
+<ins class="adsbygoogle" data-ad-client="ca-pub-8176918589359902" data-ad-format="horizontal" data-ad-slot="5218292376" data-full-width-responsive="true" style="display:inline-block;width:728px;height:90px"></ins>
+<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
-
-<!-- ── JS ────────────────────────────────────────────── -->
+</div>
+<div class="container">
+<div class="footer-main">
+<div>
+<div class="fbrand">Healthy Living <span>Blueprint</span></div>
+<p>Compassionate, evidence-based healthcare for every stage of life — delivered by 200+ board-certified physicians across 25 specialties in New York City.</p>
+<div class="fcontact">
+<span>📍 485 Madison Ave, New York, NY 10022</span>
+<a href="tel:+12125550100">📞 (212) 555-0100</a>
+<a href="mailto:care@healthylivingblueprint.com">✉️ care@healthylivingblueprint.com</a>
+<span>🕐 Mon–Fri 7am–8pm  ·  Sat–Sun 8am–5pm</span>
+</div>
+<div class="accred">
+<span class="accred-badge">🏆 Joint Commission Accredited</span>
+<span class="accred-badge">⭐ U.S. News 2024 Honor Roll</span>
+<span class="accred-badge">🔒 HIPAA Compliant</span>
+</div>
+</div>
+<div class="fcol">
+<h4>Medical Services</h4>
+<ul>
+<li><a href="#services">General Medicine</a></li>
+<li><a href="#services">Cardiology</a></li>
+<li><a href="#services">Mental Health</a></li>
+<li><a href="#services">Pediatrics</a></li>
+<li><a href="#services">Women's Health</a></li>
+<li><a href="#services">Oncology</a></li>
+<li><a href="#services">Orthopedics</a></li>
+<li><a href="#services">Telehealth</a></li>
+</ul>
+</div>
+<div class="fcol">
+<h4>Patient Services</h4>
+<ul>
+<li><a href="#appointment">Book Appointment</a></li>
+<li><a href="#">Patient Portal</a></li>
+<li><a href="#">Lab Results</a></li>
+<li><a href="#">Medical Records</a></li>
+<li><a href="#">Pay My Bill</a></li>
+<li><a href="#">Prescription Refills</a></li>
+<li><a href="#">Insurance &amp; Billing</a></li>
+<li><a href="#">Patient Rights</a></li>
+</ul>
+</div>
+<div class="fcol">
+<h4>About Healthy Living Blueprint</h4>
+<ul>
+<li><a href="#">Our Story</a></li>
+<li><a href="#doctors">Find a Doctor</a></li>
+<li><a href="#">Careers</a></li>
+<li><a href="#blog">Health Blog</a></li>
+<li><a href="#">Research &amp; Education</a></li>
+<li><a href="#">Press &amp; Media</a></li>
+<li><a href="#">Community Programs</a></li>
+<li><a href="#contact">Contact Us</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">
+<span>© 2026 Healthy Living Blueprint All rights reserved.</span>
+<span>
+<a href="#">Privacy Policy</a>
+<a href="#">Terms of Use</a>
+<a href="#">HIPAA Notice of Privacy Practices</a>
+<a href="#">Accessibility</a>
+<a href="#">Non-Discrimination Policy</a>
+</span>
+</div>
+<div style="padding:.75rem 0 1.25rem;font-size:.72rem;color:rgba(255,255,255,.35);line-height:1.6">
+<strong style="color:rgba(255,255,255,.45)">Medical Disclaimer:</strong> The information on this website is for informational purposes only and does not constitute medical advice. Always consult a qualified healthcare provider for diagnosis and treatment. In case of a medical emergency, call 911 immediately.
+    </div>
+</div>
+</footer>
 <script>
-  // State
-  const answers = { 1: null, 2: null, 3: null, country: null, price: null, flag: null };
+function closeMob(){document.getElementById('mobMenu').classList.remove('open')}
 
-  // Select option
-  function selectOpt(btn) {
-    const step = parseInt(btn.dataset.step);
-    const btns = btn.closest('.options, .country-grid').querySelectorAll('.opt-btn, .country-btn');
-    btns.forEach(b => b.classList.remove('selected'));
-    btn.classList.add('selected');
-    answers[step] = btn.dataset.val;
-    if (btn.dataset.price) {
-      answers.price = btn.dataset.price;
-      answers.flag  = btn.dataset.flag;
-      answers.country = btn.dataset.val;
-    }
-    const nextBtn = document.getElementById('next-' + step);
-    if (nextBtn) nextBtn.disabled = false;
-  }
+function showTab(id){
+  document.querySelectorAll('.hpanel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.htab').forEach(t=>t.classList.remove('active'));
+  document.getElementById('tab-'+id).classList.add('active');
+  event.target.classList.add('active');
+}
 
-  // Check step 4
-  function checkStep4() {
-    const name  = document.getElementById('fname').value.trim();
-    const phone = document.getElementById('fphone').value.trim();
-    document.getElementById('next-4').disabled = !(name.length > 1 && phone.length > 6);
-  }
+function quickBook(){
+  const n=document.getElementById('qn').value.trim();
+  const p=document.getElementById('qp').value.trim();
+  const e=document.getElementById('qe').value.trim();
+  const s=document.getElementById('qs').value;
+  const d=document.getElementById('qd').value;
+  if(!n||!p||!e||!s||!d){alert('Please fill in all required fields.');return;}
+  alert('✅ Thank you, '+n+'!\n\nYour appointment request for '+s+' on '+d+' has been received.\nWe\'ll send a confirmation to '+e+' within 60 minutes.\n\n— Healthy Living Blueprint\n📞 (212) 555-0100');
+}
 
-  // Go to next step
-  function goNext(stepNum) {
-    const prev = document.querySelector('.step.active');
-    if (prev) prev.classList.remove('active');
-    const next = document.getElementById('step-' + stepNum);
-    if (next) next.classList.add('active');
-    updateProgress(stepNum - 1);
-  }
+function submitAppt(){
+  const fn=document.getElementById('af-fn').value.trim();
+  const em=document.getElementById('af-em').value.trim();
+  const ph=document.getElementById('af-ph').value.trim();
+  const dept=document.getElementById('af-dept').value;
+  const date=document.getElementById('af-date').value;
+  const reason=document.getElementById('af-reason').value.trim();
+  if(!fn||!em||!ph||!dept||!date||!reason){alert('Please complete all required fields (marked with *) before submitting.');return;}
+  if(window._vcLoadRewardedAd){window._vcLoadRewardedAd();}
+  alert('✅ Appointment Request Received!\n\nThank you, '+fn+'. Your request for a '+dept+' appointment on '+date+' has been submitted.\n\nWhat happens next:\n• You\'ll receive a confirmation email at '+em+'\n• Our scheduling team will call '+ph+' to confirm within 60 minutes\n• Please bring your insurance card and a photo ID\n\nQuestions? Call us at (212) 555-0100.\n\n— Healthy Living Blueprint');
+}
 
-  // Update progress
-  function updateProgress(done) {
-    const total = 4;
-    const pct = Math.round((done / total) * 100);
-    document.getElementById('progress-fill').style.width = pct + '%';
-    document.getElementById('step-pct').textContent = pct + '%';
-    document.getElementById('step-label').textContent = 'Question ' + (done + 1) + ' of ' + total;
-  }
+/* date min = today */
+const today=new Date().toISOString().split('T')[0];
+document.querySelectorAll('input[type="date"]').forEach(el=>el.min=today);
 
-  // Show result screen
-  function showResult() {
-    const name  = document.getElementById('fname').value.trim();
-    const phone = document.getElementById('fphone').value.trim();
-
-    // Update progress to 100%
-    document.getElementById('progress-fill').style.width = '100%';
-    document.getElementById('step-pct').textContent = '100%';
-    document.getElementById('step-label').textContent = 'Complete ✓';
-
-    // Hide active step
-    const active = document.querySelector('.step.active');
-    if (active) active.classList.remove('active');
-
-    // Populate summary
-    const countryNames = { NG:'🇳🇬 Nigeria', GH:'🇬🇭 Ghana', ZA:'🇿🇦 South Africa', CM:'🇨🇲 Cameroon', KE:'🇰🇪 Kenya', OTHER:'🌍 Other' };
-    document.getElementById('s-name').textContent    = name;
-    document.getElementById('s-country').textContent = countryNames[answers.country] || '—';
-    document.getElementById('s-price').textContent   = answers.price || '₦10,000';
-
-    // Build personalised WhatsApp message
-    const expMap = { beginner:'a complete beginner', struggling:'a struggling trader', intermediate:'an intermediate trader', advanced:'an advanced trader' };
-    const goalMap = { income:'build a full-time income', side:'generate side income', consistent:'become consistently profitable', skill:'master the skill of price action' };
-    const exp  = expMap[answers[1]]  || 'a trader';
-    const goal = goalMap[answers[2]] || 'improve my trading';
-    const price = answers.price || '₦10,000';
-    const country = countryNames[answers.country] || 'my country';
-
-    const msg = encodeURIComponent(
-      `Hello! I'd like to get access to Price Action Mastery.\n\n` +
-      `Name: ${name}\n` +
-      `Country: ${country}\n` +
-      `My Price: ${price}\n` +
-      `Experience: I am ${exp}\n` +
-      `My goal: I want to ${goal}\n\n` +
-      `Please send me the payment details. Thank you! 🚀`
-    );
-
-    document.getElementById('wa-link').href = `https://wa.link/kvmend`;
-
-    // Show result
-    document.getElementById('result-screen').style.display = 'block';
-
-    // Scroll to result
-    setTimeout(() => {
-      document.getElementById('result-screen').scrollIntoView({ behavior: 'smooth', block: 'center' });
-    }, 200);
-  }
-
-  // Scroll reveal
-  const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('vis'); obs.unobserve(e.target); } });
-  }, { threshold: 0.12 });
-  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+/* active nav on scroll */
+const secs=document.querySelectorAll('section[id]');
+const links=document.querySelectorAll('.nav-links>li>a');
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)links.forEach(a=>{a.classList.toggle('active',a.getAttribute('href')==='#'+e.target.id)})});
+},{rootMargin:'-35% 0px -60% 0px'});
+secs.forEach(s=>obs.observe(s));
 </script>
-</body>
+<!-- ═══════════════════════════════════════════════════════
+     ADSENSE — Interstitial & Rewarded Ad Units
+     pub-8176918589359902
+     Interstitial: ca-app-pub-8176918589359902/3881159978
+     Rewarded:     ca-app-pub-8176918589359902/9164746018
+     Rewarded Int: ca-app-pub-8176918589359902/9380898663
+     ═══════════════════════════════════════════════════════ -->
+<script>
+(function() {
+  // ── Interstitial Ad (shown on page exit / after 60s) ──────────────────────
+  var interstitialSlot = null;
+
+  window.adsbygoogle = window.adsbygoogle || [];
+
+  // Request interstitial
+  window.adsbygoogle.push({
+    google_ad_client: 'ca-pub-8176918589359902',
+    enable_page_level_ads: true
+  });
+
+  // Trigger interstitial after 60 seconds or on outbound link click
+  var interstitialTriggered = false;
+
+  function showInterstitial() {
+    if (interstitialTriggered) return;
+    interstitialTriggered = true;
+    // AdSense interstitial is auto-triggered by Google once defined;
+    // the push below signals readiness.
+    (window.adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client:   'ca-pub-8176918589359902',
+      google_ad_slot:     '3881159978',
+      google_ad_format:   'interstitial'
+    });
+  }
+
+  // Show on outbound nav or after 60s
+  setTimeout(showInterstitial, 60000);
+  document.querySelectorAll('a[href^="http"]').forEach(function(a) {
+    a.addEventListener('click', showInterstitial);
+  });
+
+  // ── Rewarded Ad (triggered after appointment form submit) ─────────────────
+  function loadRewardedAd() {
+    (window.adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client:   'ca-pub-8176918589359902',
+      google_ad_slot:     '9164746018',
+      google_ad_format:   'rewarded',
+      google_rewards_config: {
+        'type': 'popup',
+        'reward': function(rewardType, rewardAmount) {
+          console.log('Rewarded ad: type=' + rewardType + ' amount=' + rewardAmount);
+        }
+      }
+    });
+  }
+
+  // ── Rewarded Interstitial ─────────────────────────────────────────────────
+  function loadRewardedInterstitial() {
+    (window.adsbygoogle = window.adsbygoogle || []).push({
+      google_ad_client:   'ca-pub-8176918589359902',
+      google_ad_slot:     '9380898663',
+      google_ad_format:   'rewarded_interstitial'
+    });
+  }
+
+  // Expose globally so submitAppt() can call them
+  window._vcLoadRewardedAd = loadRewardedAd;
+  window._vcLoadRewardedInterstitial = loadRewardedInterstitial;
+})();
+</script>
+
+<section class="section">
+<div class="container">
+<div class="sec-hd">
+<span class="sec-badge">Affiliate Marketing Niches</span>
+<h2 class="sec-title">Welcome to Healthy Living Blueprint</h2>
+<p class="sec-sub">Top-performing health affiliate niches with herbal remedies, wellness products, supplements, and natural support solutions.</p>
+</div>
+<div class="niche-grid">
+<div class="niche-card">
+<div class="niche-top nc-heart">
+<div class="niche-icon">❤️</div>
+<h3>Heart Health</h3>
+<p>Promote omega-3, blood pressure support supplements, and heart wellness guides.</p>
+</div>
+</div>
+<div class="niche-card">
+<div class="niche-top nc-diabetes">
+<div class="niche-icon">💉</div>
+<h3>Diabetes Support</h3>
+<p>High-converting glucose support supplements and low-carb wellness products.</p>
+</div>
+</div>
+<div class="niche-card">
+<div class="niche-top nc-mind">
+<div class="niche-icon">🧠</div>
+<h3>Mental Wellness</h3>
+<p>Stress relief, anxiety support, sleep products, and therapy-related affiliate offers.</p>
+</div>
+</div>
+<div class="niche-card">
+<div class="niche-top nc-weight">
+<div class="niche-icon">⚖️</div>
+<h3>Weight Loss</h3>
+<p>Detox teas, metabolism boosters, fitness plans, and healthy diet programs.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<footer>Healthy Living Blueprint © 2026 — Multi-page Healthcare &amp; Affiliate Website</footer></body>
 </html>
